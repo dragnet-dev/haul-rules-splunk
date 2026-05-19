@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3534 — Recovery Inhibition (krybit)"
+| comment "Status: stable | Level: high | ID: ef4f8e40-32b2-5386-aab4-245b1a9dcf2b"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000
