@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2081 — Event Log Clearing (medusalocker)"
+| comment "Status: stable | Level: high | ID: 6cbc1bfb-be05-50e0-a445-d3f9fcdad5c3"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

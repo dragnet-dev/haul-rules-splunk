@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-1296 — Recovery Inhibition (qilin)"
+| comment "Status: deprecated | Level: high | ID: c5c23053-9625-54ea-a151-570d7a6f2143"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

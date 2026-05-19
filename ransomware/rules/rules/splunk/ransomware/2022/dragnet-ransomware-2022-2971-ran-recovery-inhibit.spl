@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-2971 — Recovery Inhibition (cuba)"
+| comment "Status: deprecated | Level: high | ID: c2c5f7cc-0579-5853-8757-0388c341fe2c"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

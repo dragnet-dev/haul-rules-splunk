@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0001 — Mass File Rename (sekhmet)"
+| comment "Status: deprecated | Level: high | ID: 730feb33-7b27-56b0-bbb2-3b176d259e2e"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

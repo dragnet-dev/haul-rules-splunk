@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6250 — Event Log Clearing (blacknevas)"
+| comment "Status: experimental | Level: high | ID: 251be75c-90b8-5562-863e-a612b8f4b8dd"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

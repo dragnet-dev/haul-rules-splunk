@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1408 — Event Log Clearing (worldleaks)"
+| comment "Status: test | Level: high | ID: 937558f6-e5e7-528b-8d42-9fd50d1c5c0c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

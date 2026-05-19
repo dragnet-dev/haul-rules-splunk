@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0357 — Recovery Inhibition (medusalocker)"
+| comment "Status: stable | Level: high | ID: d24a1c2e-47b9-5d03-8d9f-ffb09e9cba7f"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

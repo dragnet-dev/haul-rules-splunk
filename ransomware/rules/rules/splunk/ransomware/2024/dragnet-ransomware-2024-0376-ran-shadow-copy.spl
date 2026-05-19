@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0376 — Shadow Copy Deletion (threeam)"
+| comment "Status: experimental | Level: high | ID: b070fcc6-6bcf-5f14-91e7-f5ea0e15e370"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

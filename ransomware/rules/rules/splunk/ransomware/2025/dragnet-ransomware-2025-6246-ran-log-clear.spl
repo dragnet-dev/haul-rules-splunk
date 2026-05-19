@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6246 — Event Log Clearing (tridentlocker)"
+| comment "Status: experimental | Level: high | ID: 9257f15c-6b24-5f9e-9927-a1dcb8140844"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

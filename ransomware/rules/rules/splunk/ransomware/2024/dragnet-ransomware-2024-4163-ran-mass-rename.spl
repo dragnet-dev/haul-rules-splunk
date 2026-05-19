@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4163 — Mass File Rename (safepay)"
+| comment "Status: deprecated | Level: high | ID: cd50b0de-02e9-5bac-8389-fc87c04c2407"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

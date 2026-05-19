@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-2369 — Recovery Inhibition (memedusalockerdusa)"
+| comment "Status: deprecated | Level: high | ID: 0808237c-c5e7-5de2-a62d-ec36a082d513"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

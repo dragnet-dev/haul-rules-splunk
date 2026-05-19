@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-2444 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 3a37d6e3-acc6-505f-ab0e-4da8421396fa"
+index=* sourcetype=network*
+| where (dest="*https://handala.to/temporary-warning-for-eyal-baror/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

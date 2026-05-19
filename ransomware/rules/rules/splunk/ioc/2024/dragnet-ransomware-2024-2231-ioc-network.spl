@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-2231 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: ef3e7748-9009-5a16-953a-05448eae35fd"
+index=* sourcetype=network*
+| where (dest="*http://mblogci3rudehaagbryjznltdp33ojwzkq6hn2pckvjq33rycmzczpid.onion/blog/e26a25863929498d892fc5fa338f732d064a71fbc45f82e4c50ec65dd52d0911/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

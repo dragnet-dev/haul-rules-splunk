@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0544 — Event Log Clearing (lamashtu)"
+| comment "Status: stable | Level: high | ID: 41e71deb-eba5-50b6-bce3-b6fb2181fa36"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1062 — Event Log Clearing (donutleaks)"
+| comment "Status: experimental | Level: high | ID: e7ca5028-3daf-5a53-be33-ce5bf754d3ed"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

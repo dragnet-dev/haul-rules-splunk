@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-2160 — Recovery Inhibition (kairos)"
+| comment "Status: deprecated | Level: high | ID: 04c4f5de-ebb2-5fc4-ba05-169a60bc87cc"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

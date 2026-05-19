@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-2292 — Shadow Copy Deletion (weyhro)"
+| comment "Status: experimental | Level: high | ID: dbce4977-8734-5c9f-96e1-097282daf59c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-1242 — Shadow Copy Deletion (worldleaks)"
+| comment "Status: experimental | Level: high | ID: 2e194b42-8fc1-5deb-9900-82ecaaad04db"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

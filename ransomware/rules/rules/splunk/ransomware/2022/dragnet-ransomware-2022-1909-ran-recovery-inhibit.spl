@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1909 — Recovery Inhibition (midas)"
+| comment "Status: deprecated | Level: high | ID: b0df3fd2-358d-5e02-aa19-3d54a55f8ecc"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

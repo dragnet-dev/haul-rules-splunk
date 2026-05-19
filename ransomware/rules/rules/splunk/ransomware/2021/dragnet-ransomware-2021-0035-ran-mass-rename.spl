@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0035 — Mass File Rename (bonacigroup)"
+| comment "Status: deprecated | Level: high | ID: 51aa131f-9439-58a8-8bed-c75e78183169"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

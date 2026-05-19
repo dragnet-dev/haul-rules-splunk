@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0084 — Event Log Clearing (datacarry)"
+| comment "Status: deprecated | Level: high | ID: 96a17180-f210-51d9-9987-cb7e18955c80"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

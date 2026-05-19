@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1960 — Event Log Clearing (onyx)"
+| comment "Status: deprecated | Level: high | ID: d82ea96e-7ff7-5c52-a31a-adaaabb1b05a"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

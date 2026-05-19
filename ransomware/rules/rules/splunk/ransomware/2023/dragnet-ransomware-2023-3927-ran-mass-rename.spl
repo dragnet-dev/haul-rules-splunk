@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3927 — Mass File Rename (play)"
+| comment "Status: deprecated | Level: high | ID: ea131693-e3d1-53b9-80fb-e51b68518058"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

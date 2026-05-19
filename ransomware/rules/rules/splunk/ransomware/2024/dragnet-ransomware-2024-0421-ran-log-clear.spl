@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0421 — Event Log Clearing (monti)"
+| comment "Status: experimental | Level: high | ID: b9c97c42-2c20-5ad3-84ae-ea1de47f5326"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

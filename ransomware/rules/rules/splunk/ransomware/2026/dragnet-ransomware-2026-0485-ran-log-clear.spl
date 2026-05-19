@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0485 — Event Log Clearing (BrainCipher)"
+| comment "Status: stable | Level: high | ID: b3df14f3-1a3e-5737-9a27-01f1e4d5c282"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

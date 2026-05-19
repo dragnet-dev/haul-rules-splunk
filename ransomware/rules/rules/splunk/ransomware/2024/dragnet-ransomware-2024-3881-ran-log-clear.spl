@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3881 — Event Log Clearing (meow)"
+| comment "Status: experimental | Level: high | ID: 9c3f4c30-7e94-587e-8ce0-f343959aa07b"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

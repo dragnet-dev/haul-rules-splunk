@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6908 — Event Log Clearing (tengu)"
+| comment "Status: experimental | Level: high | ID: 71ade5be-19b5-5f9d-9167-0a6e196b894c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

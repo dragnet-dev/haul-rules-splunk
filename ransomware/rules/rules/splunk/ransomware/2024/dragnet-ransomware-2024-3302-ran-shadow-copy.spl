@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3302 — Shadow Copy Deletion (embargo)"
+| comment "Status: experimental | Level: high | ID: 60b2318b-d2b1-5673-ace9-a966b440527f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

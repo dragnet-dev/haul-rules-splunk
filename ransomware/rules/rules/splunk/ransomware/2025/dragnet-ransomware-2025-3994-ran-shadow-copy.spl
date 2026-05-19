@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-3994 — Shadow Copy Deletion (handala)"
+| comment "Status: experimental | Level: high | ID: 53dbd172-db99-53ac-b032-689e979796dd"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5129 — Mass File Rename (weyhro)"
+| comment "Status: experimental | Level: high | ID: 7b597d9e-da54-576b-842c-38e76248dc89"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

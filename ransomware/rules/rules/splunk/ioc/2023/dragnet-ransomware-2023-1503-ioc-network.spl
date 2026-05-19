@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-1503 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 0a635b94-8222-5d01-81ad-8b39a2db1670"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion//companies/sebataholdings.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

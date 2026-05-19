@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3218 — Event Log Clearing (payoutsking)"
+| comment "Status: deprecated | Level: high | ID: bec471fe-d203-5265-a823-75f950993bcc"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

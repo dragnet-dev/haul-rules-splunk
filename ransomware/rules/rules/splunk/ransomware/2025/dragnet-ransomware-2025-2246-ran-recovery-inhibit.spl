@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-2246 — Recovery Inhibition (hellcat)"
+| comment "Status: deprecated | Level: high | ID: 22f32a74-fad0-5d15-92cd-c7f9d2828dfd"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

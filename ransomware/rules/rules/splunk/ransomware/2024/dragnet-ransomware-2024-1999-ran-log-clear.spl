@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-1999 — Event Log Clearing (funksec)"
+| comment "Status: experimental | Level: high | ID: db8b04db-3bdc-592d-b05c-ab6d7eede012"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

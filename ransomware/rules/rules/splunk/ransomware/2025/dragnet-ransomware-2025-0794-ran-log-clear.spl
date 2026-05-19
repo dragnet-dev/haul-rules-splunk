@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0794 — Event Log Clearing (morpheus)"
+| comment "Status: deprecated | Level: high | ID: e05f688c-dc8e-5f05-9ce0-48c53a94e469"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

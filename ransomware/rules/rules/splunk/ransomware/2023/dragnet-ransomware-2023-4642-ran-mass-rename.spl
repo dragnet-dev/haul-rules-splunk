@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4642 — Mass File Rename (karakurt)"
+| comment "Status: deprecated | Level: high | ID: 634e5389-1b7a-5f58-9079-e868149fc57f"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5641 — Event Log Clearing (flocker)"
+| comment "Status: experimental | Level: high | ID: 75178348-410b-5be6-b2e9-4943b7f751bc"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

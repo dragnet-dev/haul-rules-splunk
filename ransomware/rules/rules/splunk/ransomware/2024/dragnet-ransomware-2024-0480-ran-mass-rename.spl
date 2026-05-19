@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0480 — Mass File Rename (mallox)"
+| comment "Status: experimental | Level: high | ID: 1d4d1c04-4726-5fad-b604-8f74e4c36c6a"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5551 — Shadow Copy Deletion (lockbit3)"
+| comment "Status: experimental | Level: high | ID: 1cc2acd4-756f-5c92-ba4a-7a49926c75db"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

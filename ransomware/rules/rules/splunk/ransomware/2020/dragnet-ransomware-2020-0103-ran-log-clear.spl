@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0103 — Event Log Clearing (doppelpaymer)"
+| comment "Status: deprecated | Level: high | ID: c54c717f-0910-583a-aa94-f4d723d1bd3c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

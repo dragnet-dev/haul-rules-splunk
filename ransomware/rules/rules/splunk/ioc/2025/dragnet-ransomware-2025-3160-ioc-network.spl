@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-3160 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 4bfc7f03-f553-59a4-b8e0-9e3649679ffa"
+index=* sourcetype=network*
+| where (dest="*http://5butbkrljkaorg5maepuca25oma7eiwo6a2rlhvkblb4v6mf3ki2ovid.onion/companies/56/metro-wire-cable*")
+| table _time, src, dest, dest_ip, process
+| head 1000

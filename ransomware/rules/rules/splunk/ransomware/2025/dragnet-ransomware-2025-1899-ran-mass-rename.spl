@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-1899 — Mass File Rename (babuk2)"
+| comment "Status: experimental | Level: high | ID: 5865eaab-1467-5878-86bd-254b434060b7"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

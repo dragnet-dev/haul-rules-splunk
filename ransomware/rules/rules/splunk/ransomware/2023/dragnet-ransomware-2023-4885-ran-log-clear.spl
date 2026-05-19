@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4885 — Event Log Clearing (cyclops)"
+| comment "Status: deprecated | Level: high | ID: 0f2a5b6f-8597-54da-97ff-472d21b3ea8f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

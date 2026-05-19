@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5378 — Event Log Clearing (ElDorado)"
+| comment "Status: deprecated | Level: high | ID: 1c7a17ba-0cc8-5944-8064-1ad5904cd84d"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

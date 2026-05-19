@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0509 — Event Log Clearing (fulcrumsec)"
+| comment "Status: stable | Level: high | ID: eb7227cd-67b1-503f-aeaf-2e33e88dc420"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

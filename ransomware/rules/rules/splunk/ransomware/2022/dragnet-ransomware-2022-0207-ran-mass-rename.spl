@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-0207 — Mass File Rename (vicesociety)"
+| comment "Status: deprecated | Level: high | ID: ba125cb3-75df-5ba1-8ce0-e48d06f8f133"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-2321 — Mass File Rename (toufan)"
+| comment "Status: deprecated | Level: high | ID: 7de10c46-ddb0-59a4-b3e7-cd49c275e883"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

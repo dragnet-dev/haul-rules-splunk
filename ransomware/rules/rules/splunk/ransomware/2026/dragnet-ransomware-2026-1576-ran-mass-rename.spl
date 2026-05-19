@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1576 — Mass File Rename (blacknevas)"
+| comment "Status: stable | Level: high | ID: cc570d57-ed27-5bca-a467-f4f02f934699"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

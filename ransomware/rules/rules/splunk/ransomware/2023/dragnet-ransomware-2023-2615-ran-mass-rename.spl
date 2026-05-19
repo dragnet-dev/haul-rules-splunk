@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-2615 — Mass File Rename (cloak)"
+| comment "Status: experimental | Level: high | ID: 0a9a4e76-7a2b-5bf9-a713-7a1037a29291"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

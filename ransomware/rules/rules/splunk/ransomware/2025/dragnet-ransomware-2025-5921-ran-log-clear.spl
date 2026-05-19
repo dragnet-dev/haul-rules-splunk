@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5921 — Event Log Clearing (benzona)"
+| comment "Status: deprecated | Level: high | ID: 422d2b23-3107-50b9-98b4-ab3113355a9b"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

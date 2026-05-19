@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0329 — Event Log Clearing (payloadbin)"
+| comment "Status: deprecated | Level: high | ID: 314355ee-a2bc-5135-a17f-968d271c8fd3"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

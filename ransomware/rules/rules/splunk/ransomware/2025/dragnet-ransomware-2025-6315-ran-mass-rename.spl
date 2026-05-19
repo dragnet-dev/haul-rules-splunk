@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6315 — Mass File Rename (fog)"
+| comment "Status: deprecated | Level: high | ID: 2889a2fd-f0d1-5fcb-a567-d2f8ae90d79b"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

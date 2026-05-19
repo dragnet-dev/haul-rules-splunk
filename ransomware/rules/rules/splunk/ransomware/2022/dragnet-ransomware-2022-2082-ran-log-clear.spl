@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-2082 — Event Log Clearing (sparta)"
+| comment "Status: deprecated | Level: high | ID: e4b88ed0-5978-5d17-bf56-ff6e5c9bf1d2"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

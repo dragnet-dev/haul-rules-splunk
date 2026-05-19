@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4007 — Shadow Copy Deletion (kairos)"
+| comment "Status: experimental | Level: high | ID: e02b0401-2379-5b97-b160-3425d1f74aea"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

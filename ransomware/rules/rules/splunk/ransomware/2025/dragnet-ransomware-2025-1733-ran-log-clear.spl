@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-1733 — Event Log Clearing (arcusmedia)"
+| comment "Status: experimental | Level: high | ID: 8d1e87f5-fd88-51a6-90d0-0f7c8a85b1f6"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

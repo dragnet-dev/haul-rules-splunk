@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-3540 — Recovery Inhibition (spacebears)"
+| comment "Status: experimental | Level: high | ID: 5e0d6dc2-5f78-5769-968d-0bc74737e0f2"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

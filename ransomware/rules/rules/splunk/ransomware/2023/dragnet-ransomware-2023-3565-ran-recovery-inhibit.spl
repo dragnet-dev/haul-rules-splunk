@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3565 — Recovery Inhibition (nokoyawa)"
+| comment "Status: experimental | Level: high | ID: 0c24b532-f1db-5bc0-8e39-c1c3975aa26d"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

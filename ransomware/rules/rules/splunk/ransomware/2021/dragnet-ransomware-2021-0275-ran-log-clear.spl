@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0275 — Event Log Clearing (darkleakmarket)"
+| comment "Status: deprecated | Level: high | ID: 6b416717-3f99-53da-9074-9ce06e6b2651"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

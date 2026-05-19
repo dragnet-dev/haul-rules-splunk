@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0324 — Event Log Clearing (suncrypt)"
+| comment "Status: deprecated | Level: high | ID: ea205129-a4ae-508f-a7be-e7cca4c26ab7"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3565 — Event Log Clearing (nokoyawa)"
+| comment "Status: experimental | Level: high | ID: db7072b0-c5d4-52f8-98d7-aeb6f45cbfcd"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

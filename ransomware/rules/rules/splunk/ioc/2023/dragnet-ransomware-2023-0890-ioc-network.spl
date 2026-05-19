@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-0890 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 5a7bdd5a-0368-5550-bda4-522d0df0368a"
+index=* sourcetype=network*
+| where (dest="*http://cuba4ikm4jakjgmkezytyawtdgr2xymvy6nvzgw5cglswg3si76icnqd.onion/company/txmplant.co.uk*")
+| table _time, src, dest, dest_ip, process
+| head 1000

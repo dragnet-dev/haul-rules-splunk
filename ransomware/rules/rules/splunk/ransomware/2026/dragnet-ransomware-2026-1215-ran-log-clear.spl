@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1215 — Event Log Clearing (tengu)"
+| comment "Status: stable | Level: high | ID: baa7baf5-35a1-5834-82d0-fa6796236ac5"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

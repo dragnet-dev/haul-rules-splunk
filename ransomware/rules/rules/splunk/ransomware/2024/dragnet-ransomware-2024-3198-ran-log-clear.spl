@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3198 — Event Log Clearing (trigona)"
+| comment "Status: experimental | Level: high | ID: b7e391a4-0710-5510-80f9-75cf26c8269f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

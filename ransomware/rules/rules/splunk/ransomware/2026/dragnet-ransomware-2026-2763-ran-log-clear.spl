@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2763 — Event Log Clearing (aurora)"
+| comment "Status: stable | Level: high | ID: ae7cc1ff-da69-5a19-96d7-634999a0155f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

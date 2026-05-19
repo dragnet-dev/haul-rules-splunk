@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-2046 — Recovery Inhibition (kairos)"
+| comment "Status: experimental | Level: high | ID: 0ffd3aa8-0bf8-50d5-9992-10c2ee31be07"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

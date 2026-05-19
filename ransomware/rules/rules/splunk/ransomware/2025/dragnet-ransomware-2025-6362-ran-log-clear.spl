@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6362 — Event Log Clearing (hunters)"
+| comment "Status: experimental | Level: high | ID: bbbf0194-af81-53ab-86f8-15e8cdfc5d84"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-1358 — Ransomware C2 Communication"
+| comment "Status: stable | Level: high | ID: 6efbc51f-24f1-5a45-8575-f9a8c6444565"
+index=* sourcetype=network*
+| where (dest="*https://handala-team.to/official-statement-by-handala-group-in-response-to-threats-from-the-us-and-its-allies/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

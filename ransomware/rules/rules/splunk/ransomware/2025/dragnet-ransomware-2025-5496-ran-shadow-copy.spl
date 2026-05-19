@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5496 — Shadow Copy Deletion (devman)"
+| comment "Status: test | Level: high | ID: db898525-82ab-5d17-8982-3c9862b9ad7e"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

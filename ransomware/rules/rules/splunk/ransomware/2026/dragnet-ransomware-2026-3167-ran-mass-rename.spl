@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3167 — Mass File Rename (bravox)"
+| comment "Status: stable | Level: high | ID: 45d3132e-dcd8-5c42-9e3a-d3ac6c15965d"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

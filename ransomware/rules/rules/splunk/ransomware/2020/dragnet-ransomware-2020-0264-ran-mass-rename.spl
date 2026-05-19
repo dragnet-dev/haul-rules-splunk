@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0264 — Mass File Rename (prolock)"
+| comment "Status: deprecated | Level: high | ID: 395e2bf5-effe-5394-a4ae-fb715cd1ff95"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

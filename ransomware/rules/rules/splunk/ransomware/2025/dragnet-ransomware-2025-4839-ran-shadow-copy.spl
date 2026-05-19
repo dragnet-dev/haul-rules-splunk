@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4839 — Shadow Copy Deletion (incransom)"
+| comment "Status: experimental | Level: high | ID: fd1e0468-db38-579b-81ce-4c3a82dcc700"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

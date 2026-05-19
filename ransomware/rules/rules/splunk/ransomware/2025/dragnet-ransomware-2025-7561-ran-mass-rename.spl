@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-7561 — Mass File Rename (nova)"
+| comment "Status: experimental | Level: high | ID: d86cc9ad-bcf4-5e1a-88f5-f3785b83a26d"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5085 — Event Log Clearing (worldleaks)"
+| comment "Status: experimental | Level: high | ID: f0b3a156-7f55-567d-99b7-dbb7b7571c55"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

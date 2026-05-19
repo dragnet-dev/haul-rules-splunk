@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-7618 — Shadow Copy Deletion (cactus)"
+| comment "Status: experimental | Level: high | ID: ffe08060-46de-555c-b917-3af6e6d7e7db"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6985 — Event Log Clearing (securotrop)"
+| comment "Status: test | Level: high | ID: 96712eb1-8aef-58d0-a6bc-943d08c1a63a"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0255 — Mass File Rename (snake)"
+| comment "Status: deprecated | Level: high | ID: 440f05ab-7e78-5e8b-9850-d3d64c34ca5f"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

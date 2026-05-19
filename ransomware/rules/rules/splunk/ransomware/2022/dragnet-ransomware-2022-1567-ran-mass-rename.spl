@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1567 — Mass File Rename (leaktheanalyst)"
+| comment "Status: deprecated | Level: high | ID: bba18253-9539-5a12-943e-5a89b05f6649"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-0119 — Event Log Clearing (cheers)"
+| comment "Status: deprecated | Level: high | ID: 00eb6d53-e233-52d9-b7dd-ae853db007dd"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

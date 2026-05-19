@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6862 — Mass File Rename (pear)"
+| comment "Status: experimental | Level: high | ID: 1e28ac4c-3fcc-5d9f-ae5f-495ec95d3990"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

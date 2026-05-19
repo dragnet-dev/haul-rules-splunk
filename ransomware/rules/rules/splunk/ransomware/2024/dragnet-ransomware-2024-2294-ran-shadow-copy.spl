@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-2294 — Shadow Copy Deletion (lynx)"
+| comment "Status: experimental | Level: high | ID: bb07c752-a275-56d8-8733-0b02cf5cdb20"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

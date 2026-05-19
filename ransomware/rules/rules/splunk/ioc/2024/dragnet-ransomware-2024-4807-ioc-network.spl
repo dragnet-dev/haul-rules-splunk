@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-4807 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 0644fc54-4123-5e0f-b76a-7e1e769eaae4"
+index=* sourcetype=network*
+| where (dest="*http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/?id=bulwarkpestcontrol.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0596 — Event Log Clearing (spook)"
+| comment "Status: deprecated | Level: high | ID: a5f979f5-a689-52bf-8de9-ec4ccc8f50fe"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

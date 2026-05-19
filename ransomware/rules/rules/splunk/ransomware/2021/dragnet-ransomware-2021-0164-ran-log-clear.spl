@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0164 — Event Log Clearing (blackbyte)"
+| comment "Status: deprecated | Level: high | ID: 53df7344-8755-59f2-aa2b-eff5c26256c6"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

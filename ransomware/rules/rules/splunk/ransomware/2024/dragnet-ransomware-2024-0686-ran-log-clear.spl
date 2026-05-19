@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0686 — Event Log Clearing (rhysida)"
+| comment "Status: deprecated | Level: high | ID: 1882a324-bb18-571d-bcfe-e848e5824e57"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

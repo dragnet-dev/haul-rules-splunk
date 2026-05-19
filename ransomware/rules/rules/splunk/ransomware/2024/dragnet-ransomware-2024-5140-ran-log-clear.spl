@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5140 — Event Log Clearing (blacklock)"
+| comment "Status: experimental | Level: high | ID: 5d0ca3ea-c93f-5350-aef9-1523fdc2bf65"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

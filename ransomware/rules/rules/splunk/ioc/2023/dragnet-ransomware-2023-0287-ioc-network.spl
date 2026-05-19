@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-0287 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 214e28ab-0a23-501f-b599-a3c47de9b567"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion/companies/etic-groupe.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

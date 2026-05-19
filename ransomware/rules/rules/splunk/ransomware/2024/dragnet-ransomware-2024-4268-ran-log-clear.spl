@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4268 — Event Log Clearing (stormous)"
+| comment "Status: experimental | Level: high | ID: 1aca2cd6-c06e-5a5f-86ed-4febdbf1edf5"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

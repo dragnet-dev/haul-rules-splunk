@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3362 — Mass File Rename (raworld)"
+| comment "Status: experimental | Level: high | ID: be188d8f-8832-59a5-94e9-093c2637007d"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

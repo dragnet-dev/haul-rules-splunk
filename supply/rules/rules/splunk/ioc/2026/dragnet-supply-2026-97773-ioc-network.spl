@@ -1,0 +1,6 @@
+| comment "Dragnet [IOC]: dragnet-supply-2026-97773 — C2 Network Communication"
+| comment "Status: stable | Level: medium | ID: 60638311-478f-532f-b2b8-16a08f7ac6e4"
+index=* sourcetype=network*
+| where (dest="*07d889e2dadce6f3910dcbc253317d28ca61c766Domainsfrclak.comC2*" OR dest="*domain-Domaincallnrwise.comC2*" OR dest="*-IP142.11.206.73C2*" OR dest="*proton.meThreat*")
+| table _time, src, dest, dest_ip, process
+| head 1000

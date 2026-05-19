@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2201 — Recovery Inhibition (coinbasecartel)"
+| comment "Status: stable | Level: high | ID: 2b2758c6-b865-5e2d-8cfd-e4c9649c4629"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

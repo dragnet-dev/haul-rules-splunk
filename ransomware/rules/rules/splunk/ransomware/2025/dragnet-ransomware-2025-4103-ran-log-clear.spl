@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4103 — Event Log Clearing (moneymessage)"
+| comment "Status: experimental | Level: high | ID: c550ba1e-1d7d-5083-9e9e-8177ca6c446c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

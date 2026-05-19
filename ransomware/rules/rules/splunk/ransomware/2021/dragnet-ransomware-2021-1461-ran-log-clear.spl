@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1461 — Event Log Clearing (karma)"
+| comment "Status: deprecated | Level: high | ID: e41f6705-8071-5701-ac30-85777f94f70b"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

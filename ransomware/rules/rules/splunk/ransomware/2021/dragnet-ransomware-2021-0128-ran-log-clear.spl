@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0128 — Event Log Clearing (quantum)"
+| comment "Status: deprecated | Level: high | ID: 395a1d11-3c62-521e-bed3-a9edaa288bb2"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

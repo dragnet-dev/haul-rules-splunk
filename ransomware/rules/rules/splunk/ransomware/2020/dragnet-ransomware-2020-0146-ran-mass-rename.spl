@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0146 — Mass File Rename (revil)"
+| comment "Status: deprecated | Level: high | ID: edb86be2-3c51-53ba-9eae-8f00c70a0233"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

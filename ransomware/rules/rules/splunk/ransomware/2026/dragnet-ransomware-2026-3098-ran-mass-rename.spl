@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3098 — Mass File Rename (securotrop)"
+| comment "Status: stable | Level: high | ID: f488c4f8-e7f4-57b2-aae9-4e0d0afd1ab9"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

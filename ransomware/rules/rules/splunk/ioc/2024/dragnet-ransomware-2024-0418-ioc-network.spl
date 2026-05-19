@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-0418 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 0fec7820-fa2f-5fc3-81b1-314206a536f8"
+index=* sourcetype=network*
+| where (dest="*http://5butbkrljkaorg5maepuca25oma7eiwo6a2rlhvkblb4v6mf3ki2ovid.onion/companies/26/arista*")
+| table _time, src, dest, dest_ip, process
+| head 1000

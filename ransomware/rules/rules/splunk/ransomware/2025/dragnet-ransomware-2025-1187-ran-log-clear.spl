@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-1187 — Event Log Clearing (dragonforce)"
+| comment "Status: test | Level: high | ID: ef169567-87f8-5641-a35b-99c6cb12293d"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1282 — Event Log Clearing (pysa)"
+| comment "Status: deprecated | Level: high | ID: a137d41d-e5a9-524a-9c67-8c96a7ff22fa"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

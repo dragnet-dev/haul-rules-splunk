@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-1008 — Mass File Rename (ciphbit)"
+| comment "Status: deprecated | Level: high | ID: b9d6c1bc-af9b-5b3a-a7f0-0cab497fbd0a"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

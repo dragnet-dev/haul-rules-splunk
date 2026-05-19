@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0372 — Event Log Clearing (kittykatkrew)"
+| comment "Status: stable | Level: high | ID: 31759692-d953-5446-ba96-cf3c799edbf5"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

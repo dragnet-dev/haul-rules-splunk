@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-1384 — Event Log Clearing (blackbasta)"
+| comment "Status: experimental | Level: high | ID: 51a2f64d-9a0c-575c-8a04-0d016a71a8df"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

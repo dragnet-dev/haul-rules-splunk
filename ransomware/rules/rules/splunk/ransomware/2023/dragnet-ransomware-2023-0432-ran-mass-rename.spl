@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0432 — Mass File Rename (karakurt)"
+| comment "Status: experimental | Level: high | ID: face1279-1e51-54d4-8a9b-751d495125dc"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

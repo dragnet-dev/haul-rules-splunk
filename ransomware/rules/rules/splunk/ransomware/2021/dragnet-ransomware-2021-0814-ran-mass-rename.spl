@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0814 — Mass File Rename (babuk)"
+| comment "Status: deprecated | Level: high | ID: 56a3e803-3e46-5a54-a6ad-35cd39db5694"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

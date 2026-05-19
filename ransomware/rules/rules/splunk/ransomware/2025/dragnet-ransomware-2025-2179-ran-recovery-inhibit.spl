@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-2179 — Recovery Inhibition (d4rk4rmy)"
+| comment "Status: deprecated | Level: high | ID: c0a4d157-bb84-5431-b21d-a6fe6e2770a4"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

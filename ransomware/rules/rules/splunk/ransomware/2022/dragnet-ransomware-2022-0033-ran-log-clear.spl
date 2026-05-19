@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-0033 — Event Log Clearing (bianlian)"
+| comment "Status: deprecated | Level: high | ID: a48b8de6-0ae3-5bd1-be02-8bd017e537ee"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

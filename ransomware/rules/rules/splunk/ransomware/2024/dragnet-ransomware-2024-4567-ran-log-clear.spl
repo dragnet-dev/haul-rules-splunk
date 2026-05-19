@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4567 — Event Log Clearing (ransomhub)"
+| comment "Status: experimental | Level: high | ID: 490ff210-0097-5c2c-8362-2e3c6549fabf"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

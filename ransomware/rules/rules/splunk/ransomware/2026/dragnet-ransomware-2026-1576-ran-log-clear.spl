@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1576 — Event Log Clearing (blacknevas)"
+| comment "Status: stable | Level: high | ID: 65b3c1fa-28cf-5aea-a883-9a59cc0fc768"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

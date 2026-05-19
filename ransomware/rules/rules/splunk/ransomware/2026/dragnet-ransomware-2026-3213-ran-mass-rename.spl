@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3213 — Mass File Rename (sinobi)"
+| comment "Status: stable | Level: high | ID: 6c5b6f1e-108e-5ac9-87ec-6634da042dc7"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

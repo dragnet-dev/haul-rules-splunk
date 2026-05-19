@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-2996 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: fe53acbb-8410-5fc1-892b-4f2209c35ad8"
+index=* sourcetype=network*
+| where (dest="*http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/?id=lagunitas.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

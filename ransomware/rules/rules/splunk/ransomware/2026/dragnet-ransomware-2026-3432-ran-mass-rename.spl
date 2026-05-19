@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3432 — Mass File Rename (krybit)"
+| comment "Status: stable | Level: high | ID: b289ba8f-ea51-59b5-8b9f-876171eac7d2"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

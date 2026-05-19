@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6535 — Recovery Inhibition (warlock)"
+| comment "Status: deprecated | Level: high | ID: 6de57897-2c4a-5ed3-b3b4-6c9456ea9ae9"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

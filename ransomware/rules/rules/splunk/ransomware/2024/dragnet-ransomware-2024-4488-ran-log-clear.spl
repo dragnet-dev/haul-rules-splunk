@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4488 — Event Log Clearing (madliberator)"
+| comment "Status: experimental | Level: high | ID: 2ff599df-f846-581d-9a28-4384e26830b5"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-4925 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 27c266a2-477f-57e4-9db8-3b1d2d1c45a4"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion//companies/gurfinkel.com/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

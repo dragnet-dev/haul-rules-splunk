@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-2300 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: dc42aedb-745a-5168-b4d7-362041b10973"
+index=* sourcetype=network*
+| where (dest="*http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/?id=arunestates.co.uk*")
+| table _time, src, dest, dest_ip, process
+| head 1000

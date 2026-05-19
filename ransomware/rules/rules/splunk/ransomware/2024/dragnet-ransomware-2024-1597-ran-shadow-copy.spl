@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-1597 — Shadow Copy Deletion (argonauts)"
+| comment "Status: experimental | Level: high | ID: 942e94ef-c981-5ad0-aed4-b65acc8259e0"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1663 — Event Log Clearing (tridentlocker)"
+| comment "Status: test | Level: high | ID: 44bce0c8-0282-590c-8c50-1a594c057fa9"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

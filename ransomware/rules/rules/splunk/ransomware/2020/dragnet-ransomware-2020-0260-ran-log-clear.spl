@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0260 — Event Log Clearing (netwalker)"
+| comment "Status: deprecated | Level: high | ID: da173d50-c6e6-53fa-863e-dc31804937e6"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

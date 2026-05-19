@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3276 — Event Log Clearing (tengu)"
+| comment "Status: test | Level: high | ID: 8448af67-f81d-5f36-9a3b-558284b86f7f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

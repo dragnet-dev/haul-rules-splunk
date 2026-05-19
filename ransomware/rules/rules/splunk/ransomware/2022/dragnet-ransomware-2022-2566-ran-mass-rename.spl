@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-2566 — Mass File Rename (stormous)"
+| comment "Status: deprecated | Level: high | ID: ad80c205-58ff-59e8-a416-41f4d47154db"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

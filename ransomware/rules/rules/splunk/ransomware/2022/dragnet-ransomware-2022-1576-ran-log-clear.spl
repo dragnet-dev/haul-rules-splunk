@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1576 — Event Log Clearing (blackbasta)"
+| comment "Status: deprecated | Level: high | ID: f73e3a46-0051-5851-8304-be914c691feb"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

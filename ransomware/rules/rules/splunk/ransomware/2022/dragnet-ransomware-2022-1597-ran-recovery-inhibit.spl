@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1597 — Recovery Inhibition (medusalocker)"
+| comment "Status: deprecated | Level: high | ID: e1121c2f-6e6c-54fc-a561-e21fe30a2a67"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

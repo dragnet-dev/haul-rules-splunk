@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1608 — Event Log Clearing (akira)"
+| comment "Status: deprecated | Level: high | ID: 32a2b788-73f0-505e-bc63-35cbd6707a5e"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

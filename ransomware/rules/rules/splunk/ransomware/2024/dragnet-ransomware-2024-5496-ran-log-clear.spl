@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5496 — Event Log Clearing (spacebears)"
+| comment "Status: experimental | Level: high | ID: 7ec89714-2f54-51ef-9ee2-52d4414a5dea"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

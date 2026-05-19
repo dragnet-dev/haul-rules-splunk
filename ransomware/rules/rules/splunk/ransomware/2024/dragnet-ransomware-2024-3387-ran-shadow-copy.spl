@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3387 — Shadow Copy Deletion (fog)"
+| comment "Status: experimental | Level: high | ID: b2cacbf3-c797-5fc5-8b50-f482950a2db3"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

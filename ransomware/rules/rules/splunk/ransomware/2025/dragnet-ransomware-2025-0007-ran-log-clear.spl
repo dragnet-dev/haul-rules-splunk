@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0007 — Event Log Clearing (embargo)"
+| comment "Status: experimental | Level: high | ID: 1508397e-8605-5bc9-bdc3-75a2201bffa0"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

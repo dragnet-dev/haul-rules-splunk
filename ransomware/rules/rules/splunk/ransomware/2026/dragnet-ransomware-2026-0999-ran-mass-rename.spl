@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0999 — Mass File Rename (shinyhunters)"
+| comment "Status: deprecated | Level: high | ID: 13f7785d-05a3-5bd7-ac4e-4f9f1e4042b8"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-4246 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: e0ec33ab-4d72-5c0a-9ba3-38eeec30f0a5"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion//companies/steinfibers.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

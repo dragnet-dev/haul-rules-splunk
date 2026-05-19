@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-1404 — Event Log Clearing (clop)"
+| comment "Status: experimental | Level: high | ID: 4aedf814-e44f-5c87-945e-752c1b9e5aa4"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

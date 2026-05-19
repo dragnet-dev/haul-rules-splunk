@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-5283 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 3e0258b8-31df-55d5-a366-a36a54e2d5d8"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion//companies/insulagroup.com.au/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

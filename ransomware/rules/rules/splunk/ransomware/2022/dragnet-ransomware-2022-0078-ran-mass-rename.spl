@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-0078 — Mass File Rename (conti)"
+| comment "Status: deprecated | Level: high | ID: d796af6f-ad84-5e1e-93d9-d55eb71ecf93"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

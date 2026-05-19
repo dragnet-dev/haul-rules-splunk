@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4825 — Shadow Copy Deletion (vicesociety)"
+| comment "Status: experimental | Level: high | ID: 400c07b9-3971-52ad-8fdb-ec8f4fb41dad"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

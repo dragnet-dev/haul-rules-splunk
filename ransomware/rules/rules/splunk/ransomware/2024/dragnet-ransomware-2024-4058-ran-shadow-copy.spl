@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4058 — Shadow Copy Deletion (flocker)"
+| comment "Status: experimental | Level: high | ID: 3def0a69-5ea0-5cb8-bb19-0db3f0d3ea50"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

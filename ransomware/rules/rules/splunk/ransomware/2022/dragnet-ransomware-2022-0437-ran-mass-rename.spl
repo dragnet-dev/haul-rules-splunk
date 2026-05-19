@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-0437 — Mass File Rename (blackbasta)"
+| comment "Status: deprecated | Level: high | ID: eae132b5-949c-51e7-8346-907d9adc5943"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

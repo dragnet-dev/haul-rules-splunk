@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-0040 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: e2c7008b-9ddf-50a4-8cba-854945fdea5b"
+index=* sourcetype=network*
+| where (dest="*http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/?id=swisspro.ch*")
+| table _time, src, dest, dest_ip, process
+| head 1000

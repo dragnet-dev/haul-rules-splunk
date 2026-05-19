@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-2860 — Event Log Clearing (lockbit3)"
+| comment "Status: experimental | Level: high | ID: fc6a7e88-6e39-5c6d-8219-ac724c386582"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

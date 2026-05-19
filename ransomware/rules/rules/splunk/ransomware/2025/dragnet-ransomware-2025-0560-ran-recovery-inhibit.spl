@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0560 — Recovery Inhibition (rhysida)"
+| comment "Status: deprecated | Level: high | ID: 6feb4e65-b5f5-5ed1-a252-a74be4c36c9b"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

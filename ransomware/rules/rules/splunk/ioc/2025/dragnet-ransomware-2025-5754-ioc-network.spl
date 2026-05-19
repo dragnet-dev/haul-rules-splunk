@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-5754 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 11e00c47-3a74-5e4f-a7e2-1d54c55618dd"
+index=* sourcetype=network*
+| where (dest="*http://nerqnacjmdy3obvevyol7qhazkwkv57dwqvye5v46k5bcujtfa6sduad.onion/detail?code=casperstruck-com-usa-92-2gb*")
+| table _time, src, dest, dest_ip, process
+| head 1000

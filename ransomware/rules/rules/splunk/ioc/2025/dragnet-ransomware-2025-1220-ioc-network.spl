@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-1220 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: dc488abe-6d1d-52d7-956c-66ced903df95"
+index=* sourcetype=network*
+| where (dest="*https://handala-hack.to/mor-logistics-hacked/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

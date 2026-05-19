@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0071 — Event Log Clearing (titan)"
+| comment "Status: stable | Level: high | ID: 0dd6d52d-c205-5b82-a71d-35aa32f11258"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

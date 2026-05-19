@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1755 — Event Log Clearing (midas)"
+| comment "Status: deprecated | Level: high | ID: 852bc7b5-cfc5-51fe-a892-80dcf85788cd"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

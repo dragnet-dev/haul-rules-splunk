@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0726 — Mass File Rename (noescape)"
+| comment "Status: experimental | Level: high | ID: 54730db4-0842-5000-872d-ca648a7fbffb"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

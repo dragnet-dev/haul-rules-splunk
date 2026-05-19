@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-3462 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 5b65dc5f-017b-51a6-b47e-b234d645e42b"
+index=* sourcetype=network*
+| where (dest="*http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/?id=Aurubis*")
+| table _time, src, dest, dest_ip, process
+| head 1000

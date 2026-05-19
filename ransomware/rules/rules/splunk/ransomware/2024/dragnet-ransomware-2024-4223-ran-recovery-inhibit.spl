@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4223 — Recovery Inhibition (safepay)"
+| comment "Status: deprecated | Level: high | ID: 38f5e00a-082f-5b9b-b3b1-aa8bb85ab718"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

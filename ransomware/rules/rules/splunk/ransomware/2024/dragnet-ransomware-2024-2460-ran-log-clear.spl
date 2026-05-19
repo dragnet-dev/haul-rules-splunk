@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-2460 — Event Log Clearing (BrainCipher)"
+| comment "Status: experimental | Level: high | ID: 6b156193-5f99-5fdb-9897-b5ff69e7f736"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-5268 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 55fd451a-bc31-5fef-ba9c-619ba74f3256"
+index=* sourcetype=network*
+| where (dest="*http://nerqnacjmdy3obvevyol7qhazkwkv57dwqvye5v46k5bcujtfa6sduad.onion/detail?code=kansasrmc-com-usa-113-6gb*")
+| table _time, src, dest, dest_ip, process
+| head 1000

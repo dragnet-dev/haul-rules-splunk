@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4670 — Mass File Rename (flocker)"
+| comment "Status: experimental | Level: high | ID: 4adb7a0b-6e93-5bf4-bc88-75b542cf2beb"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

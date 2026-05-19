@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5268 — Mass File Rename (kairos)"
+| comment "Status: experimental | Level: high | ID: e8bff666-bec5-5378-8cbf-9ed7b073bdfc"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

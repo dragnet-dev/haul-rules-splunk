@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-1689 — Recovery Inhibition (noescape)"
+| comment "Status: experimental | Level: high | ID: 1fd88c0f-ca63-5d72-a6d1-0fb4d4d7a699"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

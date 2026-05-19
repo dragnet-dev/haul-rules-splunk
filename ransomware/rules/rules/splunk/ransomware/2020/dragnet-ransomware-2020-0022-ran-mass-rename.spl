@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0022 — Mass File Rename (ryuk)"
+| comment "Status: deprecated | Level: high | ID: 0cdf3bdf-4b84-53c5-a6bb-5d7e96078d92"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

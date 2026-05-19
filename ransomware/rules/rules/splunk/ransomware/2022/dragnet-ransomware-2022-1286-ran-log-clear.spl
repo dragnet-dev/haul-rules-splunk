@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1286 — Event Log Clearing (everest)"
+| comment "Status: deprecated | Level: high | ID: b92ae5ff-5f8a-589e-8a2c-6344f89e2c6b"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

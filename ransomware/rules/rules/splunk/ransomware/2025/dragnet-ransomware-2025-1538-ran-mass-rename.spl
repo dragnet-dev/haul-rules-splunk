@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-1538 — Mass File Rename (direwolf)"
+| comment "Status: test | Level: high | ID: ae0a30a2-a9df-5552-8702-0f453faa4d72"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

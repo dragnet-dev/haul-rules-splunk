@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3498 — Mass File Rename (mogilevich)"
+| comment "Status: deprecated | Level: high | ID: fb64b07a-8e56-52a3-bdda-2f480448b14e"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

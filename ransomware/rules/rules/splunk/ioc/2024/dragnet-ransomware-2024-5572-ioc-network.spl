@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-5572 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 65dd3037-f1c9-5059-b347-1256dca8ce18"
+index=* sourcetype=network*
+| where (dest="*http://6doyqxqqj36vnedtt2zwxmngx52mgyp7brbrtwkyd75jgiolocoybgid.onion/post/cityofpleasantonca.gov*")
+| table _time, src, dest, dest_ip, process
+| head 1000

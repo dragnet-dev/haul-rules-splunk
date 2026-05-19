@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6361 — Event Log Clearing (alphalocker)"
+| comment "Status: experimental | Level: high | ID: 6ad1b561-252d-5bb2-93a6-87d50be859c1"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

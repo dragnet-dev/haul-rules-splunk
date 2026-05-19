@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4373 — Mass File Rename (noescape)"
+| comment "Status: experimental | Level: high | ID: a999583e-ed1a-5357-8274-e3085eb7e3db"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

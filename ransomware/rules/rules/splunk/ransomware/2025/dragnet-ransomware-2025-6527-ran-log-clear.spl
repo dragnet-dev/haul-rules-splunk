@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6527 — Event Log Clearing (pear)"
+| comment "Status: experimental | Level: high | ID: 0df22955-907a-51ea-b8a1-b979afab9467"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

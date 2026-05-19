@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5976 — Mass File Rename (SilentRansomGroup)"
+| comment "Status: deprecated | Level: high | ID: 922debe1-d9dd-58ce-88a9-9ef31281104f"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

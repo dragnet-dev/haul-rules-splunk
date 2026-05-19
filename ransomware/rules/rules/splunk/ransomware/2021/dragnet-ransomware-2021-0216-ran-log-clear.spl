@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0216 — Event Log Clearing (xinglocker)"
+| comment "Status: deprecated | Level: high | ID: a5bc600d-cac7-5754-af59-e9e1cf7f107d"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

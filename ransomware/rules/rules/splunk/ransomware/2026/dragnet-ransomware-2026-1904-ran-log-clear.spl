@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1904 — Event Log Clearing (dragonforce)"
+| comment "Status: test | Level: high | ID: 2e5dacb6-f91d-5f20-8fb3-f5de1608f966"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

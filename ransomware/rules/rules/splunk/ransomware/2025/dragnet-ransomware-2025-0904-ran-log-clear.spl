@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0904 — Event Log Clearing (gunra)"
+| comment "Status: test | Level: high | ID: c6fddfc4-b079-5288-849b-5ca393ae747a"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-1520 — Mass File Rename (darkrace)"
+| comment "Status: experimental | Level: high | ID: f03fb457-8193-5077-bcea-2641e4887014"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

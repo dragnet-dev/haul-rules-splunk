@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4738 — Mass File Rename (bianlian)"
+| comment "Status: experimental | Level: high | ID: c2cf9600-dc6d-56c7-8fc9-826eb14892ea"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

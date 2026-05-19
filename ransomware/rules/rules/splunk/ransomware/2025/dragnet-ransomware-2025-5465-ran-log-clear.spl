@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5465 — Event Log Clearing (devman)"
+| comment "Status: deprecated | Level: high | ID: bd02e63f-d856-5af9-969e-431749abb090"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4471 — Mass File Rename (werewolves)"
+| comment "Status: experimental | Level: high | ID: 9b718bd5-3bf7-5836-9bc2-44e6e3e1338a"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

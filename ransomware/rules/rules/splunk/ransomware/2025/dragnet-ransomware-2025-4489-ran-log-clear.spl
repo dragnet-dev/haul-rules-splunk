@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4489 — Event Log Clearing (qilin)"
+| comment "Status: experimental | Level: high | ID: b22abee1-7467-52f5-8295-4596e72107eb"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

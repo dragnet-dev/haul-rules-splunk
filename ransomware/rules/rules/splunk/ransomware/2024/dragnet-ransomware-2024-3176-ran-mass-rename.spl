@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3176 — Mass File Rename (blackbasta)"
+| comment "Status: experimental | Level: high | ID: f5c4f261-80a3-5826-bc74-6e28cec7a25b"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

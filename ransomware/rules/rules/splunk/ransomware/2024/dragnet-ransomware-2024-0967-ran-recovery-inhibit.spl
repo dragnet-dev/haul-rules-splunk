@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0967 — Recovery Inhibition (arcusmedia)"
+| comment "Status: experimental | Level: high | ID: 2376ca71-2c1d-5139-8ff2-b9d9d01d1e8b"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0427 — Event Log Clearing (ElDorado)"
+| comment "Status: experimental | Level: high | ID: 94b71010-a746-5d86-bd66-a3b74eb6e18c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0891 — Mass File Rename (avaddon)"
+| comment "Status: deprecated | Level: high | ID: 30de6f73-1740-5875-9cbd-586e21b2e5cf"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

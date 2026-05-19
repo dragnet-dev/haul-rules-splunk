@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0336 — Shadow Copy Deletion (spacebears)"
+| comment "Status: test | Level: high | ID: cb9ca634-42dc-5334-aab7-1fa1544131c6"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

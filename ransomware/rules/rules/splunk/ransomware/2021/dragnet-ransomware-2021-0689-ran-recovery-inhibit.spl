@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0689 — Recovery Inhibition (xinglocker)"
+| comment "Status: deprecated | Level: high | ID: 79a7b6bc-fd60-5175-bec3-c93d1b8f7b8f"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1281 — Mass File Rename (donutleaks)"
+| comment "Status: deprecated | Level: high | ID: ac187d7f-841f-5bb7-93fd-82c031c2e1c0"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

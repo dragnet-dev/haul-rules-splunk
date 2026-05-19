@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-4522 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: ddc12a8f-0efa-53a7-aab0-bce8bc301037"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion/companies/cyrioussoftware.com/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

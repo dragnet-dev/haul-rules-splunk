@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-2769 — Event Log Clearing (GDLockerSec)"
+| comment "Status: experimental | Level: high | ID: 4912ac8a-1173-55ef-902b-79404cec0990"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

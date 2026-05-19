@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-2454 — Mass File Rename (shaoleaks)"
+| comment "Status: deprecated | Level: high | ID: ae1e522b-3d38-5854-86ce-0cbefee2ad9a"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

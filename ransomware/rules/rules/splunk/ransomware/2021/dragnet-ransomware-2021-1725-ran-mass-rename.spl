@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1725 — Mass File Rename (pysa)"
+| comment "Status: deprecated | Level: high | ID: 1889bf5e-dea2-56af-a0a8-b0e061d027c8"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

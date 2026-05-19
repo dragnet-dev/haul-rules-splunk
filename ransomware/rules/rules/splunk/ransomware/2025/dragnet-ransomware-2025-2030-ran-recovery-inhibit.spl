@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-2030 — Recovery Inhibition (shinyhunters)"
+| comment "Status: experimental | Level: high | ID: 98acf49f-f3a7-5cf5-b752-dc8c1de027de"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

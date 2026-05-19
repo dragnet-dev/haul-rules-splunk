@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1751 — Mass File Rename (sinobi)"
+| comment "Status: test | Level: high | ID: 8fbd6b6f-8ee0-58e9-a22e-6a555e2651a8"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

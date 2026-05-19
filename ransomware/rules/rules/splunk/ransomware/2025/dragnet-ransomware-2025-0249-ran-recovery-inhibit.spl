@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0249 — Recovery Inhibition (stormous)"
+| comment "Status: experimental | Level: high | ID: b56bdf15-3bf3-57a1-ab0b-1d0d45ab9eda"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

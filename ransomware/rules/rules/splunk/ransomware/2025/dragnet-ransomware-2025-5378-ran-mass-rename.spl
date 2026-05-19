@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5378 — Mass File Rename (hellcat)"
+| comment "Status: deprecated | Level: high | ID: 8cee4e11-9ae4-5e0d-86eb-c00a0f3c379d"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

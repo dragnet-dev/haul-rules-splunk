@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0793 — Shadow Copy Deletion (embargo)"
+| comment "Status: experimental | Level: high | ID: 4f85b9f4-d423-5580-b1b4-0895c34606db"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

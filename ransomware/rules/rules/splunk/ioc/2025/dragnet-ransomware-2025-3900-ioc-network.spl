@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-3900 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 3dd60ec4-580b-5904-a7d0-1d0095fb1e23"
+index=* sourcetype=network*
+| where (dest="*https://handala-hack.to/hotam-ec-hacked/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

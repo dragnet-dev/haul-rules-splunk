@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0418 — Event Log Clearing (lorenz)"
+| comment "Status: deprecated | Level: high | ID: b53e88a0-f35a-55d4-a78b-ee62c1a4476c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0653 — Mass File Rename (atomsilo)"
+| comment "Status: experimental | Level: high | ID: bc78ac39-4217-5dba-a53b-188336c3fb2a"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

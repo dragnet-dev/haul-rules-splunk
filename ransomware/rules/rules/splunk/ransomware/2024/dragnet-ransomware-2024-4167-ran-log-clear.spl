@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4167 — Event Log Clearing (ValenciaLeaks)"
+| comment "Status: experimental | Level: high | ID: a626b86c-6f2e-596d-8ae8-196f2aafeb8a"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

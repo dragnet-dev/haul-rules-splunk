@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4167 — Recovery Inhibition (ValenciaLeaks)"
+| comment "Status: experimental | Level: high | ID: f82eae24-df3c-5474-9fbc-c3fe01de6af8"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

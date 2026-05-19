@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1001 — Mass File Rename (lorenz)"
+| comment "Status: deprecated | Level: high | ID: 02fd7619-60f4-5561-8b85-44afb9425c61"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

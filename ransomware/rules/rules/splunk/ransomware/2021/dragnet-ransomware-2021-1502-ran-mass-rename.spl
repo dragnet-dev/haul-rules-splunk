@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1502 — Mass File Rename (dispossessor)"
+| comment "Status: experimental | Level: high | ID: b2881d7c-4a61-5d0c-9002-864b9ed65885"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

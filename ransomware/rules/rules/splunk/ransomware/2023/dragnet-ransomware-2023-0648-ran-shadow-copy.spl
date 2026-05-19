@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0648 — Shadow Copy Deletion (clop)"
+| comment "Status: experimental | Level: high | ID: accc6a40-dd78-5f57-b281-fb76fccef467"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

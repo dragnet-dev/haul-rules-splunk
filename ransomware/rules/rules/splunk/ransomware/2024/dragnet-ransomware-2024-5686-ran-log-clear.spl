@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5686 — Event Log Clearing (arcusmedia)"
+| comment "Status: experimental | Level: high | ID: eef752ff-e9b0-5fdc-8d6f-1b4421c71963"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

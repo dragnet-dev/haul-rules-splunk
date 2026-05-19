@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0887 — Shadow Copy Deletion (interlock)"
+| comment "Status: test | Level: high | ID: 9e276ea3-7777-5001-99b6-471b6d58807a"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

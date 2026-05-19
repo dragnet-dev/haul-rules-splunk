@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3255 — Event Log Clearing (dragonforce)"
+| comment "Status: stable | Level: high | ID: 33611e61-6cd4-5609-9db0-c75a113fef60"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

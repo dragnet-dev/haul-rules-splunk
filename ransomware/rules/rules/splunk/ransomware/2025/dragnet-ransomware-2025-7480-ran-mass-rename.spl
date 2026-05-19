@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-7480 — Mass File Rename (qilin)"
+| comment "Status: experimental | Level: high | ID: b29b0e1b-05a8-537f-96f3-2c5fa1424021"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

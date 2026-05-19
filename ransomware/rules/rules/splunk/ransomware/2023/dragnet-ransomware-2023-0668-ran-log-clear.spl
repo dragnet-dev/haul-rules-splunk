@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0668 — Event Log Clearing (karakurt)"
+| comment "Status: experimental | Level: high | ID: c1e54511-8669-54da-bb8e-43df8b8b1bc1"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

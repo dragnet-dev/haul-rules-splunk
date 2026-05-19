@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-0487 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: e24b65e0-497d-591f-ba35-a3c392e57df5"
+index=* sourcetype=network*
+| where (dest="*http://5butbkrljkaorg5maepuca25oma7eiwo6a2rlhvkblb4v6mf3ki2ovid.onion/companies/32/kemlon-products-development-co-inc*")
+| table _time, src, dest, dest_ip, process
+| head 1000

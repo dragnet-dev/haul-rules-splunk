@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-4773 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 7d38af44-8900-5afe-833e-8617397108a3"
+index=* sourcetype=network*
+| where (dest="*http://ransomocmou6mnbquqz44ewosbkjk3o5qjsl3orawojexfook2j7esad.onion/primeimaging-data-leak/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

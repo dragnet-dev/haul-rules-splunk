@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-4950 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: bded265b-79cb-57dc-808e-f9d006fa5ad7"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion//companies/greenboxloans.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

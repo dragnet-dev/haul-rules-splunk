@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-7759 — Event Log Clearing (everest)"
+| comment "Status: experimental | Level: high | ID: c0eb04bb-1d32-59e0-8af4-93c87107fb93"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

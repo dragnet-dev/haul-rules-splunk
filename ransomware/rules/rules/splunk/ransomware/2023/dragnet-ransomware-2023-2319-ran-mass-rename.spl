@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-2319 — Mass File Rename (rhysida)"
+| comment "Status: experimental | Level: high | ID: caf0b5c6-4c14-50fa-866c-82706dc7089d"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

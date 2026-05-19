@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0806 — Mass File Rename (frag)"
+| comment "Status: deprecated | Level: high | ID: 5388f89a-d168-5719-92ec-26eb32cc75ea"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2335 — Mass File Rename (aurora)"
+| comment "Status: stable | Level: high | ID: 47160bb3-e147-52dd-a07a-4b34aadc9559"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

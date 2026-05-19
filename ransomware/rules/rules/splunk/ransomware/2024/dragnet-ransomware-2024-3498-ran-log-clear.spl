@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3498 — Event Log Clearing (mogilevich)"
+| comment "Status: deprecated | Level: high | ID: 2c8677b7-6da2-53ed-9ac2-99230fd921e7"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

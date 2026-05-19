@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-1598 — Mass File Rename (bert)"
+| comment "Status: experimental | Level: high | ID: a40acc50-a11b-53c1-80ef-3ce46f1a29e4"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

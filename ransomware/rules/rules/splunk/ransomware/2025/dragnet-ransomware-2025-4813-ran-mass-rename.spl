@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4813 — Mass File Rename (anubis)"
+| comment "Status: test | Level: high | ID: 91fc83be-dda0-5a1a-a0bf-a54dc1798041"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

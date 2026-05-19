@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1974 — Shadow Copy Deletion (ms13089)"
+| comment "Status: test | Level: high | ID: 954021a7-051d-553c-805f-66e7848b164f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-5057 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 715798c7-df1a-5913-a630-b8c0c8674287"
+index=* sourcetype=network*
+| where (dest="*http://santat7kpllt6iyvqbr7q4amdv6dzrh6paatvyrzl7ry3zm72zigf4ad.onion/hallmarkchannel-com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

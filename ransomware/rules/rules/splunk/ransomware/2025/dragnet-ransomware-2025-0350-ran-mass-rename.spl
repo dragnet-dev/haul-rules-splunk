@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0350 — Mass File Rename (skira)"
+| comment "Status: experimental | Level: high | ID: 2a1446a1-4826-561b-9f96-375389d50db4"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

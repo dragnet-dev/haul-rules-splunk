@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-3454 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 50b7e553-989e-560b-b853-06a3bb46b524"
+index=* sourcetype=network*
+| where (dest="*http://cuba4ikm4jakjgmkezytyawtdgr2xymvy6nvzgw5cglswg3si76icnqd.onion/company/hydrex.co.uk*")
+| table _time, src, dest, dest_ip, process
+| head 1000

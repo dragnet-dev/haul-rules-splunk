@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1271 — Event Log Clearing (gunra)"
+| comment "Status: stable | Level: high | ID: 43c278b8-c4a9-5d45-a104-4d7b62b54cbb"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

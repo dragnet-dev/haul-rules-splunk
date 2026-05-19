@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0231 — Event Log Clearing (azroteam)"
+| comment "Status: deprecated | Level: high | ID: 16962a84-6785-5f07-8d54-a8b67dd25f23"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

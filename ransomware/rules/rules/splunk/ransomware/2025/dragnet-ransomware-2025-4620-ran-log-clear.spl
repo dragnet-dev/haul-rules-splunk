@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4620 — Event Log Clearing (fog)"
+| comment "Status: experimental | Level: high | ID: 766ede7b-7fdf-55f7-962b-009ee43ffc98"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

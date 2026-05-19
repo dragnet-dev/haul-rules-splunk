@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-0598 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: ef689fab-85ab-5ae2-b837-232a1c2b8cb9"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion//companies/donear.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

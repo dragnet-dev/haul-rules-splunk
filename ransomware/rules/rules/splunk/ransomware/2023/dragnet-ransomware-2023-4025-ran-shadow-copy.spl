@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4025 — Shadow Copy Deletion (dispossessor)"
+| comment "Status: experimental | Level: high | ID: 77dd6607-e26b-557f-80cd-a6a6fc429699"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

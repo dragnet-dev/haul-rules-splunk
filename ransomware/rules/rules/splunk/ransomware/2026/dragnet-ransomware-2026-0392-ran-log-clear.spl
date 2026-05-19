@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0392 — Event Log Clearing (play)"
+| comment "Status: stable | Level: high | ID: beeeb285-4d25-5433-8965-05bf75029e76"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2270 — Event Log Clearing (thegentlemen)"
+| comment "Status: deprecated | Level: high | ID: d8b49a2a-e816-5134-b116-073b1d14fe32"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

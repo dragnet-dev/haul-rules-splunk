@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-2268 — Recovery Inhibition (donutleaks)"
+| comment "Status: deprecated | Level: high | ID: 8dfd6c42-a9e8-5dcd-b2ef-1d9372081389"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-2961 — Event Log Clearing (mallox)"
+| comment "Status: experimental | Level: high | ID: 735e0826-d37e-5597-a154-c90529b931e2"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

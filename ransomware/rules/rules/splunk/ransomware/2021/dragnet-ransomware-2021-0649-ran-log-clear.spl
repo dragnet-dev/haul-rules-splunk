@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0649 — Event Log Clearing (ragnarok)"
+| comment "Status: deprecated | Level: high | ID: d683a505-eb1f-57bb-8bdd-6e371da1142b"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

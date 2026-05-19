@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-5576 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: db2d6154-b4f1-5918-ab5e-c01468de11ae"
+index=* sourcetype=network*
+| where (dest="*http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/?id=wachter.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

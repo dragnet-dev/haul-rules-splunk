@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0951 — Shadow Copy Deletion (mallox)"
+| comment "Status: experimental | Level: high | ID: a7903cb6-e1dc-54db-bdfa-cfb7630378e1"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

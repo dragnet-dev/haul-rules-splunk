@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3297 — Mass File Rename (blackbyte)"
+| comment "Status: deprecated | Level: high | ID: 38704200-3c5a-5b8b-99a0-a71d335b1d2e"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

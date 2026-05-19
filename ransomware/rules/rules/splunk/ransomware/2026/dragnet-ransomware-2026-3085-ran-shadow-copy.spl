@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3085 — Shadow Copy Deletion (sinobi)"
+| comment "Status: test | Level: high | ID: 7f56df00-61cc-5665-a5be-cbf2cc520cfb"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

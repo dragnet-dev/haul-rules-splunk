@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0402 — Mass File Rename (interlock)"
+| comment "Status: experimental | Level: high | ID: 94bee95b-4cda-5e81-9814-4b6eb8ed3606"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

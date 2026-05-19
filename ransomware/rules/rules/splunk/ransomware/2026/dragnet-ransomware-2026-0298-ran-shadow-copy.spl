@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0298 — Shadow Copy Deletion (incransom)"
+| comment "Status: stable | Level: high | ID: 8778e284-c34f-5c8f-a914-5051912f3db5"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

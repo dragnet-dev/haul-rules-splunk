@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0109 — Mass File Rename (maze)"
+| comment "Status: deprecated | Level: high | ID: cdc6cf6c-199c-5a1b-a20e-193654811e45"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

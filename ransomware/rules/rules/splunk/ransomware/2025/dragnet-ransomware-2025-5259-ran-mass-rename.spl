@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5259 — Mass File Rename (payoutsking)"
+| comment "Status: test | Level: high | ID: e526f9d0-575b-5aa0-92c7-78c85a96fa15"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

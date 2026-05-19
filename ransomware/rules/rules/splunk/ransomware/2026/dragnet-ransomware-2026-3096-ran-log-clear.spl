@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3096 — Event Log Clearing (securotrop)"
+| comment "Status: stable | Level: high | ID: ab891aa8-6485-554c-8905-5db438571ea7"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

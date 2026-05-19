@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0939 — Mass File Rename (dragonforce)"
+| comment "Status: stable | Level: high | ID: 92e25887-1bb7-53f5-a0c3-2e314fa5f6c8"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

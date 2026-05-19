@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-3170 — Mass File Rename (dragonforce)"
+| comment "Status: experimental | Level: high | ID: c4079118-47d9-580c-86a3-d7ba9fe2e6da"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

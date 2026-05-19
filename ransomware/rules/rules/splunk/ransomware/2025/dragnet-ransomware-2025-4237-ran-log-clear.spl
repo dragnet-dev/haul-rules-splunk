@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4237 — Event Log Clearing (VanHelsing)"
+| comment "Status: experimental | Level: high | ID: fb79d2a8-6591-50c4-9a99-604fed46f17e"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

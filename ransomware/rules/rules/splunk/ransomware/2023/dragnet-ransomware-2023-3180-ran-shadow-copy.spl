@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3180 — Shadow Copy Deletion (medusa)"
+| comment "Status: experimental | Level: high | ID: cdb0732d-1cf5-50dd-ad9c-6825f42db93d"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

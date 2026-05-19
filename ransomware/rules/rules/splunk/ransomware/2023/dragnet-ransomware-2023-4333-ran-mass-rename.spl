@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4333 — Mass File Rename (hive)"
+| comment "Status: deprecated | Level: high | ID: 8d72594b-d8d5-5538-bcdb-8586139eaa55"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

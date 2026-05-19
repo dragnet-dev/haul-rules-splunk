@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1637 — Event Log Clearing (LeakBazaar)"
+| comment "Status: stable | Level: high | ID: 2755c528-3906-5cf9-824c-61ada4617654"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

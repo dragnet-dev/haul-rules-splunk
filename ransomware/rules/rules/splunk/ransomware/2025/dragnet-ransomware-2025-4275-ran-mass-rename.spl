@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4275 — Mass File Rename (termite)"
+| comment "Status: experimental | Level: high | ID: d5c2d831-19bf-53af-a3ba-7ab82771d6c1"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

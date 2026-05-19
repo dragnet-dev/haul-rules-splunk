@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-1039 — Shadow Copy Deletion (spacebears)"
+| comment "Status: experimental | Level: high | ID: f808f485-50d7-5eda-b5d0-660cfc1aaf27"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

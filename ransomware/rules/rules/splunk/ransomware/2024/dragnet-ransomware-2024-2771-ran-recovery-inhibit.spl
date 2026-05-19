@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-2771 — Recovery Inhibition (bluebox)"
+| comment "Status: experimental | Level: high | ID: 1172ed5f-84e4-5f5d-9b79-135ab7e4d063"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

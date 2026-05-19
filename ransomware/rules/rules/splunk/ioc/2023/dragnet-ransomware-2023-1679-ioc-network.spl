@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-1679 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: e5d36521-2d01-5074-8370-98fdb52c5017"
+index=* sourcetype=network*
+| where (dest="*http://sbc2zv2qnz5vubwtx3aobfpkeao6l4igjegm3xx7tk5suqhjkp5jxtqd.onion/montgomery-general-hospital/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-5902 — Ransomware C2 Communication"
+| comment "Status: test | Level: high | ID: 83a6aabf-0b95-5e59-a027-aa33c3019f38"
+index=* sourcetype=network*
+| where (dest="*https://handala-hack.to/from-shield-to-shame/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

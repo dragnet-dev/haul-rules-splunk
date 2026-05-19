@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6718 — Event Log Clearing (gunra)"
+| comment "Status: experimental | Level: high | ID: 4c8c9153-8029-52cf-8fc5-c76159bd6a0b"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

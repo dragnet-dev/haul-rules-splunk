@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5584 — Recovery Inhibition (funksec)"
+| comment "Status: experimental | Level: high | ID: 9f7be1cc-c38c-56b4-9f52-5723e6ca5b13"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4713 — Mass File Rename (killsec)"
+| comment "Status: experimental | Level: high | ID: e880b645-6105-5d0c-877f-69585d87b9c3"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

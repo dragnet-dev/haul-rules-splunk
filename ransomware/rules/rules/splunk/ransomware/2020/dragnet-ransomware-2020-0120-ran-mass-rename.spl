@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0120 — Mass File Rename (netwalker)"
+| comment "Status: deprecated | Level: high | ID: 310a7c3a-c74c-5034-ae3a-0958694af55c"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

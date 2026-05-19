@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0525 — Event Log Clearing (krybit)"
+| comment "Status: stable | Level: high | ID: 5ce959db-b4d8-5436-ac78-10cb53de3a9f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

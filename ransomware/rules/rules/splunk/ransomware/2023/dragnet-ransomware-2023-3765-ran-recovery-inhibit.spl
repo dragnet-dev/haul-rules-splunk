@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3765 — Recovery Inhibition (siegedsec)"
+| comment "Status: deprecated | Level: high | ID: 6c4116e9-c72c-521e-a995-8aeb1c874e24"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

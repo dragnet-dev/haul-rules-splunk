@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-1031 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 570ddddb-561d-56ac-b0bf-e9b673dfdb7b"
+index=* sourcetype=network*
+| where (dest="*http://lynxblog.net/leaks/67a3a54e61c2d9c619a484ec*")
+| table _time, src, dest, dest_ip, process
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-0994 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 0799244d-19ce-5737-b26b-906bc45d7547"
+index=* sourcetype=network*
+| where (dest="*https://handala-hack.to/soreq-nrc-hacked/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

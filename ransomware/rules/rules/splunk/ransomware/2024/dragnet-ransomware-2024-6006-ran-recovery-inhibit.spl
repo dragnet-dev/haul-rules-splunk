@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-6006 — Recovery Inhibition (snatch)"
+| comment "Status: experimental | Level: high | ID: aaf2ad30-afb0-51b2-8ded-a7d6e6ddc665"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

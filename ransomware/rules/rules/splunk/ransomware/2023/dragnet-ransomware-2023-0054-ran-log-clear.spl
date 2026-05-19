@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0054 — Event Log Clearing (cryptbb)"
+| comment "Status: experimental | Level: high | ID: 324d76ee-c315-5667-b043-10771c0631a2"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

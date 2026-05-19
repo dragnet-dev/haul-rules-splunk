@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-3203 — Mass File Rename (medusa)"
+| comment "Status: experimental | Level: high | ID: c8b27994-3b0a-5692-a625-f44663784621"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

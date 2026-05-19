@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2646 — Event Log Clearing (m3rx)"
+| comment "Status: stable | Level: high | ID: 17d9032a-d0de-5779-8ed4-7a9332928247"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

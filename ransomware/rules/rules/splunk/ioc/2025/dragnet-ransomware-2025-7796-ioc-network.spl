@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-7796 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: e99e17b5-a232-5ae1-bb66-bd88e646de0e"
+index=* sourcetype=network*
+| where (dest="*http://nerqnacjmdy3obvevyol7qhazkwkv57dwqvye5v46k5bcujtfa6sduad.onion/detail?code=stattorney-org-usa-325gb-*")
+| table _time, src, dest, dest_ip, process
+| head 1000

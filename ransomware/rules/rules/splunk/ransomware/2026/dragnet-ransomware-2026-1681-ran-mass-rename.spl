@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1681 — Mass File Rename (benzona)"
+| comment "Status: deprecated | Level: high | ID: f1e93f74-5ef1-53ad-9745-127b6e52cd80"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

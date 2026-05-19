@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-0450 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 9d627da3-7257-5773-b5b4-880a64586eb8"
+index=* sourcetype=network*
+| where (dest="*https://werewolves.pro/en/emprint.html*")
+| table _time, src, dest, dest_ip, process
+| head 1000

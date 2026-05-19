@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1745 — Recovery Inhibition (avoslocker)"
+| comment "Status: deprecated | Level: high | ID: 724f3dd3-16f5-5499-b7b5-fa5dbe8c0a67"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

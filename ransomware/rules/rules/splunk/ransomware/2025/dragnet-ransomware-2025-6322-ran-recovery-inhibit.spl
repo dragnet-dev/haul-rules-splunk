@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6322 — Recovery Inhibition (kawa4096)"
+| comment "Status: deprecated | Level: high | ID: 1ff3990d-0914-599a-9ebd-de13a7d42d60"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

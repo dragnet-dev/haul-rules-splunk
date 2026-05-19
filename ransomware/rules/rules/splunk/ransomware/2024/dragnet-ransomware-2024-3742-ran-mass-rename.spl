@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3742 — Mass File Rename (nitrogen)"
+| comment "Status: experimental | Level: high | ID: 08f2cda2-258b-5931-ab35-8bd04339595a"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

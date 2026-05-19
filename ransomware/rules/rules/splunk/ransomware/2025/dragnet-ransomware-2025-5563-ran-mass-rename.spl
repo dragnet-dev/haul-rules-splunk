@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5563 — Mass File Rename (blacknevas)"
+| comment "Status: experimental | Level: high | ID: 79591df1-7165-5e71-bb88-c28d00ada941"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

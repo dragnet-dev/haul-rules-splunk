@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6702 — Event Log Clearing (arkana)"
+| comment "Status: experimental | Level: high | ID: ac3ef184-dc18-5b33-8980-8779a726365d"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

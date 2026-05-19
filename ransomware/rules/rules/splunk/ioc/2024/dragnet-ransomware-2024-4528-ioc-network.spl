@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-4528 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: a859d4bf-97a3-5498-b924-ec9365ae5378"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion//companies/tandemlasvegas.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

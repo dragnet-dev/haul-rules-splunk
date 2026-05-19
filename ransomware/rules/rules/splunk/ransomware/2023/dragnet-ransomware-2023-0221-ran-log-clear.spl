@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0221 — Event Log Clearing (alphv)"
+| comment "Status: experimental | Level: high | ID: 76fbc32f-8d2a-5758-9705-e7c2ab87a26b"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

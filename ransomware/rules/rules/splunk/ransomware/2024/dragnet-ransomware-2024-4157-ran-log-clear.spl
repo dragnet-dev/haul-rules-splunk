@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4157 — Event Log Clearing (werewolves)"
+| comment "Status: experimental | Level: high | ID: 40c6d5ff-f7f9-50cf-b6c4-632d58f2f3cf"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

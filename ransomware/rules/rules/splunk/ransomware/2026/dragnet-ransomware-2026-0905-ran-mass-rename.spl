@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0905 — Mass File Rename (tridentlocker)"
+| comment "Status: stable | Level: high | ID: 37057364-4dbf-5049-9a70-a0aabcee7aca"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

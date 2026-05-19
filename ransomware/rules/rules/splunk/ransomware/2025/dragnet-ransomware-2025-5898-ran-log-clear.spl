@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5898 — Event Log Clearing (shinyhunters)"
+| comment "Status: experimental | Level: high | ID: a6259bd4-8582-59ab-ae20-910395343802"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

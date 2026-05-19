@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-6948 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: af891df7-bd29-5e07-ae10-e64d7328576c"
+index=* sourcetype=network*
+| where (dest="*https://darkforums.st/Thread-Source-Code-SystemExec-Co-Ltd-%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%82%B0%E3%82%BC-GitLab-naked-repo-leak-30G*")
+| table _time, src, dest, dest_ip, process
+| head 1000

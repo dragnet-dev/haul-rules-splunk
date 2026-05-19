@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-2452 — Recovery Inhibition (thegentlemen)"
+| comment "Status: experimental | Level: high | ID: d00c1cca-e1f2-5d5e-893b-e9def2317c99"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

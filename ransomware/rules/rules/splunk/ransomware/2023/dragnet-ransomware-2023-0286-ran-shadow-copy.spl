@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0286 — Shadow Copy Deletion (cloak)"
+| comment "Status: deprecated | Level: high | ID: fc8a2388-ea80-54aa-852b-bb34db7bb902"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

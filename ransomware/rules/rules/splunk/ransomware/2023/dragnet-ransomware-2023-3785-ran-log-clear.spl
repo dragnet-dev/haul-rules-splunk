@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3785 — Event Log Clearing (cactus)"
+| comment "Status: deprecated | Level: high | ID: ae8a0afb-2053-5651-adf8-6a0050e3576f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0409 — Event Log Clearing (playboy)"
+| comment "Status: experimental | Level: high | ID: 461a119e-fabf-595f-9015-ea5aec72825e"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-1464 — Event Log Clearing (sarcoma)"
+| comment "Status: deprecated | Level: high | ID: 61f91092-12d6-57b9-8787-02806ec5c672"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

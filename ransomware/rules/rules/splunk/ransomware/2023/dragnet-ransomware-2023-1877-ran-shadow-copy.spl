@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-1877 — Shadow Copy Deletion (donutleaks)"
+| comment "Status: experimental | Level: high | ID: 443ea056-bd68-522b-a423-51f5bef9ccb3"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

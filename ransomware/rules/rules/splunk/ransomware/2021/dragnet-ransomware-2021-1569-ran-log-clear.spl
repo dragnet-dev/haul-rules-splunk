@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1569 — Event Log Clearing (grief)"
+| comment "Status: deprecated | Level: high | ID: cb57dc2d-0fdd-5568-8706-9cd80941166c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

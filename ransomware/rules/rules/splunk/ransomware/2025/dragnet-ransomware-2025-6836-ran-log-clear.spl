@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6836 — Event Log Clearing (safepay)"
+| comment "Status: experimental | Level: high | ID: 309b01e9-7b19-5bde-a6d9-df7ecb1ec7e8"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

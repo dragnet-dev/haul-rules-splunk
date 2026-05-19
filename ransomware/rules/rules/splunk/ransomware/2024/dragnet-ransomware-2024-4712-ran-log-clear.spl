@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4712 — Event Log Clearing (metaencryptor)"
+| comment "Status: experimental | Level: high | ID: bdf8de39-12c0-52f9-813d-1cf960a3189b"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

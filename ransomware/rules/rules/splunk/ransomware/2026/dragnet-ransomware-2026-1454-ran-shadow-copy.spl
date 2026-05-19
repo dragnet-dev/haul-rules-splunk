@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1454 — Shadow Copy Deletion (payload)"
+| comment "Status: stable | Level: high | ID: ad2ba2ee-6a22-5d8d-9607-a637630f5eee"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2020-0182 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 8c7920f0-c077-5497-b445-f130ab9939f5"
+index=* sourcetype=network*
+| where (dest="*https://dispossessor.com/blogs/28*")
+| table _time, src, dest, dest_ip, process
+| head 1000

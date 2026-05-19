@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0969 — Mass File Rename (donutleaks)"
+| comment "Status: experimental | Level: high | ID: 7267163e-25ad-58bd-a614-816ce4a51b4d"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

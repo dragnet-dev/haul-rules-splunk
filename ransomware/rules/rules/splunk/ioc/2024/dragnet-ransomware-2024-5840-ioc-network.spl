@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-5840 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 85f336d1-bd12-5fd6-bc16-93a1eaeaae93"
+index=* sourcetype=network*
+| where (dest="*http://7ixfdvqb4eaju5lzj4gg76kwlrxg4ugqpuog5oqkkmgfyn33h527oyyd.onion/FunkLocker.html*")
+| table _time, src, dest, dest_ip, process
+| head 1000

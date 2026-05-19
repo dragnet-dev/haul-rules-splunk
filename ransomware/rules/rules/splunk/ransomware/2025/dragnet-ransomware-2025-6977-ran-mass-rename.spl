@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6977 — Mass File Rename (securotrop)"
+| comment "Status: experimental | Level: high | ID: c6f2a352-a004-58d0-8e4a-a41a3d5a4c50"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

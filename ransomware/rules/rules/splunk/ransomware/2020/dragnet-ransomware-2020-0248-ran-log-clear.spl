@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0248 — Event Log Clearing (pay2key)"
+| comment "Status: deprecated | Level: high | ID: 80cbe969-678c-5714-8b41-87132387c341"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

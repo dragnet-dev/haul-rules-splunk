@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-2788 — Event Log Clearing (blackshrantac)"
+| comment "Status: experimental | Level: high | ID: a09b885e-2f0a-5fd6-b045-636d3f9f23e9"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

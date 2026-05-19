@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1482 — Mass File Rename (lockbit2)"
+| comment "Status: deprecated | Level: high | ID: cfa3cd6d-2bae-5cc0-a61e-3dbaabd8bcdf"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

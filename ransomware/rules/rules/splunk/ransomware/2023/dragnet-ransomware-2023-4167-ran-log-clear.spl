@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4167 — Event Log Clearing (noescape)"
+| comment "Status: experimental | Level: high | ID: 4a043c53-13ce-5651-9b81-eb761fd31bb4"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

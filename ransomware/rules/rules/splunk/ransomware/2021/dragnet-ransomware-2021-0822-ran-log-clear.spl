@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0822 — Event Log Clearing (lorenz)"
+| comment "Status: deprecated | Level: high | ID: 0db5d3ec-666c-58eb-9d0c-09e5af9bca30"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

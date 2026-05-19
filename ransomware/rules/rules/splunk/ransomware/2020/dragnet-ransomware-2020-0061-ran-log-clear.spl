@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0061 — Event Log Clearing (egregor)"
+| comment "Status: deprecated | Level: high | ID: 482a6279-3572-52f1-8dc7-ee4b4c0854cf"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

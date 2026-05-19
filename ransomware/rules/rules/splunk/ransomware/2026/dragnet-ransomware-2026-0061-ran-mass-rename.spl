@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0061 — Mass File Rename (blackwater)"
+| comment "Status: stable | Level: high | ID: b3c38eb8-9b13-583c-b195-0d29b489cefe"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

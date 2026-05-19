@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0802 — Mass File Rename (SilentRansomGroup)"
+| comment "Status: deprecated | Level: high | ID: 7f9b5f53-239d-5f17-9b38-684cc3e4f498"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

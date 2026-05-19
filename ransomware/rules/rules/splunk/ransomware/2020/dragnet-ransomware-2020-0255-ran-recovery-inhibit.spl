@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0255 — Recovery Inhibition (snake)"
+| comment "Status: deprecated | Level: high | ID: 7c7dc8b3-bb35-5f17-a0ef-5814521b6c23"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

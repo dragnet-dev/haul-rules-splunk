@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-5202 — Recovery Inhibition (cactus)"
+| comment "Status: experimental | Level: high | ID: 61b63cf3-ccc5-536c-b66a-9a6b6b4f4241"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

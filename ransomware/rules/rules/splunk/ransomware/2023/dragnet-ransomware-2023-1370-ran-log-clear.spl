@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-1370 — Event Log Clearing (trigona)"
+| comment "Status: experimental | Level: high | ID: e4493773-5a77-5530-84a5-0e1744b16d4e"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

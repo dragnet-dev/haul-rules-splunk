@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-5337 — Event Log Clearing (stormous)"
+| comment "Status: experimental | Level: high | ID: 4b4c1b9e-3ca0-5ef5-9966-f5cfb99c8320"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

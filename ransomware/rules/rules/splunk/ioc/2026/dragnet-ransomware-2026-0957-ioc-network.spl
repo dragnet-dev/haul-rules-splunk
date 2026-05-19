@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-0957 — Ransomware C2 Communication"
+| comment "Status: stable | Level: high | ID: a5d3e179-b98b-5e97-bafa-4d67a91ec9d2"
+index=* sourcetype=network*
+| where (dest="*http://ransomocmou6mnbquqz44ewosbkjk3o5qjsl3orawojexfook2j7esad.onion/news/Evaluate_a_Norstella_company/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

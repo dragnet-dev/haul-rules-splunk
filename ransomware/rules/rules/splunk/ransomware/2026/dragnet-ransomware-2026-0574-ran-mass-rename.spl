@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0574 — Mass File Rename (BrainCipher)"
+| comment "Status: stable | Level: high | ID: 345e4e06-f2c8-57b5-baec-00e4fc43d404"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

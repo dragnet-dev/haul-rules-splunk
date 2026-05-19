@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-2404 — Shadow Copy Deletion (trigona)"
+| comment "Status: experimental | Level: high | ID: c4b597df-8680-52f6-ae07-54f8ebbbb3cb"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

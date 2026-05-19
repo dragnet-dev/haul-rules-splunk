@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0668 — Shadow Copy Deletion (tengu)"
+| comment "Status: test | Level: high | ID: e86ac2f1-49ac-5fed-ac27-692728be2b35"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

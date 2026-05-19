@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-0502 — Event Log Clearing (clop)"
+| comment "Status: experimental | Level: high | ID: 029c36e6-3b25-503d-a97e-ad969905ba13"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

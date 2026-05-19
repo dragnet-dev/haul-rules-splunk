@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0937 — Event Log Clearing (payloadbin)"
+| comment "Status: deprecated | Level: high | ID: f7835acc-91a6-5c92-99f1-e3a7ac87974c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

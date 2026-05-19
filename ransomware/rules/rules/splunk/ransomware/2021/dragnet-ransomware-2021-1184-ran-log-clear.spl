@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1184 — Event Log Clearing (mosesstaff)"
+| comment "Status: deprecated | Level: high | ID: 188d8518-7a4e-5984-abdd-cc872ae9911c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

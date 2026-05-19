@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1377 — Event Log Clearing (chaos)"
+| comment "Status: stable | Level: high | ID: 0649ca13-b3df-59f9-97fe-b6d08cca0b0f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0990 — Recovery Inhibition (ronggolawe)"
+| comment "Status: deprecated | Level: high | ID: 3cfb326b-e85c-5c3a-8649-8d857027ac7a"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

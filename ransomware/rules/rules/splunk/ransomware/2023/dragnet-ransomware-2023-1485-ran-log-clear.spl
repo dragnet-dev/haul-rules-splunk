@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-1485 — Event Log Clearing (darkpower)"
+| comment "Status: experimental | Level: high | ID: 916275c5-67ab-5f70-801c-c02fb54eca27"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

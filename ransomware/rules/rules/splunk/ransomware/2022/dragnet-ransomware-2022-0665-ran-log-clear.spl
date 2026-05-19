@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-0665 — Event Log Clearing (freecivilian)"
+| comment "Status: deprecated | Level: high | ID: ad5ae759-0079-592d-b804-64c8974acd07"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

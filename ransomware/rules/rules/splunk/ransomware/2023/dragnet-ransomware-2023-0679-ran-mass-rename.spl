@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0679 — Mass File Rename (nokoyawa)"
+| comment "Status: experimental | Level: high | ID: 69691380-017a-51f6-96e2-af695496b5e0"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

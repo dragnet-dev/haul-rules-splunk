@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3191 — Event Log Clearing (qilin)"
+| comment "Status: deprecated | Level: high | ID: 2d0506f2-ca94-5122-a72f-d237f25d5ee2"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

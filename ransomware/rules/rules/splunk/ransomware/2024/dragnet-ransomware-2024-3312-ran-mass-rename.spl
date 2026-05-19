@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3312 — Mass File Rename (ValenciaLeaks)"
+| comment "Status: experimental | Level: high | ID: 46160d96-2c9a-5dd7-bd73-f093283fc305"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

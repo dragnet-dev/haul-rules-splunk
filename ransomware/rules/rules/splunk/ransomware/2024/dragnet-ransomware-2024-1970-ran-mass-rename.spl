@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-1970 — Mass File Rename (alphalocker)"
+| comment "Status: experimental | Level: high | ID: 67dd0721-18cf-5236-b88e-7c48f93aa86d"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

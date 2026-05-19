@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0316 — Mass File Rename (arvinclub)"
+| comment "Status: deprecated | Level: high | ID: 0d7dcbb5-6991-5379-9851-a3d082429a4a"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

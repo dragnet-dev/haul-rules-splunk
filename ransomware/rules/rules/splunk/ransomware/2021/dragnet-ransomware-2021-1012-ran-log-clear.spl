@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1012 — Event Log Clearing (lockbit2)"
+| comment "Status: deprecated | Level: high | ID: 3ab2bceb-bafa-5df6-9462-3d59b675051d"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

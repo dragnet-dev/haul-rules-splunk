@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-0550 — Recovery Inhibition (projectrelic)"
+| comment "Status: deprecated | Level: high | ID: 20a0c801-fc7c-5b3e-9e44-2c66608ff92f"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

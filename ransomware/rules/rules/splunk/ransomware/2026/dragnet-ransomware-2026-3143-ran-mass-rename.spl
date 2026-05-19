@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3143 — Mass File Rename (lapsus$)"
+| comment "Status: deprecated | Level: high | ID: c26b7ce2-c0ad-5ba6-8755-c4e264df9fc8"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

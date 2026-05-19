@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0213 — Event Log Clearing (wastedlocker)"
+| comment "Status: deprecated | Level: high | ID: 4d3edab1-30bd-5191-b7f1-4684beb96f8f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

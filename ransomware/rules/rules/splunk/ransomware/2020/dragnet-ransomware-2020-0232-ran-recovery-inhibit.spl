@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0232 — Recovery Inhibition (doppelpaymer)"
+| comment "Status: deprecated | Level: high | ID: 22bdf385-8c82-5975-a88d-7c8549f833de"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-2001 — Recovery Inhibition (VanHelsing)"
+| comment "Status: experimental | Level: high | ID: 105a286c-4d4f-5c24-840c-7b84c1cc4625"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

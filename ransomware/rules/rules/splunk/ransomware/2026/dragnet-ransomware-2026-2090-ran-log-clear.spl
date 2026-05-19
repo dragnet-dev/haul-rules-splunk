@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2090 — Event Log Clearing (lapsus$)"
+| comment "Status: deprecated | Level: high | ID: 14225fbc-4844-5caa-be5b-385bf8db1eac"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5814 — Mass File Rename (shinyhunters)"
+| comment "Status: experimental | Level: high | ID: 11a60df8-146e-5612-b1e1-36afe212475f"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

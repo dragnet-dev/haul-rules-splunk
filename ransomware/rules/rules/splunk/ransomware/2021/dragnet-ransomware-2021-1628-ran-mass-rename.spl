@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1628 — Mass File Rename (azroteam)"
+| comment "Status: deprecated | Level: high | ID: 68a43da4-90b4-506a-86d3-fb4b80152d43"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-2163 — Shadow Copy Deletion (ElDorado)"
+| comment "Status: experimental | Level: high | ID: 3db49b31-7837-51bc-9022-8e1ee5a4410a"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

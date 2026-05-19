@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-6257 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 5ce12b14-691e-517a-8964-fcbbbfa3491e"
+index=* sourcetype=network*
+| where (dest="*https://weyhro.hk//leaks/dwiprograms*")
+| table _time, src, dest, dest_ip, process
+| head 1000

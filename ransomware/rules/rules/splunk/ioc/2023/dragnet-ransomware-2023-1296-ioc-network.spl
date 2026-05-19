@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-1296 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 2a7ea201-5520-5bde-a8f1-2f8316c55cf8"
+index=* sourcetype=network*
+| where (dest="*https://werewolves.pro/en/gaztranscom-ru.html*")
+| table _time, src, dest, dest_ip, process
+| head 1000

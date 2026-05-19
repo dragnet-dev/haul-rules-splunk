@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0384 — Mass File Rename (bravox)"
+| comment "Status: test | Level: high | ID: 0c95c56f-3834-514f-9256-42c2c6a26b23"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000
