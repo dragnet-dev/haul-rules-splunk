@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-2381 — Recovery Inhibition (cloak)"
+| comment "Status: deprecated | Level: high | ID: 6a0f1b53-0fa2-5a28-92fa-5867226eaa57"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

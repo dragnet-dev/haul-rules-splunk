@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5048 — Mass File Rename (payoutsking)"
+| comment "Status: experimental | Level: high | ID: 1b1c3e55-c2b8-5178-b3f6-d73468d6dcd1"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

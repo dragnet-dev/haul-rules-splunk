@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0258 — Event Log Clearing (insomnia)"
+| comment "Status: stable | Level: high | ID: 3a5db048-fc8f-5b53-8c86-e51ad3b406be"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

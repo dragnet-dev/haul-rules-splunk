@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3974 — Shadow Copy Deletion (snatch)"
+| comment "Status: experimental | Level: high | ID: ab7fc30a-9bbc-5867-ac75-63730cb2992e"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

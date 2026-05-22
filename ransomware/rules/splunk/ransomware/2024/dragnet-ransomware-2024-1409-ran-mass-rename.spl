@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-1409 — Mass File Rename (clop)"
+| comment "Status: experimental | Level: high | ID: 4f425e73-6479-58bd-b745-95dae5968180"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

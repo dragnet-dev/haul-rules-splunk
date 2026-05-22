@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2781 — Event Log Clearing (bravox)"
+| comment "Status: test | Level: high | ID: 813bdbf8-e28e-5ac1-a19b-cabde624d679"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

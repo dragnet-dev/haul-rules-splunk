@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-5376 — Mass File Rename (abyss)"
+| comment "Status: deprecated | Level: high | ID: 2ccab48e-44d7-5410-80e2-d66e4b94f5b0"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

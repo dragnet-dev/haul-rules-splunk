@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3669 — Mass File Rename (cyclops)"
+| comment "Status: deprecated | Level: high | ID: 78488e81-5c7a-51d8-8e71-3f99c0735f92"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

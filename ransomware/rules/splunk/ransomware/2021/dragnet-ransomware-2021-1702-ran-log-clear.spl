@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1702 — Event Log Clearing (conti)"
+| comment "Status: deprecated | Level: high | ID: 4058c77f-ba4e-569e-93e8-eb6d78c7ad18"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

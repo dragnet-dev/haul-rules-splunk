@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-1006 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: ef35e0fe-3f2b-5b3a-a192-c5a48720f120"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion/companies/telnet-ri.es/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

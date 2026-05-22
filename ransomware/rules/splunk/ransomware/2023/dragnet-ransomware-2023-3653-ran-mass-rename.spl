@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3653 — Mass File Rename (moneymessage)"
+| comment "Status: experimental | Level: high | ID: e10c88de-1efc-55d9-855e-c5758eab8368"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

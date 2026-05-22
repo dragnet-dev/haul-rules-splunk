@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-2368 — Event Log Clearing (satanlockv2)"
+| comment "Status: experimental | Level: high | ID: 120faca1-ddda-5937-b3ce-e000fb20335c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

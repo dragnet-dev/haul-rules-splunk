@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0033 — Mass File Rename (lamashtu)"
+| comment "Status: stable | Level: high | ID: 17415165-04b4-533e-b8fb-212363329164"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

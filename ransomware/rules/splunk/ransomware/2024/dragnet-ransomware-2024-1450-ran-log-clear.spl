@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-1450 — Event Log Clearing (cuba)"
+| comment "Status: experimental | Level: high | ID: 31c32230-8e10-5e93-a0b6-c62aa6848689"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

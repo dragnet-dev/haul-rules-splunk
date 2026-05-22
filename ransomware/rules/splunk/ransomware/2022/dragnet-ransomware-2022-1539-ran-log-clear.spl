@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1539 — Event Log Clearing (hive)"
+| comment "Status: deprecated | Level: high | ID: 971f66d5-13cc-58cd-9a9d-7f7b7c0354c1"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0132 — Recovery Inhibition (netwalker)"
+| comment "Status: deprecated | Level: high | ID: 515e0d75-7b21-5e1d-9d03-8ed1fdbc0e6a"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-1492 — Event Log Clearing (skira)"
+| comment "Status: experimental | Level: high | ID: bebdbfa5-ef7c-5bc9-8c37-e45ce2d93c6b"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

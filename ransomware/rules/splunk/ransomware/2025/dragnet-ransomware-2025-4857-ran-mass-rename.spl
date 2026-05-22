@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4857 — Mass File Rename (IMNCrew)"
+| comment "Status: experimental | Level: high | ID: a48d1b27-8fc2-5a3c-af2a-06bc7e332762"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

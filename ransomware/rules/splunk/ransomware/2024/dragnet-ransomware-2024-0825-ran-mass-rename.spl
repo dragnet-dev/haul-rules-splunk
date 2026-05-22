@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0825 — Mass File Rename (ransomhub)"
+| comment "Status: experimental | Level: high | ID: eab0f57f-8f97-5e35-a1a3-5ecc4d685ccb"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

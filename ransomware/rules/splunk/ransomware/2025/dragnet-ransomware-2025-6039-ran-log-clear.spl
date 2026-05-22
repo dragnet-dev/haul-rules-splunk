@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6039 — Event Log Clearing (metaencryptor)"
+| comment "Status: experimental | Level: high | ID: 6ef14997-7a2c-5f80-9711-ab5c481469ba"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

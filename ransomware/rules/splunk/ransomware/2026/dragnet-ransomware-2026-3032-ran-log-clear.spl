@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3032 — Event Log Clearing (killsec)"
+| comment "Status: deprecated | Level: high | ID: c1a45b52-9d53-5871-a68b-0443ee36232c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

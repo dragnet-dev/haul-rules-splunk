@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-2511 — Event Log Clearing (kelvinsecurity)"
+| comment "Status: deprecated | Level: high | ID: 7ffb50ef-f002-5729-81b0-31884e7b02b0"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

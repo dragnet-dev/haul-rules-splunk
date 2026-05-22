@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0457 — Mass File Rename (cactus)"
+| comment "Status: deprecated | Level: high | ID: 99c017e2-27be-51ae-a7df-578ebd454b5d"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

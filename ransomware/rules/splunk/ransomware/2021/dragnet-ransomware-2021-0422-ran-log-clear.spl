@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0422 — Event Log Clearing (cuba)"
+| comment "Status: deprecated | Level: high | ID: 9201d199-f6e2-54f5-a04a-46a9df3465dc"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

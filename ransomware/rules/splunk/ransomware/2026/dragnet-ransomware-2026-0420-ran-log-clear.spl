@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0420 — Event Log Clearing (SilentRansomGroup)"
+| comment "Status: deprecated | Level: high | ID: 07988081-0087-5a46-8734-dd995a71c887"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3715 — Mass File Rename (blackbasta)"
+| comment "Status: experimental | Level: high | ID: ec0bc77c-c641-57f9-bea7-e463655e73bf"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

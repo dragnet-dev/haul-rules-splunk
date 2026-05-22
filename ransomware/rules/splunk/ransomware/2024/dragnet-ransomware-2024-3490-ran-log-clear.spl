@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3490 — Event Log Clearing (blacksuit)"
+| comment "Status: experimental | Level: high | ID: 2c648e36-aa15-57cc-a5a3-eb52b0c52e21"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

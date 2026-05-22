@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-0148 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: def11bbe-73f8-5d5d-b6ce-90e87a1678e2"
+index=* sourcetype=network*
+| where (dest="*http://nerqnacjmdy3obvevyol7qhazkwkv57dwqvye5v46k5bcujtfa6sduad.onion/detail?code=eisenhowerlaw-com-usa-1tb-*")
+| table _time, src, dest, dest_ip, process
+| head 1000

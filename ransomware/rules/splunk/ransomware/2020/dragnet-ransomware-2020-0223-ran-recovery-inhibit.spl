@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0223 — Recovery Inhibition (suncrypt)"
+| comment "Status: deprecated | Level: high | ID: 5f44bbd6-9e1e-5144-b1ce-a70f76e537f6"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

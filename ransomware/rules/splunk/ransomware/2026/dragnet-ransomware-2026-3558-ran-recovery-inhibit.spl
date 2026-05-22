@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3558 — Recovery Inhibition (shadowbyt3$)"
+| comment "Status: deprecated | Level: high | ID: cdaa3a1c-16ea-5370-9e0b-f57a5ea8299e"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

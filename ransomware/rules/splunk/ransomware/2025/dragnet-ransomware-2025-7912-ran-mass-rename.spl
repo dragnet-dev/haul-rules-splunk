@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-7912 — Mass File Rename (embargo)"
+| comment "Status: experimental | Level: high | ID: 54b09522-a10a-5153-9e93-82e2cd1045d2"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

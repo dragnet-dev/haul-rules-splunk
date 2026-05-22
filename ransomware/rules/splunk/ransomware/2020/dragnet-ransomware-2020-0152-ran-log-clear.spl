@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0152 — Event Log Clearing (ragnarlocker)"
+| comment "Status: deprecated | Level: high | ID: 17f832cd-cbac-5acc-92e8-e44141cc3a1f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

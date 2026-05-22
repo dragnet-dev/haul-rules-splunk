@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2105 — Mass File Rename (killsec)"
+| comment "Status: deprecated | Level: high | ID: f2ff6eb0-cb8c-55fa-ada7-a64e93204be9"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

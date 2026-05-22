@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4077 — Event Log Clearing (madliberator)"
+| comment "Status: experimental | Level: high | ID: bd63322b-d712-5a6c-b6fd-5c74b98b080c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

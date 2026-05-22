@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-2389 — Event Log Clearing (donutleaks)"
+| comment "Status: experimental | Level: high | ID: 96b2f201-dda8-550d-90de-c3f0b0e51be4"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

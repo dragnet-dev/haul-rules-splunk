@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-0737 — Ransomware C2 Communication"
+| comment "Status: test | Level: high | ID: 6cd930d1-3c4c-549a-9d4a-50c2d3f411aa"
+index=* sourcetype=network*
+| where (dest="*http://ransomocmou6mnbquqz44ewosbkjk3o5qjsl3orawojexfook2j7esad.onion/news/National_Money_Mart_Company/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

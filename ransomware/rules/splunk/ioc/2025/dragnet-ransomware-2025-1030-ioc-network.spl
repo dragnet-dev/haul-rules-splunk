@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-1030 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 5b339247-45b1-53e0-8da7-f1a7b3cfb074"
+index=* sourcetype=network*
+| where (dest="*https://darkforums.st/Thread-Document-Guerrero-Mears-LLP-DATALEAK-FORGOT-THE-SIZE*")
+| table _time, src, dest, dest_ip, process
+| head 1000

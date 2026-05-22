@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1671 — Shadow Copy Deletion (atomsilo)"
+| comment "Status: experimental | Level: high | ID: 70a3d084-cc7a-598d-a0dc-33b677556d4f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

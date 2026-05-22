@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-3508 — Shadow Copy Deletion (genesis)"
+| comment "Status: test | Level: high | ID: ec96aa5b-f180-528a-b54e-975ab338ac22"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

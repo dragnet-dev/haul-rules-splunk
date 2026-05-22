@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1683 — Mass File Rename (la_piovra)"
+| comment "Status: experimental | Level: high | ID: bf210bed-cc6c-5142-b058-0d02bed4b162"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

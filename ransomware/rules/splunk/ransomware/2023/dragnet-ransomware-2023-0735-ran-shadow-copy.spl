@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0735 — Shadow Copy Deletion (malas)"
+| comment "Status: experimental | Level: high | ID: 63089db8-7763-5e76-a8cd-a6db706a7717"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

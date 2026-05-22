@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0654 — Mass File Rename (insomnia)"
+| comment "Status: test | Level: high | ID: 6e40e86f-3968-51ef-bfa9-7d2ea198e0ff"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

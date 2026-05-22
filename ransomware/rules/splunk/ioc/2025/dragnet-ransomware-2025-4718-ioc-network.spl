@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-4718 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 14770a46-1fa9-5d8f-b6fc-c35ac9c89bad"
+index=* sourcetype=network*
+| where (dest="*http://funksec.top/stayzapp.in*")
+| table _time, src, dest, dest_ip, process
+| head 1000

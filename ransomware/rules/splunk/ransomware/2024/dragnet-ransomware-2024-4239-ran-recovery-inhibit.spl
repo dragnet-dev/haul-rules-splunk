@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4239 — Recovery Inhibition (killsec)"
+| comment "Status: experimental | Level: high | ID: aadd3e0b-d0ea-5d2c-a428-57a7f5bb2fcb"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

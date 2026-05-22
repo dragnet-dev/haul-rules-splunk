@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3285 — Recovery Inhibition (bianlian)"
+| comment "Status: experimental | Level: high | ID: 185b3bf0-f1d6-5aec-a4d7-b67868b5c894"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

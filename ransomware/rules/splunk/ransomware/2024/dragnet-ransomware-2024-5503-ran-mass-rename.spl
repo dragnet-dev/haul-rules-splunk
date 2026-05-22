@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5503 — Mass File Rename (darkvault)"
+| comment "Status: experimental | Level: high | ID: 6c7d8584-7d84-5b9e-b737-55f5b787071d"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

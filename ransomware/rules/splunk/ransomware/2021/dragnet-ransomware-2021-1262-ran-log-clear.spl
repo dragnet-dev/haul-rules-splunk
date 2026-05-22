@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1262 — Event Log Clearing (alphv)"
+| comment "Status: deprecated | Level: high | ID: 36fd0729-f8a0-5257-9c1f-216c4800b85d"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1413 — Recovery Inhibition (blackmatter)"
+| comment "Status: deprecated | Level: high | ID: e4ee95ba-7ac8-5f2c-b36d-bbd76c042621"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

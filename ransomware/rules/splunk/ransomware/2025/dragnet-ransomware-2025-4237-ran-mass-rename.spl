@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4237 — Mass File Rename (VanHelsing)"
+| comment "Status: experimental | Level: high | ID: 0f35949d-ad8b-5de1-a75d-a98864804fbb"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

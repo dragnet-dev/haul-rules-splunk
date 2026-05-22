@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-3602 — Recovery Inhibition (flocker)"
+| comment "Status: experimental | Level: high | ID: 8b2a0c30-6619-592c-b2c6-af7f2d8e2c02"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

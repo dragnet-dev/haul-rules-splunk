@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0963 — Shadow Copy Deletion (rancoz)"
+| comment "Status: experimental | Level: high | ID: 9b3a9b58-663e-5d77-9c04-2ecd6e456272"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

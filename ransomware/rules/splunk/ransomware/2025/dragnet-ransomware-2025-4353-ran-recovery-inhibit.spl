@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4353 — Recovery Inhibition (payoutsking)"
+| comment "Status: experimental | Level: high | ID: 8e3e3ac5-b0d9-513b-a726-79c9617dd187"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

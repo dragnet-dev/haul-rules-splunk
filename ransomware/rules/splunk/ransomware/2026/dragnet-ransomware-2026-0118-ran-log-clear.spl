@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0118 — Event Log Clearing (termite)"
+| comment "Status: stable | Level: high | ID: 2bb000c5-cf89-5b31-abda-9e2961fee5be"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

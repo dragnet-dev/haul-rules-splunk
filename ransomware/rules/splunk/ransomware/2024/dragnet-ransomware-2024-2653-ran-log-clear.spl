@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-2653 — Event Log Clearing (hellcat)"
+| comment "Status: deprecated | Level: high | ID: af9f5874-703a-5431-913a-8bf268a660d8"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

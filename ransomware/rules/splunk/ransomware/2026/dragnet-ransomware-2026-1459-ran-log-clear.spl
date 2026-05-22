@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1459 — Event Log Clearing (nova)"
+| comment "Status: stable | Level: high | ID: fcba2210-4312-58c8-94bb-59bdfbdb10f4"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

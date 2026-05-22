@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-1522 — Event Log Clearing (nova)"
+| comment "Status: experimental | Level: high | ID: c60177dc-9839-58ad-a2d2-339f7b8d381f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-0873 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 5310836a-e1d4-53f4-af87-e657e1c3f4d2"
+index=* sourcetype=network*
+| where (dest="*http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/?id=bathfitter.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

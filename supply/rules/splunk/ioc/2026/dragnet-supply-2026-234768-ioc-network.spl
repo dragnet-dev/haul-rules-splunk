@@ -1,0 +1,6 @@
+| comment "Dragnet [IOC]: dragnet-supply-2026-234768 — C2 Network Communication"
+| comment "Status: test | Level: medium | ID: 4b7b01dd-bbfb-5400-ac44-0644c7c19021"
+index=* sourcetype=network*
+| where (dest="*https://check.git-service.com/rope.pyz*" OR dest="*https://check.git-service.com/v1/models*" OR dest="*https://check.git-service.com/api/public/version*" OR dest="*https://check.git-service.com/audio.mp3*" OR dest="*https://t.m-kosche.com/rope.pyz*")
+| table _time, src, dest, dest_ip, process
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3419 — Event Log Clearing (karakurt)"
+| comment "Status: deprecated | Level: high | ID: 8e85d150-e278-5e4c-949c-04f804cb1b01"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

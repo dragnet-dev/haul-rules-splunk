@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0098 — Mass File Rename (alphv)"
+| comment "Status: experimental | Level: high | ID: 16beb0e5-b7ba-500e-9139-47b8ae70b065"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

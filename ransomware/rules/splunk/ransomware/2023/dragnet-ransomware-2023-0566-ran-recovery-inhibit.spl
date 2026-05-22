@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0566 — Recovery Inhibition (moneymessage)"
+| comment "Status: deprecated | Level: high | ID: 79fe0129-a08c-55b1-ad8c-abbbb8fbb38e"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

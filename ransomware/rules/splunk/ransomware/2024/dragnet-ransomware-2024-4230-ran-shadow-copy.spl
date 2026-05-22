@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4230 — Shadow Copy Deletion (killsec)"
+| comment "Status: experimental | Level: high | ID: 53f83c18-9040-5fb0-9c45-91cbc2db8275"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

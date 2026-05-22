@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4855 — Event Log Clearing (IMNCrew)"
+| comment "Status: experimental | Level: high | ID: 79f841a5-bd8f-5805-95ae-0783919d48d4"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1090 — Mass File Rename (xinglocker)"
+| comment "Status: deprecated | Level: high | ID: 7c9cb07c-f63c-506a-ad21-caa150f25952"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

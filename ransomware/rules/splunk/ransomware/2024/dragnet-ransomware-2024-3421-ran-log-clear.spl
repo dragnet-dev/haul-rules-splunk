@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3421 — Event Log Clearing (dragonforce)"
+| comment "Status: deprecated | Level: high | ID: 7c1647a1-a17a-5a3d-822b-1c65ff615be7"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

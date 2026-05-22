@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0786 — Mass File Rename (titan)"
+| comment "Status: stable | Level: high | ID: 74b856c6-164b-5948-9721-94fbba173359"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2596 — Event Log Clearing (apt73)"
+| comment "Status: stable | Level: high | ID: 21eb559e-561a-5591-bc5b-4e8dbce949dc"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

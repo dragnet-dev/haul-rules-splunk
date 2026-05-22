@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-1319 — Recovery Inhibition (datacarry)"
+| comment "Status: deprecated | Level: high | ID: 2e5f1d2e-b991-58c5-8f8a-3ddcd4983e47"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

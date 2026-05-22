@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0436 — Mass File Rename (kairos)"
+| comment "Status: deprecated | Level: high | ID: 1238da73-1ab5-576b-a50d-d5a62651dcac"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0271 — Recovery Inhibition (stormous)"
+| comment "Status: deprecated | Level: high | ID: 9a1e93cb-f05b-5384-87d1-4f4a8c19f482"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

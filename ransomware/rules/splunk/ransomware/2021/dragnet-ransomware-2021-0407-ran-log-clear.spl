@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0407 — Event Log Clearing (avoslocker)"
+| comment "Status: deprecated | Level: high | ID: 943f0f1b-12e4-5b3b-a66e-49eada1c1be6"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

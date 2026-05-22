@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0334 — Event Log Clearing (warlock)"
+| comment "Status: deprecated | Level: high | ID: 61503d15-d119-5cd1-85e9-55d17ff88356"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

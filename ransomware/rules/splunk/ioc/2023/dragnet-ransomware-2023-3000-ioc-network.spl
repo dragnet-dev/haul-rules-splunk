@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-3000 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: a71f8c89-f2a8-532b-8973-6364baab6843"
+index=* sourcetype=network*
+| where (dest="*http://lockbitapt2d73krlbewgv27tquljgxr33xbwwsp6rkyieto7u4ncead.onion/post/Ba7as2hi734BHl6M655f49c4d0830*")
+| table _time, src, dest, dest_ip, process
+| head 1000

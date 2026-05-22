@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-2788 — Recovery Inhibition (karakurt)"
+| comment "Status: deprecated | Level: high | ID: 9453f072-6032-5ebf-b2eb-2ffe1ba86211"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

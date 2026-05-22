@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-3615 — Ransomware C2 Communication"
+| comment "Status: test | Level: high | ID: 374e8f7b-63c6-567c-856e-09477408508d"
+index=* sourcetype=network*
+| where (dest="*http://ransomocmou6mnbquqz44ewosbkjk3o5qjsl3orawojexfook2j7esad.onion/news/Air Miles_España,_S.A/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

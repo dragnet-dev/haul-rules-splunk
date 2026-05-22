@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0113 — Event Log Clearing (orca)"
+| comment "Status: experimental | Level: high | ID: 42e3b48d-6b08-59f1-9cdd-cf853293e458"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

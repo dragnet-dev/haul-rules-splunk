@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-2340 — Event Log Clearing (mallox)"
+| comment "Status: deprecated | Level: high | ID: a8fdf54f-f23f-50d5-a152-bd574336fff1"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

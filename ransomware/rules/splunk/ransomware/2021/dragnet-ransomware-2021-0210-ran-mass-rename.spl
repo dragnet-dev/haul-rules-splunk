@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0210 — Mass File Rename (spook)"
+| comment "Status: deprecated | Level: high | ID: 6ea0deeb-e689-5908-b37b-be5478cf73f4"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

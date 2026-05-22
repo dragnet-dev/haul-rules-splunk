@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-5363 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 83188ccd-a64e-527e-9bae-bec103b334a0"
+index=* sourcetype=network*
+| where (dest="*http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/?id=pecofoods.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

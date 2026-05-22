@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4022 — Recovery Inhibition (lorenz)"
+| comment "Status: deprecated | Level: high | ID: 7a0d724c-3d3b-58a3-b6ec-ab55ef3c8f3d"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

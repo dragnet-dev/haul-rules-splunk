@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0743 — Mass File Rename (obscura)"
+| comment "Status: deprecated | Level: high | ID: d03e8957-7f70-5dfa-9439-7da4692dec1e"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-2725 — Mass File Rename (werewolves)"
+| comment "Status: experimental | Level: high | ID: 06ed6b52-f1ac-52a2-b4c6-0846169e1152"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

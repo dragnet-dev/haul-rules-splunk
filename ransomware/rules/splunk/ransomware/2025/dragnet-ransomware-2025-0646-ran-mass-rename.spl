@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0646 — Mass File Rename (morpheus)"
+| comment "Status: deprecated | Level: high | ID: 0f680985-f1c9-536d-9843-65aff1d126ae"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1507 — Mass File Rename (ALP-001)"
+| comment "Status: stable | Level: high | ID: 170bda2e-f20c-5bc9-bc67-03091694986a"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

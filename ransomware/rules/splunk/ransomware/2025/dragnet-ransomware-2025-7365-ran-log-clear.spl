@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-7365 — Event Log Clearing (weyhro)"
+| comment "Status: experimental | Level: high | ID: 6558c960-d615-5c07-a154-f9a81d086d78"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

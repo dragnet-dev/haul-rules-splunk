@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-1300 — Event Log Clearing (devman)"
+| comment "Status: experimental | Level: high | ID: 4d3f20b4-d4ad-529f-b670-c77eb5d5516e"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

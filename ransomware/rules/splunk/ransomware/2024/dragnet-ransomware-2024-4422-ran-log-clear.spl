@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4422 — Event Log Clearing (raworld)"
+| comment "Status: experimental | Level: high | ID: 87f50b5c-99a5-533b-801d-6078aec4a808"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

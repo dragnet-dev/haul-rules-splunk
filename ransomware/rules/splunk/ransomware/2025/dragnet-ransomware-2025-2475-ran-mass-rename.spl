@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-2475 — Mass File Rename (thegentlemen)"
+| comment "Status: experimental | Level: high | ID: 82af3ce2-47f1-5271-9f59-9f4d72068e72"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

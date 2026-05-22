@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3248 — Mass File Rename (rhysida)"
+| comment "Status: deprecated | Level: high | ID: 719a9ae0-770a-5fe5-b435-74a36af70e3e"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

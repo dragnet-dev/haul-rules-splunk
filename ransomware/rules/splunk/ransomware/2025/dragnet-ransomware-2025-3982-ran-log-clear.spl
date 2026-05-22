@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-3982 — Event Log Clearing (minteye)"
+| comment "Status: deprecated | Level: high | ID: 91a11627-0baf-5ff8-af82-006f56e4f732"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

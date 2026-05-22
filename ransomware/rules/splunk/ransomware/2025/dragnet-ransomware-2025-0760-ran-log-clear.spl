@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0760 — Event Log Clearing (kawa4096)"
+| comment "Status: experimental | Level: high | ID: d8296215-0a0e-5946-9fae-7f53c29e64dc"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-1777 — Recovery Inhibition (bianlian)"
+| comment "Status: deprecated | Level: high | ID: 27d9526b-f29e-5d8b-b324-5daf44eb4c91"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

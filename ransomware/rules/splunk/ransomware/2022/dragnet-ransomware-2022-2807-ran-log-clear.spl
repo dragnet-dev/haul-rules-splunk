@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-2807 — Event Log Clearing (ragnarlocker)"
+| comment "Status: experimental | Level: high | ID: d965f588-6604-50b2-a19e-9aa3efe0a0a0"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

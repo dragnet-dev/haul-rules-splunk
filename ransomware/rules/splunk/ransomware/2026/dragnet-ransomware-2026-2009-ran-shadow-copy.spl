@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2009 — Shadow Copy Deletion (krybit)"
+| comment "Status: stable | Level: high | ID: 418b1708-d2c0-5463-82db-a853fddd6768"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

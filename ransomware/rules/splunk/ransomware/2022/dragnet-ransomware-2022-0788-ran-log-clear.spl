@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-0788 — Event Log Clearing (donutleaks)"
+| comment "Status: deprecated | Level: high | ID: 4af29a1e-a42d-55ed-ab37-f14b8c1fa911"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

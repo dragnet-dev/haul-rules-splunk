@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0643 — Mass File Rename (apt73)"
+| comment "Status: stable | Level: high | ID: cbb69909-5403-5ff2-b332-d36310d7b77f"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

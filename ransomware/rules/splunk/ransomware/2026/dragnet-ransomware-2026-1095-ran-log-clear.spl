@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1095 — Event Log Clearing (thegentlemen)"
+| comment "Status: test | Level: high | ID: b6716af1-8ff9-597e-ae5b-ac23a2f353a6"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

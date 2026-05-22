@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-1828 — Shadow Copy Deletion (bianlian)"
+| comment "Status: experimental | Level: high | ID: 30d24db7-2f4e-5cbf-a5f2-159128345541"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

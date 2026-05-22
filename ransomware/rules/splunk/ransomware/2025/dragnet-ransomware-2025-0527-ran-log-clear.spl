@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0527 — Event Log Clearing (AiLock)"
+| comment "Status: deprecated | Level: high | ID: 5a2ea339-96e6-5399-925c-c0ba272d9757"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3471 — Event Log Clearing (trisec)"
+| comment "Status: experimental | Level: high | ID: 3d50865c-7a89-566e-a45a-863c0139b4c4"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

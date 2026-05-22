@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-2695 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 4dc6517e-23d9-5c79-aa0f-c2cad070ac48"
+index=* sourcetype=network*
+| where (dest="*http://nerqnacjmdy3obvevyol7qhazkwkv57dwqvye5v46k5bcujtfa6sduad.onion/detail?code=tri-county-property-management-usa*")
+| table _time, src, dest, dest_ip, process
+| head 1000

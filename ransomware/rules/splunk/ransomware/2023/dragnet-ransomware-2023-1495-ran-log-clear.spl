@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-1495 — Event Log Clearing (medusa)"
+| comment "Status: experimental | Level: high | ID: 481b211b-4ef3-54dd-87e2-b923a94d29b9"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

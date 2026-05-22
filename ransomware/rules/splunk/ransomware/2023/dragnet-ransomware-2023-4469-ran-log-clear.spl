@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4469 — Event Log Clearing (trigona)"
+| comment "Status: deprecated | Level: high | ID: 34a23de5-728c-534f-8c44-daf5dde8899c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

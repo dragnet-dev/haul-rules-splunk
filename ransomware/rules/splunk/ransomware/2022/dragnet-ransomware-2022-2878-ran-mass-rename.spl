@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-2878 — Mass File Rename (blackbyte)"
+| comment "Status: deprecated | Level: high | ID: f8b6ca64-58e2-50eb-b3a9-587bdbde982e"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

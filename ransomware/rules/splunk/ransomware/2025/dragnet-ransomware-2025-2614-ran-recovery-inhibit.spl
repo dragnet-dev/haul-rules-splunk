@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-2614 — Recovery Inhibition (cephalus)"
+| comment "Status: experimental | Level: high | ID: 4e8c23bb-9d8e-5799-93cd-75dbdc4fc330"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

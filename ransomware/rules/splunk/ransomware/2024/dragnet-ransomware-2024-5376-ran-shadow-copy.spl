@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5376 — Shadow Copy Deletion (meow)"
+| comment "Status: experimental | Level: high | ID: b478db05-a4c3-51a5-80db-d79adb02b409"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

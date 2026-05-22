@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-4701 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 6726d516-a7f5-5ab3-aae8-bb01217597fb"
+index=* sourcetype=network*
+| where (dest="*http://santat7kpllt6iyvqbr7q4amdv6dzrh6paatvyrzl7ry3zm72zigf4ad.onion/metrobank-com-ph*")
+| table _time, src, dest, dest_ip, process
+| head 1000

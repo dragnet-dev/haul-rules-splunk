@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0137 — Event Log Clearing (prolock)"
+| comment "Status: deprecated | Level: high | ID: 346e8f41-e1cc-5831-a9c4-270947d577d3"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

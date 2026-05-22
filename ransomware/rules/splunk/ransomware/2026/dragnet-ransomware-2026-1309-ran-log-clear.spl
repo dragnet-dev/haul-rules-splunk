@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1309 — Event Log Clearing (ALP-001)"
+| comment "Status: stable | Level: high | ID: 4a94b798-f78c-5ab6-8894-890fa10d9128"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

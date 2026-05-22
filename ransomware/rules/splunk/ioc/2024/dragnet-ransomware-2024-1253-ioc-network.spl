@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-1253 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: f911c334-d2a8-5915-9d34-753c412679cd"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion//companies/westernsaw.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

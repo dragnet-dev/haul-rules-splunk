@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4103 — Shadow Copy Deletion (moneymessage)"
+| comment "Status: experimental | Level: high | ID: f5cc77db-c4e8-5f7c-925d-6a888d0288ce"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

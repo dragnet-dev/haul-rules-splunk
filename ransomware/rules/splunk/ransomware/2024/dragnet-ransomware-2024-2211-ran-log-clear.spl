@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-2211 — Event Log Clearing (handala)"
+| comment "Status: experimental | Level: high | ID: 800ec602-8de1-5ee5-abc7-6b92392a1648"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

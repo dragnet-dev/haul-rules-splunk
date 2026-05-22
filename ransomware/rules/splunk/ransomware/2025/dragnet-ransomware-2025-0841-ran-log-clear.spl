@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0841 — Event Log Clearing (nitrogen)"
+| comment "Status: experimental | Level: high | ID: ceeb88e7-ab9a-55cc-9ab6-d25a0ad7c73d"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

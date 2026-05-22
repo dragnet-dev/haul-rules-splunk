@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-5099 — Recovery Inhibition (vicesociety)"
+| comment "Status: deprecated | Level: high | ID: e556ccd5-c4e7-5aa5-aa6b-c846aee6a514"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3707 — Mass File Rename (fog)"
+| comment "Status: experimental | Level: high | ID: f1733e5f-384f-5a53-855f-017e6ea7ac2b"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

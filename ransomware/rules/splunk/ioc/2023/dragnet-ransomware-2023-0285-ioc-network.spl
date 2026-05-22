@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-0285 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 0127e7f1-3bed-5bef-9bb4-e6a658b85659"
+index=* sourcetype=network*
+| where (dest="*http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/?id=torrescpa.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

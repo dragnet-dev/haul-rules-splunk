@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3076 — Recovery Inhibition (lapsus$)"
+| comment "Status: deprecated | Level: high | ID: 90f836e4-9d41-5daa-9a39-bd2dabb64502"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

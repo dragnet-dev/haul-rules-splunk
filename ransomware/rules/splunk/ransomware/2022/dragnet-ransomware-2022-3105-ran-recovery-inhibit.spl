@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-3105 — Recovery Inhibition (yanluowang)"
+| comment "Status: deprecated | Level: high | ID: 63fd5fde-13e9-50ef-9ac0-8f7223e8c9d9"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1424 — Mass File Rename (embargo)"
+| comment "Status: stable | Level: high | ID: 28c4ff64-9337-570f-bafa-f8931c4f370e"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

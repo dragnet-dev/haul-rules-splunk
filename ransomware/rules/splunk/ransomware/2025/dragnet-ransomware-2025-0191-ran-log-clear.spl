@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0191 — Event Log Clearing (clop)"
+| comment "Status: experimental | Level: high | ID: 3c2d822e-5a85-5e63-a0c2-7c424f80e2ce"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

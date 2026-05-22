@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5057 — Shadow Copy Deletion (BrainCipher)"
+| comment "Status: experimental | Level: high | ID: b280b466-c8fb-5396-91a2-df6f31ccbe3e"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

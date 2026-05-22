@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-6879 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: f9ccd228-08f2-5703-bdb6-fcc795d37be7"
+index=* sourcetype=network*
+| where (dest="*http://5butbkrljkaorg5maepuca25oma7eiwo6a2rlhvkblb4v6mf3ki2ovid.onion/companies/64/whittaker-company*")
+| table _time, src, dest, dest_ip, process
+| head 1000

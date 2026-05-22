@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4071 — Mass File Rename (rancoz)"
+| comment "Status: experimental | Level: high | ID: 0e3c8d6a-6fb4-53e5-945c-eab38f0d7915"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

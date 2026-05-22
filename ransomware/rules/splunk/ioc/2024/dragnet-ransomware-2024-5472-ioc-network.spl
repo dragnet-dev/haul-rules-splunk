@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-5472 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 4792832f-d764-5001-a59d-7efe781e5da5"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion//companies/southwestfamilymed.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

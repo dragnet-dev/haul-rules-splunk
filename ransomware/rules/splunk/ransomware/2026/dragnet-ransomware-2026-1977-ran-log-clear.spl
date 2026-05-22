@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1977 — Event Log Clearing (coinbasecartel)"
+| comment "Status: test | Level: high | ID: 2e89dc32-d80e-590a-ae7b-646d6a6b44ce"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

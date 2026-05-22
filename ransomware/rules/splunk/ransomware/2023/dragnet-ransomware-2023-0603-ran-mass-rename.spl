@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0603 — Mass File Rename (dunghill)"
+| comment "Status: experimental | Level: high | ID: 6184aff1-673c-59b8-9d15-8d22097cbc43"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

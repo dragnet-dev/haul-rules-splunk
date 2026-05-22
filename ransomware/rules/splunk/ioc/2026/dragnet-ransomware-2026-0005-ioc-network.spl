@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-0005 — Ransomware C2 Communication"
+| comment "Status: stable | Level: high | ID: 4a175d2d-48c7-5373-94ec-6b1b244a60d5"
+index=* sourcetype=network*
+| where (dest="*https://handala-hack.to/vahid-offline-members/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-1010 — Mass File Rename (shinyhunters)"
+| comment "Status: experimental | Level: high | ID: f0f44875-4200-523d-94f7-5af9834e94d1"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

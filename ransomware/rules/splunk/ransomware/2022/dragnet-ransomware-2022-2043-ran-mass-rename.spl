@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-2043 — Mass File Rename (onyx)"
+| comment "Status: deprecated | Level: high | ID: 4f0e0d99-72f9-5f7b-bbd4-9cdf18a1fcf5"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

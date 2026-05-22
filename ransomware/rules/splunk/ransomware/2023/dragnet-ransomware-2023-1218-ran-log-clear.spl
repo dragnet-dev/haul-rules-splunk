@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-1218 — Event Log Clearing (rancoz)"
+| comment "Status: experimental | Level: high | ID: 126e72a6-1218-5b9b-9eed-de0389d8fae3"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

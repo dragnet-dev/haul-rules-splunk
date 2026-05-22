@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-4951 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: bac468c4-1f22-5f2c-bbdb-f16371e6da72"
+index=* sourcetype=network*
+| where (dest="*http://santat7kpllt6iyvqbr7q4amdv6dzrh6paatvyrzl7ry3zm72zigf4ad.onion/axisbank-com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

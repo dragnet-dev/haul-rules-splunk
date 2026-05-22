@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6285 — Mass File Rename (tridentlocker)"
+| comment "Status: experimental | Level: high | ID: 0ca2beac-7e68-5c4c-a17d-086dd3bc461a"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

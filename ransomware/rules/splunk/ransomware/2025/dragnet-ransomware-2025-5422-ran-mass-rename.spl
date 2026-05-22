@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5422 — Mass File Rename (arkana)"
+| comment "Status: experimental | Level: high | ID: 60f270d2-1279-5db5-a6cc-7d378b4b78c6"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

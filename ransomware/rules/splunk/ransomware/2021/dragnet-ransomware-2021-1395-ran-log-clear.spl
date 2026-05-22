@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1395 — Event Log Clearing (darkside)"
+| comment "Status: deprecated | Level: high | ID: 3e270d76-4973-5855-b7e1-7cf0ec1dd4e9"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

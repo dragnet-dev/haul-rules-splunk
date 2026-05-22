@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0969 — Event Log Clearing (linkc)"
+| comment "Status: test | Level: high | ID: 69035d45-c15f-5d5d-b247-f4a0a19c882b"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

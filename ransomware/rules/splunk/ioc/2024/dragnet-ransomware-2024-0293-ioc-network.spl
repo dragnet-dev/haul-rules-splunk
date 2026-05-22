@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-0293 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 752c96cd-dfae-5377-bf86-ae8edf1b357e"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion//companies/gcargo.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

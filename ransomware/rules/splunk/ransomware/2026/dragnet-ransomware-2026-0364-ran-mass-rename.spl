@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0364 — Mass File Rename (nightspire)"
+| comment "Status: deprecated | Level: high | ID: bb965c20-1ef7-58af-a723-c6132b520d10"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-1485 — Mass File Rename (darkpower)"
+| comment "Status: experimental | Level: high | ID: a317af8d-9d77-5392-a405-e8d2052a16b0"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

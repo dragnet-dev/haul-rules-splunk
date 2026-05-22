@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0465 — Event Log Clearing (sabbath)"
+| comment "Status: deprecated | Level: high | ID: fa01110f-5291-571c-b3f0-4e163ce6da12"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

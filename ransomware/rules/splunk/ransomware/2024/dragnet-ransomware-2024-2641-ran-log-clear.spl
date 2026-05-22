@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-2641 — Event Log Clearing (medusalocker)"
+| comment "Status: experimental | Level: high | ID: 2000ffed-ddb8-500b-b524-f43af878b899"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0400 — Mass File Rename (bianlian)"
+| comment "Status: experimental | Level: high | ID: 50d337aa-32a2-535f-a892-0692a5a338ac"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

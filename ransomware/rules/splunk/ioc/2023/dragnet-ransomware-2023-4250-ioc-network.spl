@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-4250 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 79adbaf9-fdd3-5881-aa12-82a26ed02a4b"
+index=* sourcetype=network*
+| where (dest="*http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/?id=arenaproducts.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

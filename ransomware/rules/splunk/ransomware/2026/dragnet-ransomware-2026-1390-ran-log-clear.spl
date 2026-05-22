@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1390 — Event Log Clearing (beast)"
+| comment "Status: test | Level: high | ID: afdfbe40-4f2a-5e33-bcfe-c55cfaa75e6e"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

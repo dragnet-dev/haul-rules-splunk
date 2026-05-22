@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4608 — Mass File Rename (cactus)"
+| comment "Status: experimental | Level: high | ID: c0b3ac9d-6054-596c-a100-487f19fc52cb"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

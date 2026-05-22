@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5795 — Mass File Rename (lockbit3)"
+| comment "Status: experimental | Level: high | ID: e766e72e-4673-5d18-bebb-fe3da3b68517"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

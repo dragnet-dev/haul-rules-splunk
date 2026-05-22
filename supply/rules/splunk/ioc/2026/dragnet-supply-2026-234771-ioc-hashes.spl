@@ -1,0 +1,6 @@
+| comment "Dragnet [IOC]: dragnet-supply-2026-234771 — Malicious File Hash"
+| comment "Status: stable | Level: medium | ID: b4155852-36de-5500-b078-15840d345bd8"
+index=* sourcetype=file*
+| where (file_hash_sha256="069ac1dc7f7649b76bc72a11ac700f373804bfd81dab7e561157b703999f44ce" OR file_hash_sha256="7d80b3ef74ad7992b93c31966962612e4e2ceb93e7727cdbd1d2a9af47d44ba8" OR file_hash_sha256="aeaf583e20347bf850e2fabdcd6f4982996ba023f8c2cd56bbd299cfd56516f5" OR file_hash_sha256="877ff2531a63393c4cb9c3c86908b62d9c4fc3db971bc231c48537faae6cb3ec")
+| table _time, host, file_path, file_hash
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5558 — Mass File Rename (ElDorado)"
+| comment "Status: experimental | Level: high | ID: 9985dd11-476b-5e0e-8f84-7f5ef50fa5a4"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

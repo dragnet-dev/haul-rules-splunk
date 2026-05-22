@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2464 — Event Log Clearing (kazu)"
+| comment "Status: deprecated | Level: high | ID: 552afa44-e43b-53cd-86af-957a4ba52185"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

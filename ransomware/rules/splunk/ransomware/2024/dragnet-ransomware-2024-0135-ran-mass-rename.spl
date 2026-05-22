@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0135 — Mass File Rename (stormous)"
+| comment "Status: deprecated | Level: high | ID: b1b870d1-55c7-52a8-89ed-1d27d940dd97"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

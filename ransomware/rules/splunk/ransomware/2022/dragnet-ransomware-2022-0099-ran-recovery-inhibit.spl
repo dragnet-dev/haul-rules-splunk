@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-0099 — Recovery Inhibition (karakurt)"
+| comment "Status: experimental | Level: high | ID: 8e8bafd7-0ce3-5fe9-aa63-9da123fc33b4"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

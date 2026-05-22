@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3484 — Event Log Clearing (blackwater)"
+| comment "Status: stable | Level: high | ID: 0448db02-3269-5eb7-b889-e7a55dad9348"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

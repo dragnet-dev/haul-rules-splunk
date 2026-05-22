@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0376 — Event Log Clearing (nefilim)"
+| comment "Status: deprecated | Level: high | ID: 798c3b1f-d2df-52ef-be61-5b472aa1aeb1"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

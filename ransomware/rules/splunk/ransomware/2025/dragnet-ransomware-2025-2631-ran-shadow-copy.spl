@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-2631 — Shadow Copy Deletion (dragonforce)"
+| comment "Status: experimental | Level: high | ID: d7c97494-a3bc-5343-9db9-c582bce3e019"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

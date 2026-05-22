@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1988 — Event Log Clearing (threeam)"
+| comment "Status: stable | Level: high | ID: e067d2a2-c26d-5486-ae51-5e759be3d1c1"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4346 — Event Log Clearing (cuba)"
+| comment "Status: deprecated | Level: high | ID: d3579480-6674-502e-9563-b31ea5b87d63"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

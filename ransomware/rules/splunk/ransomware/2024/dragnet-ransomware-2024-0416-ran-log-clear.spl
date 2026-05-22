@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0416 — Event Log Clearing (bianlian)"
+| comment "Status: experimental | Level: high | ID: a0c759da-7903-5507-89dc-2d036a90e49f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

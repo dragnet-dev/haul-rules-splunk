@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1044 — Event Log Clearing (medusalocker)"
+| comment "Status: deprecated | Level: high | ID: 4637143f-9b3e-5cd4-8f9e-adf036645b05"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

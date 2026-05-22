@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0524 — Mass File Rename (thegentlemen)"
+| comment "Status: deprecated | Level: high | ID: ced7a36c-62de-5a8f-a017-81a96cb8a238"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

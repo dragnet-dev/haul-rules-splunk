@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0181 — Recovery Inhibition (AiLock)"
+| comment "Status: deprecated | Level: high | ID: 403f86f0-f4a0-50e5-be7e-99a9383c7c12"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

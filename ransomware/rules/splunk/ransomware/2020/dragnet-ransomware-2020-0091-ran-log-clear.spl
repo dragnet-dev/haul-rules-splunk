@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0091 — Event Log Clearing (snake)"
+| comment "Status: deprecated | Level: high | ID: 0cf27cd8-1e06-5890-be02-ed87755f7c44"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

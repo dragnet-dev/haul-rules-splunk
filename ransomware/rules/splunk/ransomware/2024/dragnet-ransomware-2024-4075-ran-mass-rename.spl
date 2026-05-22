@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4075 — Mass File Rename (madliberator)"
+| comment "Status: experimental | Level: high | ID: e8eb18b3-a680-5e85-98db-d2507194ed2f"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

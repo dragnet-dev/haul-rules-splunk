@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5561 — Mass File Rename (crazyhunter)"
+| comment "Status: experimental | Level: high | ID: 5fbecf90-670f-5e55-8170-b65a7264032b"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

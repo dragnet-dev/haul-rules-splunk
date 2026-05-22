@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1415 — Event Log Clearing (nokoyawa)"
+| comment "Status: deprecated | Level: high | ID: 465368e8-5669-5be0-a829-1e4500a25af8"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

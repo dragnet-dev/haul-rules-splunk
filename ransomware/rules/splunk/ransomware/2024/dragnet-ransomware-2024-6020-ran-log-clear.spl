@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-6020 — Event Log Clearing (apt73)"
+| comment "Status: experimental | Level: high | ID: b166576e-5493-5fa5-b4e8-fbd28e98ac49"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

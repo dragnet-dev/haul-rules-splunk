@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-5145 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 12a47815-8c38-59c0-9e79-758ea95733ac"
+index=* sourcetype=network*
+| where (dest="*http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/?id=continentalserves.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

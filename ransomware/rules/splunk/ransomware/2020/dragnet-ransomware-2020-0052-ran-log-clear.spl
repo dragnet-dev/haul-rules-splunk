@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0052 — Event Log Clearing (maze)"
+| comment "Status: deprecated | Level: high | ID: afa7b693-75d3-5874-97cf-38a1d367ba65"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

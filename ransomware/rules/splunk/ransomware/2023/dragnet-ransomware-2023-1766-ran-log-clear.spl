@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-1766 — Event Log Clearing (toufan)"
+| comment "Status: deprecated | Level: high | ID: a24b098d-69cf-5317-9df9-e36906081189"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5968 — Shadow Copy Deletion (cicada3301)"
+| comment "Status: experimental | Level: high | ID: 16fd11c0-db8a-55eb-bd41-d32bd6e2202d"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

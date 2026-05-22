@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5398 — Shadow Copy Deletion (hunters)"
+| comment "Status: experimental | Level: high | ID: cd5476d0-2383-5d5d-89d7-8d795960a400"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

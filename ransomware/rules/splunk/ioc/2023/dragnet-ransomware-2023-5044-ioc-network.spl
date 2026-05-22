@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-5044 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 8bd3d97f-d491-5013-9ad2-072d737cd051"
+index=* sourcetype=network*
+| where (dest="*http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/?id=shopbentley.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

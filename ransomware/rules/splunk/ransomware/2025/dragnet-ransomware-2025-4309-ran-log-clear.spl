@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4309 — Event Log Clearing (threeam)"
+| comment "Status: experimental | Level: high | ID: a4ff6159-5c90-549a-a912-7f1ab7808b9d"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-2037 — Event Log Clearing (cactus)"
+| comment "Status: experimental | Level: high | ID: 841565b5-8bf2-5342-86b9-1c45ea1eedad"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

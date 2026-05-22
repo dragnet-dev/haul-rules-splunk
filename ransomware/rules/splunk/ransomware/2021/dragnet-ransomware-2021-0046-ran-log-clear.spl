@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0046 — Event Log Clearing (avaddon)"
+| comment "Status: deprecated | Level: high | ID: 90b312d0-b480-5b53-9cc2-89e5bb82a6a4"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1016 — Mass File Rename (thegentlemen)"
+| comment "Status: test | Level: high | ID: 5c7c8678-908b-574e-aa35-1c8e05995281"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

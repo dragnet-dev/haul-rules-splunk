@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-5686 — Ransomware C2 Communication"
+| comment "Status: test | Level: high | ID: 2150c193-56bf-5a46-8ed8-48c2db585956"
+index=* sourcetype=network*
+| where (dest="*http://novadmrkp4vbk2padk5t6pbxolndceuc7hrcq4mjaoyed6nxsqiuzyyd.onion/#atencao-primaria-a-saude-brazil*")
+| table _time, src, dest, dest_ip, process
+| head 1000

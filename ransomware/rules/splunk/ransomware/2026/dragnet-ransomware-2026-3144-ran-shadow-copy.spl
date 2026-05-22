@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3144 — Shadow Copy Deletion (anubis)"
+| comment "Status: test | Level: high | ID: 32e91edf-1088-5479-9042-065ae8632c58"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

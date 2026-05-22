@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0031 — Shadow Copy Deletion (werewolves)"
+| comment "Status: experimental | Level: high | ID: 985a27f5-c1ba-5103-b848-dbd8b77431dc"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

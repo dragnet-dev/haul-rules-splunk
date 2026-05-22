@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4090 — Event Log Clearing (clop)"
+| comment "Status: deprecated | Level: high | ID: a8c170e4-e9d8-5e06-8033-5bb2557d4489"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

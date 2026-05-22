@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0897 — Mass File Rename (coinbasecartel)"
+| comment "Status: stable | Level: high | ID: ef0320dd-8ba1-58b5-9ce1-ee5a6c333757"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

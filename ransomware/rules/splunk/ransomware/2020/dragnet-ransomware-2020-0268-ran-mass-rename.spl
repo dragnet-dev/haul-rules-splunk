@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0268 — Mass File Rename (babuk)"
+| comment "Status: deprecated | Level: high | ID: 4cbbe733-d028-551e-a81a-233c747d3562"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-3067 — Event Log Clearing (interlock)"
+| comment "Status: experimental | Level: high | ID: 60df0992-bfcc-5835-9df4-cf2350eca7ef"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

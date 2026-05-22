@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-2507 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 7546df33-204a-5037-95ec-54ec4b14a3a8"
+index=* sourcetype=network*
+| where (dest="*http://sbc2zv2qnz5vubwtx3aobfpkeao6l4igjegm3xx7tk5suqhjkp5jxtqd.onion/pittsburghs-trusted-orthopaedic-surgeons/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

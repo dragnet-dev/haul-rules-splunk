@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3512 — Mass File Rename (PrinzEugen)"
+| comment "Status: stable | Level: high | ID: b01fe713-28bf-5f9e-9830-73909825a0e0"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-0793 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 8d1177a9-ad6e-58f9-b41c-499f55c5bc0b"
+index=* sourcetype=network*
+| where (dest="*https://weerwolven.biz/en/auditexpertnn-ru.html*")
+| table _time, src, dest, dest_ip, process
+| head 1000

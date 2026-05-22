@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4788 — Event Log Clearing (lynx)"
+| comment "Status: experimental | Level: high | ID: b3ae24b8-1e42-5d59-8c2a-415aa842a610"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

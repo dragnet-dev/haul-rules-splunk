@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-0941 — Event Log Clearing (ragnarlocker)"
+| comment "Status: deprecated | Level: high | ID: 6797fc44-045d-574a-82e5-02cc91ae32cf"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

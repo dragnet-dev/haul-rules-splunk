@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1756 — Mass File Rename (ALP-001)"
+| comment "Status: stable | Level: high | ID: d6eb1ffa-7aa0-557b-9de8-ec88234e190e"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

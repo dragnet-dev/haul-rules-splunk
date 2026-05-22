@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-2606 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: f5293697-0a1a-52b6-be69-eb957c73fb21"
+index=* sourcetype=network*
+| where (dest="*https://breachforums.hn//homedepot.html*")
+| table _time, src, dest, dest_ip, process
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-5988 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: e9a53acf-d361-54a8-8805-fc031d0bf128"
+index=* sourcetype=network*
+| where (dest="*http://novavdivko2zvtrvtllnq45lxhba2rfzp76qigb4nrliklem5au7czqd.onion/Novaevo*")
+| table _time, src, dest, dest_ip, process
+| head 1000

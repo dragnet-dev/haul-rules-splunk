@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0722 — Shadow Copy Deletion (everest)"
+| comment "Status: experimental | Level: high | ID: fe419013-f327-542d-813a-5275dda573e5"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

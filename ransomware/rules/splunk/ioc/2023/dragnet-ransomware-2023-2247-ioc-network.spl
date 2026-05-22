@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-2247 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 4b83b509-3d75-512a-b215-b071f66d02d7"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion/companies/humanagroup.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-1928 — Recovery Inhibition (argonauts)"
+| comment "Status: experimental | Level: high | ID: 0b9fa3e3-8b4b-5ddc-b77a-1d77215e56e5"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6381 — Mass File Rename (anubis)"
+| comment "Status: test | Level: high | ID: 61a2ebd3-c45a-5f8a-a54a-16ff0933fa71"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

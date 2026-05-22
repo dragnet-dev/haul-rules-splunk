@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0147 — Event Log Clearing (coldlock)"
+| comment "Status: deprecated | Level: high | ID: 1414e5e8-b733-5060-92ba-8c4a2e21aff4"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

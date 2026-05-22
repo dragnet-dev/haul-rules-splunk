@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0030 — Mass File Rename (mosesstaff)"
+| comment "Status: deprecated | Level: high | ID: 11d3f95b-c294-548b-913d-4c5680f76da2"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

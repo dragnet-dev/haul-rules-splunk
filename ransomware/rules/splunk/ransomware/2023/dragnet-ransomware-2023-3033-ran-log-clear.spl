@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3033 — Event Log Clearing (medusa)"
+| comment "Status: deprecated | Level: high | ID: 65369e7e-3433-50a7-be47-692f12865c69"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

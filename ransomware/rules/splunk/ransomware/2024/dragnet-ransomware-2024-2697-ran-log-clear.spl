@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-2697 — Event Log Clearing (chort)"
+| comment "Status: deprecated | Level: high | ID: 23b26ae2-e6c9-507b-9bac-26ad9cd9a775"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

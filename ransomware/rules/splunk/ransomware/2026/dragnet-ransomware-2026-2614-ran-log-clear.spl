@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2614 — Event Log Clearing (anubis)"
+| comment "Status: test | Level: high | ID: 44925db2-d576-56b9-950f-d3e1fdb20c3d"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

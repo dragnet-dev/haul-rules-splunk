@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4200 — Mass File Rename (nightspire)"
+| comment "Status: experimental | Level: high | ID: 2094f384-33bb-5d68-a7f0-4c4b273bf1ff"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

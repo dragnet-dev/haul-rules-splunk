@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-2477 — Ransomware C2 Communication"
+| comment "Status: stable | Level: high | ID: c0fb4803-8af4-5443-9c6e-2b19b3f8f40b"
+index=* sourcetype=network*
+| where (dest="*https://handala-hack.to/full-access-jerusalems-security-cameras-in-handalas-hands/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

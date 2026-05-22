@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-3669 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 512945f4-91aa-5caa-8ded-f866034be7c0"
+index=* sourcetype=network*
+| where (dest="*http://nerqnacjmdy3obvevyol7qhazkwkv57dwqvye5v46k5bcujtfa6sduad.onion/detail?code=clayplattefamily-com-usa-235gb*")
+| table _time, src, dest, dest_ip, process
+| head 1000

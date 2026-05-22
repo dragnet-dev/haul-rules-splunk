@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-1876 — Mass File Rename (arcusmedia)"
+| comment "Status: experimental | Level: high | ID: d90501fa-b6d1-5da9-94fb-878caada8cc8"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

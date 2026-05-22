@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1274 — Recovery Inhibition (sabbath)"
+| comment "Status: deprecated | Level: high | ID: 4ed9bc72-7c09-596c-b6f6-533d25fdc7fb"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

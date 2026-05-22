@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2255 — Shadow Copy Deletion (qilin)"
+| comment "Status: test | Level: high | ID: d1073e6b-1aa9-5d00-89f8-764052e9b1fd"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

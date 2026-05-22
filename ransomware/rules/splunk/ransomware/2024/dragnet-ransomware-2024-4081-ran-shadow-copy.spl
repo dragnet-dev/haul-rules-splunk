@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4081 — Shadow Copy Deletion (madliberator)"
+| comment "Status: experimental | Level: high | ID: be96ccc6-f04f-5e75-9f7c-8ed4706df78e"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

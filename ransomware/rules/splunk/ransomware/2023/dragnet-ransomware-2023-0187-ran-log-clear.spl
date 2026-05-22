@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0187 — Event Log Clearing (arvinclub)"
+| comment "Status: deprecated | Level: high | ID: 5d58b4a9-41dd-576a-b943-f616462a1af1"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

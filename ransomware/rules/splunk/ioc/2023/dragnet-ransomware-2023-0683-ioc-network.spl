@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-0683 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: e5224d74-88b8-54d3-a2b9-7c0e5cceac57"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion//companies/tntplasticmolding.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

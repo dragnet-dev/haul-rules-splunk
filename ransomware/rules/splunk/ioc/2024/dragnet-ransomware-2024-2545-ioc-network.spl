@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-2545 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: f5859613-9455-542c-ac01-24bc4cfabf3f"
+index=* sourcetype=network*
+| where (dest="*https://handala.to/eyal-baror-the-key-official-of-the-8200-unit/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

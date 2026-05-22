@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0165 — Recovery Inhibition (maze)"
+| comment "Status: deprecated | Level: high | ID: 379b6aa7-0d20-5e56-a9bc-3f7b7a2e7cea"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

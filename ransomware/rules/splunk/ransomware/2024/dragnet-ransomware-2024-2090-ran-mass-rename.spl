@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-2090 — Mass File Rename (safepay)"
+| comment "Status: experimental | Level: high | ID: f50c49fd-ea7c-55e7-8267-be1d550c1392"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

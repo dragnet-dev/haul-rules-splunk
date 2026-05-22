@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-2618 — Event Log Clearing (8base)"
+| comment "Status: experimental | Level: high | ID: 6ed436f8-b5f6-5ea2-bee1-033e2f6e4322"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

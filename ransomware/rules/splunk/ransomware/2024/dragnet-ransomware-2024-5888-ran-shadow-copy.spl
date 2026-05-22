@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5888 — Shadow Copy Deletion (rhysida)"
+| comment "Status: experimental | Level: high | ID: 4f9f86cb-3923-5345-a7d3-4415ba51d888"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

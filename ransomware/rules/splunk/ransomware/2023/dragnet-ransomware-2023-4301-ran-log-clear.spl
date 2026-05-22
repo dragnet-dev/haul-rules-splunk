@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4301 — Event Log Clearing (metaencryptor)"
+| comment "Status: experimental | Level: high | ID: 5d141d67-97ed-5702-aa23-946773aadd00"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

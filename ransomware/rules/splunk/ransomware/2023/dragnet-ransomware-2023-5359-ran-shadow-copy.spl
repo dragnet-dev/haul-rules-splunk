@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-5359 — Shadow Copy Deletion (blackbasta)"
+| comment "Status: experimental | Level: high | ID: df169af3-3e3e-5d8a-a198-354ec7eea1ac"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

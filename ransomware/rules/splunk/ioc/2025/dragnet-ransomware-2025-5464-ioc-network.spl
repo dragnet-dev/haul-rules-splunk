@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-5464 — Ransomware C2 Communication"
+| comment "Status: test | Level: high | ID: ded34996-3321-5405-9393-bdb553a33dd5"
+index=* sourcetype=network*
+| where (dest="*https://handala-hack.to/caught-by-the-octopus-bennetts-darkest-hour/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

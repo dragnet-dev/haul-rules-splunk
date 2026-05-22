@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-0559 — Mass File Rename (kelvinsecurity)"
+| comment "Status: deprecated | Level: high | ID: 1a241277-3cba-5cd1-8640-e6c5364b2f22"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

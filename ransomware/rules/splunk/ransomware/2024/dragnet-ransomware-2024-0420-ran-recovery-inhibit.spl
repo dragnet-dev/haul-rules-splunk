@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0420 — Recovery Inhibition (dragonforce)"
+| comment "Status: deprecated | Level: high | ID: 40a564ae-07b9-5366-8bc0-7a2be6f54868"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

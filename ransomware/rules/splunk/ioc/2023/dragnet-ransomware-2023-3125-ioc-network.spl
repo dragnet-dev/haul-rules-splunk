@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-3125 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: ebbb2c3d-f66a-5d02-b764-55e4fdad6adf"
+index=* sourcetype=network*
+| where (dest="*http://santat7kpllt6iyvqbr7q4amdv6dzrh6paatvyrzl7ry3zm72zigf4ad.onion/amerisave-com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

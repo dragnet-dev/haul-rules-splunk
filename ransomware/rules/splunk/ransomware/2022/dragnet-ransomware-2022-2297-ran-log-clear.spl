@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-2297 — Event Log Clearing (icefire)"
+| comment "Status: deprecated | Level: high | ID: ff1eda29-a359-57ca-90cc-ec6b6bb57157"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

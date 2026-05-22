@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1367 — Mass File Rename (pandora)"
+| comment "Status: deprecated | Level: high | ID: 6bda84f2-e567-53a2-a97f-ebd4cd99f6a5"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

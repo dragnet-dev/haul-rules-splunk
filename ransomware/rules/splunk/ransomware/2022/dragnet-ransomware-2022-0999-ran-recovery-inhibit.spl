@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-0999 — Recovery Inhibition (kelvinsecurity)"
+| comment "Status: deprecated | Level: high | ID: 740c8606-1ca0-5d1b-8305-cceafaa72da6"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

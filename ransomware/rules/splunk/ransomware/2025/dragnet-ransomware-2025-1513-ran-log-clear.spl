@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-1513 — Event Log Clearing (play)"
+| comment "Status: experimental | Level: high | ID: d8f1cac9-c5a2-55c2-83f8-287d409f4925"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

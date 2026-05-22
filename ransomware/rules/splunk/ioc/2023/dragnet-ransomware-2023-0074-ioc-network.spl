@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-0074 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 8cb7de3c-6849-569d-ac86-4ae95f202cbc"
+index=* sourcetype=network*
+| where (dest="*http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/?id=VOLEX.COM*")
+| table _time, src, dest, dest_ip, process
+| head 1000

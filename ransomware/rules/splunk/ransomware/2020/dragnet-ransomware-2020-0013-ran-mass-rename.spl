@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0013 — Mass File Rename (doppelpaymer)"
+| comment "Status: deprecated | Level: high | ID: 9d9b5d29-3541-59bc-8063-08bb351a3b59"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

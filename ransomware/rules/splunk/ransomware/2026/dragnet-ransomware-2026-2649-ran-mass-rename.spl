@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2649 — Mass File Rename (m3rx)"
+| comment "Status: stable | Level: high | ID: 5339bcec-dbb6-5efe-aa97-a3f47e43ae18"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

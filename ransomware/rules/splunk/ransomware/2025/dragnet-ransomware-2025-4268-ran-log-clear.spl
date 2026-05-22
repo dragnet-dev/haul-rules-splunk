@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4268 — Event Log Clearing (cephalus)"
+| comment "Status: deprecated | Level: high | ID: d69150b9-8cfc-5bee-aab7-beca9b409012"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

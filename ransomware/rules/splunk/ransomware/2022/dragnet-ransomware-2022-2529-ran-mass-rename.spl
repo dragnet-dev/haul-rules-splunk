@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-2529 — Mass File Rename (avoslocker)"
+| comment "Status: deprecated | Level: high | ID: 0864430a-3cd3-5f12-9f6e-1cf4fcd1f5cf"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

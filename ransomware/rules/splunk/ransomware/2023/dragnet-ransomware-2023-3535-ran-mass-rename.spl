@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3535 — Mass File Rename (siegedsec)"
+| comment "Status: experimental | Level: high | ID: 4be81110-a703-550e-a137-cf96bdbec841"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

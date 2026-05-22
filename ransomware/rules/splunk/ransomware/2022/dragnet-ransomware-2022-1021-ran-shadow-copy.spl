@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1021 — Shadow Copy Deletion (alphv)"
+| comment "Status: experimental | Level: high | ID: 223e8b70-f725-5ddd-954e-0d977735db58"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

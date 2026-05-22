@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-5056 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 125cb21f-9bae-5384-95f1-a2d623e2310b"
+index=* sourcetype=network*
+| where (dest="*https://dispossessor.com/blogs/731*")
+| table _time, src, dest, dest_ip, process
+| head 1000

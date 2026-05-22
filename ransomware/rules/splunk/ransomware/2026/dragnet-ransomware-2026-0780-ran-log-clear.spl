@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0780 — Event Log Clearing (safepay)"
+| comment "Status: stable | Level: high | ID: 5c42cefb-3b61-5be9-a41c-ef8b1add3542"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

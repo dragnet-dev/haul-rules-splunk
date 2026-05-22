@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0295 — Event Log Clearing (nightspire)"
+| comment "Status: deprecated | Level: high | ID: b58b11db-d08d-5159-b6e3-f3c40caecfc0"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

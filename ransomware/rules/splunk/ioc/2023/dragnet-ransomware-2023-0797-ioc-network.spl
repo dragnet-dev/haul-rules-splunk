@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-0797 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: b2e6ad3e-c0d9-5fb1-a6ec-c2b57a13d7f2"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion/companies/collinsaerospace.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

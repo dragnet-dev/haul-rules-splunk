@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1766 — Event Log Clearing (payoutsking)"
+| comment "Status: test | Level: high | ID: 42938d47-5544-52e8-92fa-12c02bbaa960"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

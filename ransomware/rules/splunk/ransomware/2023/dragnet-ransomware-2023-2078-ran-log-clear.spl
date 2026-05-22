@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-2078 — Event Log Clearing (trigona)"
+| comment "Status: deprecated | Level: high | ID: 254f7c52-33ac-5302-b4ea-16f593c0cf1f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

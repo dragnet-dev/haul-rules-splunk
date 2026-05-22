@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0894 — Mass File Rename (cloak)"
+| comment "Status: deprecated | Level: high | ID: 24107468-f273-54bc-9c6b-3bf6b116d57a"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

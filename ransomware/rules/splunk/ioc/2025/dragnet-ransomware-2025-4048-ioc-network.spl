@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-4048 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 343f9762-aa3c-5c48-8cfb-a02d91c4ec60"
+index=* sourcetype=network*
+| where (dest="*http://securo45z554mw7rgrt7wcgv5eenj2xmxyrsdj3fcjsvindu63s4bsid.onion/FasseValves/info.txt*")
+| table _time, src, dest, dest_ip, process
+| head 1000

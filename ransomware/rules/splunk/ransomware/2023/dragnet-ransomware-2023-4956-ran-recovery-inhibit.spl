@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4956 — Recovery Inhibition (blackbasta)"
+| comment "Status: experimental | Level: high | ID: 2d36d4dd-8f3c-57b2-ac63-9af7cca1139e"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-7753 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 361691ef-a9af-51ce-b38d-a0f2150bccb6"
+index=* sourcetype=network*
+| where (dest="*https://handala-hack.to/a-space-surprise-soon/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

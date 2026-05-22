@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2020-0100 — Event Log Clearing (ryuk)"
+| comment "Status: deprecated | Level: high | ID: c69ff195-8149-5d21-a8b5-33c2ffe09a0c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

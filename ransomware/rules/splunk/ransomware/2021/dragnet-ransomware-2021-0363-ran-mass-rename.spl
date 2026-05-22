@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0363 — Mass File Rename (ragnarlocker)"
+| comment "Status: deprecated | Level: high | ID: 01176236-c3e6-5d79-b8d1-54304c8b04e2"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

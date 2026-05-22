@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-4970 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: ebf8c300-d970-555d-ac45-a5deffc1b32c"
+index=* sourcetype=network*
+| where (dest="*http://6sf5xa7eso3e3vk46i5tpcqhnlayczztj7zjktzaztlotyy75zs6j7qd.onion/vwg-connect.com/CarNet-Part1.log*")
+| table _time, src, dest, dest_ip, process
+| head 1000

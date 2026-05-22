@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0206 — Shadow Copy Deletion (global)"
+| comment "Status: experimental | Level: high | ID: e3ca3013-5af2-5991-88fe-ded45cf9bb92"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

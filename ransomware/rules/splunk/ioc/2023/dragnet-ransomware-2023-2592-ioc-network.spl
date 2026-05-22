@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-2592 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 816034b4-2265-54b4-9077-f674b9071bb1"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion/companies/skywayendo.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

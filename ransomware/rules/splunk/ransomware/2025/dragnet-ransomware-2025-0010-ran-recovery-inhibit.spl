@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0010 — Recovery Inhibition (interlock)"
+| comment "Status: experimental | Level: high | ID: 2ee2ec65-0677-5ea2-8e5e-1f5ef3736b8e"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

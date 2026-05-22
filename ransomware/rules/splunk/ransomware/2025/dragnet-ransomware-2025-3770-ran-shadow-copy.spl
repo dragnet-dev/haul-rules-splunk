@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-3770 — Shadow Copy Deletion (nitrogen)"
+| comment "Status: experimental | Level: high | ID: 889790db-cace-5476-8cd6-28685f425936"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

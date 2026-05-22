@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0479 — Shadow Copy Deletion (monti)"
+| comment "Status: experimental | Level: high | ID: c2a40def-9404-5d0f-9111-1fd2829a3fda"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

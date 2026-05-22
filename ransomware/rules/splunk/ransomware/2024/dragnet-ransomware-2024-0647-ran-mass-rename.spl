@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0647 — Mass File Rename (monti)"
+| comment "Status: experimental | Level: high | ID: 3c2acf38-d75b-5115-a28c-2ff28f71fcba"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

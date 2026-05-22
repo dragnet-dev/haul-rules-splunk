@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-3620 — Shadow Copy Deletion (nova)"
+| comment "Status: test | Level: high | ID: 74cad9ba-b521-5753-9d3b-5081980b235a"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

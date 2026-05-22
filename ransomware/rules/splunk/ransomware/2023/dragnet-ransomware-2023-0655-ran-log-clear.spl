@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0655 — Event Log Clearing (raworld)"
+| comment "Status: experimental | Level: high | ID: 782b053b-2dbf-5c0b-8537-d7b23267131e"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

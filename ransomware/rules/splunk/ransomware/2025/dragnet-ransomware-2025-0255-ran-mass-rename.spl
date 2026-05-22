@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0255 — Mass File Rename (kazu)"
+| comment "Status: deprecated | Level: high | ID: ad04fbcf-7897-56e5-baa5-882c85e4593b"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

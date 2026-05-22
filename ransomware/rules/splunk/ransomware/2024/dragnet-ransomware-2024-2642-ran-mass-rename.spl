@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-2642 — Mass File Rename (akira)"
+| comment "Status: deprecated | Level: high | ID: 85d2a07f-44fa-5d8f-bc82-610fc68e48c9"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

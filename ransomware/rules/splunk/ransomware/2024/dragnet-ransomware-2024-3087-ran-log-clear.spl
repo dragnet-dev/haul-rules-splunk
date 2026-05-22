@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3087 — Event Log Clearing (moneymessage)"
+| comment "Status: experimental | Level: high | ID: 33a2e8d8-f8da-5ddf-b1d4-98d4bdc20818"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

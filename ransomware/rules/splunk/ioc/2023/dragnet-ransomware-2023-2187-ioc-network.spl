@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-2187 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: b99c94b9-ff7f-5493-9ba9-cd4b8976a937"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion/companies/magnoliasteel.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

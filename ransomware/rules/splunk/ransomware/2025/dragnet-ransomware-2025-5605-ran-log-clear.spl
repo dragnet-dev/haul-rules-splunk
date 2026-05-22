@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5605 — Event Log Clearing (kairos)"
+| comment "Status: experimental | Level: high | ID: 610083f1-f3ce-5226-9bc7-f89bbe282f4f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

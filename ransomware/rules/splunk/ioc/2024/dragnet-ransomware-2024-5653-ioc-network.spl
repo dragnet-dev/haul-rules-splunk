@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-5653 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 4d2e2064-d0e9-58eb-8503-9354458d1a5b"
+index=* sourcetype=network*
+| where (dest="*https://handala.to/ramat-gan-academic-college-hacked/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

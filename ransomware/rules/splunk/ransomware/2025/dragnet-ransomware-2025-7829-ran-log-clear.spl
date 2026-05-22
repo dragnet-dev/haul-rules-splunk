@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-7829 — Event Log Clearing (payoutsking)"
+| comment "Status: experimental | Level: high | ID: b2132d60-a2d4-5d1f-a6ef-3706cbd2a8c8"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

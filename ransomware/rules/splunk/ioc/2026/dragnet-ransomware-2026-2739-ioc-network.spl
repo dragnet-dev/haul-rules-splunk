@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-2739 — Ransomware C2 Communication"
+| comment "Status: stable | Level: high | ID: 9189831a-4df2-5c3a-a9b0-6cc957fb51de"
+index=* sourcetype=network*
+| where (dest="*https://handala-hack.to/verifone-hacked/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-3471 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 693fb932-4037-541b-8512-0d945c597c51"
+index=* sourcetype=network*
+| where (dest="*http://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/?id=Fortive%20Corporation*")
+| table _time, src, dest, dest_ip, process
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3449 — Mass File Rename (qilin)"
+| comment "Status: deprecated | Level: high | ID: f9736443-248e-55a1-a4ba-e43538230e2e"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

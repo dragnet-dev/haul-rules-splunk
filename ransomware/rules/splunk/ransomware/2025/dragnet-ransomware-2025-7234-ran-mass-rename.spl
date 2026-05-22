@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-7234 — Mass File Rename (tengu)"
+| comment "Status: experimental | Level: high | ID: c89af862-88b0-5a75-b0b1-f4f6a5e656c8"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

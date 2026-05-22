@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3761 — Mass File Rename (meow)"
+| comment "Status: experimental | Level: high | ID: 5bff5dc6-eb64-59da-84f1-6f575f2a774b"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-7371 — Event Log Clearing (direwolf)"
+| comment "Status: experimental | Level: high | ID: bd8e5c85-8960-501c-add9-28607367e759"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3334 — Mass File Rename (worldleaks)"
+| comment "Status: stable | Level: high | ID: 9f8d0c53-7838-577f-84f6-a5876ea2bbda"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

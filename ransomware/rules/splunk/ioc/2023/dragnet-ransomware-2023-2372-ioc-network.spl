@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-2372 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 95d57308-8687-58b6-8f62-95c8445f2fe0"
+index=* sourcetype=network*
+| where (dest="*http://sbc2zv2qnz5vubwtx3aobfpkeao6l4igjegm3xx7tk5suqhjkp5jxtqd.onion/garden-hotel-narita/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

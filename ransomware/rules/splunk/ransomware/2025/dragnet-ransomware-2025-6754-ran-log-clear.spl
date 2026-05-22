@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6754 — Event Log Clearing (kraken)"
+| comment "Status: experimental | Level: high | ID: 992d212e-fdf3-5d1a-b1e8-ca06b31b49a7"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

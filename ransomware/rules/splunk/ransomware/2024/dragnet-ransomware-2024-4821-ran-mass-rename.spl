@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4821 — Mass File Rename (spacebears)"
+| comment "Status: experimental | Level: high | ID: 67fa9ec3-34c8-59ea-ba6a-2766d9075de4"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

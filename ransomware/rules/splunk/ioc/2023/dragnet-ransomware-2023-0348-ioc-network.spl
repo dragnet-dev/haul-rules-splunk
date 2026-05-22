@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-0348 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 513ea6e7-a1c3-5391-a908-64d665581827"
+index=* sourcetype=network*
+| where (dest="*https://weerwolven.biz/en/forabank-ru.html*")
+| table _time, src, dest, dest_ip, process
+| head 1000

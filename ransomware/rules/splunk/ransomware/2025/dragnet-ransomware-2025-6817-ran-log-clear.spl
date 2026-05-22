@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6817 — Event Log Clearing (kairos)"
+| comment "Status: deprecated | Level: high | ID: 2c3b78d4-a894-51e7-abd9-1938bb87abc8"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-2635 — Mass File Rename (cuba)"
+| comment "Status: experimental | Level: high | ID: 7f35cbc0-df06-5920-a15a-e9666d098959"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

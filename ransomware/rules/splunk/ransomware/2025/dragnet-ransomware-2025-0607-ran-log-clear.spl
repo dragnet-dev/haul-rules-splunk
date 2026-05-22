@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0607 — Event Log Clearing (sinobi)"
+| comment "Status: experimental | Level: high | ID: 540167c2-50c5-5a4f-93a7-2379fac72b34"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

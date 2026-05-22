@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1040 — Mass File Rename (blacktor)"
+| comment "Status: deprecated | Level: high | ID: b114047c-66bb-5c51-9dc9-1a8008f3cc09"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

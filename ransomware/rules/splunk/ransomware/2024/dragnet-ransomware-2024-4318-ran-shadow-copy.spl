@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4318 — Shadow Copy Deletion (babuk2)"
+| comment "Status: experimental | Level: high | ID: db904133-ad11-5e6f-ba01-1085a2e7baa0"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

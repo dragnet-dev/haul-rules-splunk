@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0401 — Event Log Clearing (doppelpaymer)"
+| comment "Status: deprecated | Level: high | ID: 79dc9927-d625-5959-b40e-6850f720683e"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

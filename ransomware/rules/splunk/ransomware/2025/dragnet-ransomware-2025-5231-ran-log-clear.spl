@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5231 — Event Log Clearing (termite)"
+| comment "Status: experimental | Level: high | ID: 820b3199-4043-5e8b-9212-4634bd1ef099"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

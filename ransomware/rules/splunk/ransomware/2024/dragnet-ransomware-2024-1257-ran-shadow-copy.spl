@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-1257 — Shadow Copy Deletion (play)"
+| comment "Status: experimental | Level: high | ID: 6773204e-d84d-537a-b5e7-49569c07db45"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

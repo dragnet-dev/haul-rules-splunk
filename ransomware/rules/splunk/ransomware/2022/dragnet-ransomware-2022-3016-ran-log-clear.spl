@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-3016 — Event Log Clearing (quantum)"
+| comment "Status: deprecated | Level: high | ID: 1746dace-7865-51a9-a072-8032cbde9fbf"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

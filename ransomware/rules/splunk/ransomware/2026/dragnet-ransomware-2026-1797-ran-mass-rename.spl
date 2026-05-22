@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1797 — Mass File Rename (AiLock)"
+| comment "Status: deprecated | Level: high | ID: 736ed698-5f3c-5cf1-a68b-0c431fa29e1b"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

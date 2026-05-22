@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1553 — Mass File Rename (medusalocker)"
+| comment "Status: deprecated | Level: high | ID: d3d9d5ec-7dde-5fc9-9320-053dba66b2bd"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

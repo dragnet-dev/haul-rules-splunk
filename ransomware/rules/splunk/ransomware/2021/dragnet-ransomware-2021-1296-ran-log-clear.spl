@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1296 — Event Log Clearing (mountlocker)"
+| comment "Status: deprecated | Level: high | ID: a41cef51-02da-5f4b-9fd0-8e388e69f9b1"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

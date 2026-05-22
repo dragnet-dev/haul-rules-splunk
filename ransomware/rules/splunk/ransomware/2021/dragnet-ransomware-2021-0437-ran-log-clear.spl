@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0437 — Event Log Clearing (spook)"
+| comment "Status: deprecated | Level: high | ID: c0f13dff-2257-59d0-a209-1fd73f1c309c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

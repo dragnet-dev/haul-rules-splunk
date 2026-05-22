@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2023-3147 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: aed0f004-fd6f-52ae-ae1c-40be392261f7"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion/companies/harvardenergy.com*")
+| table _time, src, dest, dest_ip, process
+| head 1000

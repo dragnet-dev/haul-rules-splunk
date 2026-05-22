@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6265 — Event Log Clearing (kazu)"
+| comment "Status: experimental | Level: high | ID: 8704eaa8-e0f5-535a-8853-95ad2d9f6951"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

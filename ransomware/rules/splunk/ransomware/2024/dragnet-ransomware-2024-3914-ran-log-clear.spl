@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3914 — Event Log Clearing (threeam)"
+| comment "Status: experimental | Level: high | ID: 40d4545e-f9a0-56f2-afec-a0cf7e79ba22"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

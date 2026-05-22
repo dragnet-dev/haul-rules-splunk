@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4375 — Event Log Clearing (snatch)"
+| comment "Status: experimental | Level: high | ID: 49180d1a-d9d1-51d4-ad24-eb2d5c250712"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

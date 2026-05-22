@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-3473 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: e6cb403b-3a05-5380-9942-5030301bd8b0"
+index=* sourcetype=network*
+| where (dest="*http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion//companies/pearlcohen.com/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1469 — Shadow Copy Deletion (ragnarlocker)"
+| comment "Status: experimental | Level: high | ID: ec5909d3-8419-5346-bdf0-2f1e62ef5449"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

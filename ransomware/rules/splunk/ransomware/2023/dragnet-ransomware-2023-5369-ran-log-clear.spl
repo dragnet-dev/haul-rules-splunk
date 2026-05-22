@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-5369 — Event Log Clearing (8base)"
+| comment "Status: experimental | Level: high | ID: fe3df2fe-6682-5cd8-a221-a7cf296e9817"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

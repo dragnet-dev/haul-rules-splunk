@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1506 — Mass File Rename (interlock)"
+| comment "Status: stable | Level: high | ID: 2acf3ee5-78ba-5e55-8498-cd7fb764764a"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

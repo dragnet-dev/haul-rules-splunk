@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0612 — Mass File Rename (cicada3301)"
+| comment "Status: experimental | Level: high | ID: 660a8aff-2199-5811-aaef-44b6cdc2f9f3"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

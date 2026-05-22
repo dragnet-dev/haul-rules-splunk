@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3157 — Mass File Rename (handala)"
+| comment "Status: stable | Level: high | ID: 30efd655-b1b1-5229-8bb6-43eee8626abf"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

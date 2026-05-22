@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-3172 — Event Log Clearing (nova)"
+| comment "Status: test | Level: high | ID: ee891741-2870-5782-be62-805e88e57b95"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

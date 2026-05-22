@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0883 — Recovery Inhibition (akira)"
+| comment "Status: deprecated | Level: high | ID: 1e7f5ecf-42bd-54c7-be65-c2d5f3fbf5b3"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

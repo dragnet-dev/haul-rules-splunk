@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3969 — Recovery Inhibition (qilin)"
+| comment "Status: experimental | Level: high | ID: 0b0a6ed2-c3fb-5e6b-aa25-a2d347fc8ec2"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

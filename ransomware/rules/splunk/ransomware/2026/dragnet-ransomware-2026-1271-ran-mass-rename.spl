@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1271 — Mass File Rename (gunra)"
+| comment "Status: stable | Level: high | ID: d92c3d33-bf97-5aa6-ad97-9001e159ada7"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

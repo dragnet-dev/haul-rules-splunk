@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4516 — Shadow Copy Deletion (dispossessor)"
+| comment "Status: experimental | Level: high | ID: d532180b-64db-5d00-b95e-f89389b46429"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

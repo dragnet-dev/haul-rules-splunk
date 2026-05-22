@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5200 — Mass File Rename (worldleaks)"
+| comment "Status: experimental | Level: high | ID: 22c68ac7-314c-5efc-bd21-8747830d45ac"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

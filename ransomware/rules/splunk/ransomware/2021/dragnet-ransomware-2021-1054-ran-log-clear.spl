@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1054 — Event Log Clearing (snatch)"
+| comment "Status: deprecated | Level: high | ID: 5c7e1ad6-eee6-5d42-baba-b4c1842e474a"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

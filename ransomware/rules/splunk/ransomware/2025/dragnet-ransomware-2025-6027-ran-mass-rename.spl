@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6027 — Mass File Rename (funksec)"
+| comment "Status: experimental | Level: high | ID: f49f3f8e-87fb-5949-b15a-dead06cc4f2c"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6360 — Event Log Clearing (rhysida)"
+| comment "Status: experimental | Level: high | ID: 7cf7aafd-2391-514d-9cba-ebc95d392307"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

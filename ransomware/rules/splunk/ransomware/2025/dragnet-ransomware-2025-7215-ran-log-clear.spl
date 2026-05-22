@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-7215 — Event Log Clearing (babuk2)"
+| comment "Status: experimental | Level: high | ID: df438b52-2b54-5b7e-b1d1-06b4731e4417"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

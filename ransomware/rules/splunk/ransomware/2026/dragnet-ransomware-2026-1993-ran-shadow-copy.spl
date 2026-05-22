@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1993 — Shadow Copy Deletion (payload)"
+| comment "Status: stable | Level: high | ID: a77b650e-03da-5190-8770-12694e76f796"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

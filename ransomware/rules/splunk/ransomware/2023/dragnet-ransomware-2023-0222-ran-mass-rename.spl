@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0222 — Mass File Rename (snatch)"
+| comment "Status: experimental | Level: high | ID: 8698e981-ebc1-5466-962b-c1037dcf57bb"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

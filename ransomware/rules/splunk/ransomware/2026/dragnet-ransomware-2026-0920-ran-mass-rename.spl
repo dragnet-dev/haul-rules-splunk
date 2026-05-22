@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0920 — Mass File Rename (fulcrumsec)"
+| comment "Status: stable | Level: high | ID: f2a53277-19b0-54c3-8805-b8866d500320"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

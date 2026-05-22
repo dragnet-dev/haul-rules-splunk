@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1706 — Mass File Rename (cuba)"
+| comment "Status: deprecated | Level: high | ID: e094820e-007f-537c-9cae-f58306dd8eca"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

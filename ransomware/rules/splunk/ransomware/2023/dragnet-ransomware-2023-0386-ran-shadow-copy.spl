@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0386 — Shadow Copy Deletion (ransomhouse)"
+| comment "Status: experimental | Level: high | ID: b9496a0f-60c3-5752-b49e-24cd4dcdba67"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

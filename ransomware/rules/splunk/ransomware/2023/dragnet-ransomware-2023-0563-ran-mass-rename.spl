@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0563 — Mass File Rename (play)"
+| comment "Status: deprecated | Level: high | ID: 6695bc60-d13e-566c-82f5-8aa141bb6055"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

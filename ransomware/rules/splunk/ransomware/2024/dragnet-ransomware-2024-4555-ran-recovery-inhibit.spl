@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4555 — Recovery Inhibition (qiulong)"
+| comment "Status: experimental | Level: high | ID: 649f8fc4-2e7b-5a4d-8d2e-8b77ca087b33"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

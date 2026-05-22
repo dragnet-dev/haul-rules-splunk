@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3424 — Event Log Clearing (daixin)"
+| comment "Status: deprecated | Level: high | ID: 62e9cca5-8867-554f-b2fb-c273ea0f775b"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

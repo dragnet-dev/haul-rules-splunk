@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1391 — Event Log Clearing (shadowbyt3$)"
+| comment "Status: deprecated | Level: high | ID: f1a65c74-db27-5071-93f7-fd675968054f"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

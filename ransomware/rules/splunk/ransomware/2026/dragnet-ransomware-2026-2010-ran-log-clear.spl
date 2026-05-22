@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2010 — Event Log Clearing (vect)"
+| comment "Status: deprecated | Level: high | ID: 2bda8ee0-dbcc-53c4-95e2-830d5ac3d980"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

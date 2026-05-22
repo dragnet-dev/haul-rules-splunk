@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1112 — Shadow Copy Deletion (thegentlemen)"
+| comment "Status: test | Level: high | ID: 95fd3b5f-5b13-5c9a-803e-fcf652372355"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

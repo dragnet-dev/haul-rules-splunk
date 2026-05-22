@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-2800 — Shadow Copy Deletion (malas)"
+| comment "Status: experimental | Level: high | ID: 26abe984-c134-527f-b478-70ed1f01a806"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

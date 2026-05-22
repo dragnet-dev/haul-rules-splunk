@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0513 — Mass File Rename (everest)"
+| comment "Status: experimental | Level: high | ID: 2d15d176-1c59-570c-b165-cefad797c7ec"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

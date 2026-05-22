@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-2558 — Ransomware C2 Communication"
+| comment "Status: stable | Level: high | ID: 527884c9-9264-5804-b723-4b8bad286e52"
+index=* sourcetype=network*
+| where (dest="*http://lockbitapt67g6rwzjbcxnww5efpg4qok6vpfeth7wx3okj52ks4wtad.onion/post/43b17c6157880975105f7ff8034b3661*")
+| table _time, src, dest, dest_ip, process
+| head 1000

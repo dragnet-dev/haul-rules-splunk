@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-2023 — Ransomware C2 Communication"
+| comment "Status: test | Level: high | ID: 747f6e3e-b24a-5b82-897c-41aadf0ef08e"
+index=* sourcetype=network*
+| where (dest="*https://handala-hack.to/handala-alert-amplifying-the-voice-of-resistance/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

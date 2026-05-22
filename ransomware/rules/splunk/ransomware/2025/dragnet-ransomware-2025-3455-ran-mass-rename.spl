@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-3455 — Mass File Rename (GDLockerSec)"
+| comment "Status: experimental | Level: high | ID: df77d56d-8177-501c-b0d8-fa3a889e6cc7"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

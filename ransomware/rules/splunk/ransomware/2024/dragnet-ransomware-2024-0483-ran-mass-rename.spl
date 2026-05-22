@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0483 — Mass File Rename (blacklock)"
+| comment "Status: experimental | Level: high | ID: bb2aa8e0-bceb-57bf-806e-1161661e848f"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

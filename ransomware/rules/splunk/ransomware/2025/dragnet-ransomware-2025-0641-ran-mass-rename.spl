@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0641 — Mass File Rename (clop)"
+| comment "Status: deprecated | Level: high | ID: 1a43cce1-4398-5d9a-b3ee-a9418ff59ee3"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

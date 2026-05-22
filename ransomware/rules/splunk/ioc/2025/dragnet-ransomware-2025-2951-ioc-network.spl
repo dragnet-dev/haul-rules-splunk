@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2025-2951 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: 619a11d4-c70e-5112-a888-7c76a61732ba"
+index=* sourcetype=network*
+| where (dest="*http://funksec.top/extreme*")
+| table _time, src, dest, dest_ip, process
+| head 1000

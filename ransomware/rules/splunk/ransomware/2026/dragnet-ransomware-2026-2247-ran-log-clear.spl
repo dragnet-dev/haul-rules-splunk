@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2247 — Event Log Clearing (shinyhunters)"
+| comment "Status: deprecated | Level: high | ID: 3ee883ca-7654-52b6-bbac-54a14dc9286b"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

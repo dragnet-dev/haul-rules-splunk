@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0246 — Mass File Rename (chaos)"
+| comment "Status: stable | Level: high | ID: 38a926fb-ea61-5558-b01d-8d8f74c530f6"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

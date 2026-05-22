@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-7349 — Mass File Rename (devman)"
+| comment "Status: experimental | Level: high | ID: 451c541c-b644-55f3-9001-779801bc4bae"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

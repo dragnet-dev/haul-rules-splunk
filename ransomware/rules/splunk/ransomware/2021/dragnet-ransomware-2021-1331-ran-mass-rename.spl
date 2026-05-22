@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1331 — Mass File Rename (darkleakmarket)"
+| comment "Status: deprecated | Level: high | ID: 48daa585-bc92-5363-b955-efd1ebe67cd5"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0074 — Event Log Clearing (lv)"
+| comment "Status: deprecated | Level: high | ID: 554bed53-d798-5b8c-bdac-68902e1a5a78"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

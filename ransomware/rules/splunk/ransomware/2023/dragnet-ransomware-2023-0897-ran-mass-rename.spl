@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0897 — Mass File Rename (play)"
+| comment "Status: experimental | Level: high | ID: cd8c8d2d-d476-586c-ab9a-f9762b74a239"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

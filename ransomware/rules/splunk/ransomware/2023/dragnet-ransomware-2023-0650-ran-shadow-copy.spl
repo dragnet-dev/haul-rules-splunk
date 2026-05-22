@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0650 — Shadow Copy Deletion (noescape)"
+| comment "Status: experimental | Level: high | ID: ac89e26c-a968-583e-a5f9-15816d747edd"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

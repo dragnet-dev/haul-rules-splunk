@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2024-0518 — Ransomware C2 Communication"
+| comment "Status: experimental | Level: high | ID: e989d408-6f2a-52e2-ad86-5ebb114364e8"
+index=* sourcetype=network*
+| where (dest="*https://handala.to/independent-education-system-hacked/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

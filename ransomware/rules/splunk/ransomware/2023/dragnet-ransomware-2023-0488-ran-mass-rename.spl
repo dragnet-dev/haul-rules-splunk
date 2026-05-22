@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0488 — Mass File Rename (ElDorado)"
+| comment "Status: deprecated | Level: high | ID: 02144767-9478-5c8e-ace5-c3b67d20d56b"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

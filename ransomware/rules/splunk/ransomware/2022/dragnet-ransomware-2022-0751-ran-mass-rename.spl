@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-0751 — Mass File Rename (bianlian)"
+| comment "Status: deprecated | Level: high | ID: 0b191134-feb9-511f-a794-044858199bcb"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

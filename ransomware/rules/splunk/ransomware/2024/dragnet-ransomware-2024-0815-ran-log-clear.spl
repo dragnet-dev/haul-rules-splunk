@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-0815 — Event Log Clearing (incransom)"
+| comment "Status: experimental | Level: high | ID: 357e6687-11a1-5836-9fb2-fe7489a72bec"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

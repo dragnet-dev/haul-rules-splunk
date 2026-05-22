@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-2852 — Mass File Rename (lynx)"
+| comment "Status: experimental | Level: high | ID: 47b2120d-6b16-5162-b7eb-981c32940f80"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

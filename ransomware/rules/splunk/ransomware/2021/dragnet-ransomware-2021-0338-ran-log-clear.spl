@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0338 — Event Log Clearing (revil)"
+| comment "Status: deprecated | Level: high | ID: 56a180d4-3e49-53b0-9cdd-513e46e5a915"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

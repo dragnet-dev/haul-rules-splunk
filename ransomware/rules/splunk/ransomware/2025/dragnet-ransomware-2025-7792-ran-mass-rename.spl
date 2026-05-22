@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-7792 — Mass File Rename (blackshrantac)"
+| comment "Status: test | Level: high | ID: 59d013bc-8dda-5196-a658-1580987fa92c"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

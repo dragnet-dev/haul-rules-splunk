@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5161 — Event Log Clearing (cicada3301)"
+| comment "Status: experimental | Level: high | ID: 1f39e51e-d837-5329-bb28-086a4e39a02c"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

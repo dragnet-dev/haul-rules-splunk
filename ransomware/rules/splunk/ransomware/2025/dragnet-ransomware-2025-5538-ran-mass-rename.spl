@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5538 — Mass File Rename (sinobi)"
+| comment "Status: test | Level: high | ID: 95fba351-07c6-5779-b9de-81a85b60da6b"
+index=*
+| where (file_path="*.encrypted" OR file_path="*.locked" OR file_path="*.ransom")
+| table _time, host
+| head 1000

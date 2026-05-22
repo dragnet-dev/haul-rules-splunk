@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware/IOC]: dragnet-ransomware-2026-3132 — Ransomware C2 Communication"
+| comment "Status: test | Level: high | ID: 9cccdbcb-536f-5ba4-8cac-641a2cbf121a"
+index=* sourcetype=network*
+| where (dest="*https://handala-hack.to/unveiling-the-secrets-inside-the-whatsapp-chats-of-a-minister/*")
+| table _time, src, dest, dest_ip, process
+| head 1000

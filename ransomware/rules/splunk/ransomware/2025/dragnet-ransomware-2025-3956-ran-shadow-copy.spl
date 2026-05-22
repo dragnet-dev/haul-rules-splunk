@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-3956 — Shadow Copy Deletion (chaos)"
+| comment "Status: experimental | Level: high | ID: 525ca095-62ee-5db2-bfbe-a78ec8863950"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000

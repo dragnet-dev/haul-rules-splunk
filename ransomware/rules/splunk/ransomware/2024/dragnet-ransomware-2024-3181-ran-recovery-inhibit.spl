@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-3181 — Recovery Inhibition (vanirgroup)"
+| comment "Status: deprecated | Level: high | ID: 12c4685a-e9f2-5614-a8d6-7013b9db0c0f"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6867 — Recovery Inhibition (alphalocker)"
+| comment "Status: experimental | Level: high | ID: 4c21a9b3-eb7f-58cd-bdde-ca3e209d7e8c"
+index=* sourcetype=endpoint*
+| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
+| table _time, host, process, parent_process, CommandLine
+| head 1000

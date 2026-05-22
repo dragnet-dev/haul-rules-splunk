@@ -1,0 +1,6 @@
+| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-1002 — Event Log Clearing (ransomhouse)"
+| comment "Status: test | Level: high | ID: ea3ccdc8-86c1-5121-9787-dde3a45c80a2"
+index=* sourcetype=endpoint*
+| where 1ofselection_
+| table _time, host, process, parent_process, CommandLine
+| head 1000
