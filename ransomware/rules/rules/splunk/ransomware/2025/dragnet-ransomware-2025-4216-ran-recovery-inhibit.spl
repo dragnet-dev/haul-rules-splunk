@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4216 — Recovery Inhibition (ransomhub)"
-| comment "Status: experimental | Level: high | ID: 44ef91f9-9790-531a-9134-c63cc68cd5e1"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

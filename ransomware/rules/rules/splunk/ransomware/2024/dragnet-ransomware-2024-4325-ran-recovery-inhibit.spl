@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4325 — Recovery Inhibition (ransomexx)"
-| comment "Status: experimental | Level: high | ID: 2e6c7907-97c1-5e86-bf87-79c1c7e6d108"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

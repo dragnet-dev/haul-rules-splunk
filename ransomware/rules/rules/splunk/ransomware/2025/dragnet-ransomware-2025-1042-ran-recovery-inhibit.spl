@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-1042 — Recovery Inhibition (payoutsking)"
-| comment "Status: deprecated | Level: high | ID: b14caed2-3c56-5832-b9e4-8a89a3df7aaf"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

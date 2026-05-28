@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4024 — Recovery Inhibition (cephalus)"
-| comment "Status: deprecated | Level: high | ID: ca6471ce-38d8-541a-9ff0-0d18f1ce3ba1"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

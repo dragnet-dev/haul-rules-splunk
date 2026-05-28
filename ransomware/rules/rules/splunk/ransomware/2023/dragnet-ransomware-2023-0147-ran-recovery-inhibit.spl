@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0147 — Recovery Inhibition (cyclops)"
-| comment "Status: deprecated | Level: high | ID: 41fa0082-dbfa-595b-834c-c2774fe4bd4b"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

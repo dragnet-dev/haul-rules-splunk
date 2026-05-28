@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-4536 — Recovery Inhibition (killsec)"
-| comment "Status: deprecated | Level: high | ID: e7cf4ed3-d812-5115-a64e-a3ff6f6a059a"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

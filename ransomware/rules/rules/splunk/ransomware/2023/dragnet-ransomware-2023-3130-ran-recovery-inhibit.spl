@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3130 — Recovery Inhibition (toufan)"
-| comment "Status: deprecated | Level: high | ID: d10de07a-2c4b-5fda-ae33-783a53e4aaa4"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

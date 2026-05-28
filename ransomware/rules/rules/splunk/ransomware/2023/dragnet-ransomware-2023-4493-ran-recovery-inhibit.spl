@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4493 — Recovery Inhibition (clop)"
-| comment "Status: experimental | Level: high | ID: 5f3e51b9-2e5e-5f9d-bdd4-a2928ed846cd"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

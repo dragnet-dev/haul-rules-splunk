@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0793 — Recovery Inhibition (embargo)"
-| comment "Status: experimental | Level: high | ID: cf18ee1e-cd1c-5612-9614-ed2d3c1ae0c8"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4532 — Recovery Inhibition (nitrogen)"
-| comment "Status: experimental | Level: high | ID: 7be67cdc-50b9-5e76-ad1c-a3e5be0ee684"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5940 — Recovery Inhibition (clop)"
-| comment "Status: deprecated | Level: high | ID: 6c0e07dc-43b9-519a-b7d1-7ff0c3fc7f61"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

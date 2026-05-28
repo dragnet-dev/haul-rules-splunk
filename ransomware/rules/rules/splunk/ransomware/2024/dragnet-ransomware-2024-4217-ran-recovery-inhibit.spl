@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4217 — Recovery Inhibition (spacebears)"
-| comment "Status: experimental | Level: high | ID: 4a3874a7-e3db-513c-8f6b-e0cf0967ea55"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

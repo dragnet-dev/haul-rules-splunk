@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-1592 — Recovery Inhibition (threeam)"
-| comment "Status: experimental | Level: high | ID: 5ad2094a-3d6c-5a88-ae0c-aaa2eaef4c38"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

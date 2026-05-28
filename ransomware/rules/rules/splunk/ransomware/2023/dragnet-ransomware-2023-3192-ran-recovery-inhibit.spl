@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3192 — Recovery Inhibition (cactus)"
-| comment "Status: deprecated | Level: high | ID: e9a283d0-0179-5ea4-94ec-a6d9f07f16a9"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

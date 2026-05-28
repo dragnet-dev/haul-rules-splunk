@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-6067 — Recovery Inhibition (blackshrantac)"
-| comment "Status: test | Level: high | ID: 58b82401-0a5d-5ac2-bb5a-31cfc8264c82"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

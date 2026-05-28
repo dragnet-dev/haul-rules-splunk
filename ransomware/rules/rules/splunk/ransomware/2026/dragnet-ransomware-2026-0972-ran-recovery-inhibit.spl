@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0972 — Recovery Inhibition (benzona)"
-| comment "Status: deprecated | Level: high | ID: c0a706b2-5eb9-55f2-899f-f2b0d31f3e37"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0699 — Recovery Inhibition (avaddon)"
-| comment "Status: deprecated | Level: high | ID: 3ccf7219-2ed0-5d63-bd74-402eb0f46dce"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

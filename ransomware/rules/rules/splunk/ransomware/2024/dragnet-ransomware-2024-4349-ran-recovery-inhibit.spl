@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-4349 — Recovery Inhibition (alphv)"
-| comment "Status: experimental | Level: high | ID: 4bc1b09c-ba7b-5c6c-bc43-98dfe6248040"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

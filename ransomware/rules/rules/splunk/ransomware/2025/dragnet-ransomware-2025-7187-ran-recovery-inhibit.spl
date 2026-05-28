@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-7187 — Recovery Inhibition (babuk2)"
-| comment "Status: experimental | Level: high | ID: 2b8631c2-8b61-5609-b0e5-6c33b2c12b48"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

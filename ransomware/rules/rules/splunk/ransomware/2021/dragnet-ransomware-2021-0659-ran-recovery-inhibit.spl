@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0659 — Recovery Inhibition (blackbyte)"
-| comment "Status: deprecated | Level: high | ID: f4cf1a4b-34c8-505b-b27d-85f1f564d2b6"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

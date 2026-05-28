@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-0191 — Recovery Inhibition (ciphbit)"
-| comment "Status: deprecated | Level: high | ID: 5caa62fe-cff8-59f9-bc1f-7aa3cef88218"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

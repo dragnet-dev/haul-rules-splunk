@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-2668 — Recovery Inhibition (icefire)"
-| comment "Status: deprecated | Level: high | ID: 9e71c5c1-1c98-56a2-b641-6d1ac0360e37"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

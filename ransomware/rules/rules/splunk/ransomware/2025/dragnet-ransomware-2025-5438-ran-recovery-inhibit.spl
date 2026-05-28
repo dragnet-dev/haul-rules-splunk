@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5438 — Recovery Inhibition (tridentlocker)"
-| comment "Status: experimental | Level: high | ID: 37fe1cd7-3d9e-5bc4-abe3-61a09075f55f"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

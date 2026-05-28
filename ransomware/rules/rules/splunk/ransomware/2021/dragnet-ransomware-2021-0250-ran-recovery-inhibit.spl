@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0250 — Recovery Inhibition (cryp70n1c0d3)"
-| comment "Status: deprecated | Level: high | ID: f82f077d-9a89-5087-92ca-6157db7de4ba"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

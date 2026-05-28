@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-1788 — Recovery Inhibition (donutleaks)"
-| comment "Status: experimental | Level: high | ID: 4b3ff9e5-bfa8-5d6e-9972-dd39622ed11e"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

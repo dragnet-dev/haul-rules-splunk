@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1827 — Recovery Inhibition (blackbasta)"
-| comment "Status: deprecated | Level: high | ID: 9fddd276-8b1f-5ea7-89ca-bbf11e10d7cb"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

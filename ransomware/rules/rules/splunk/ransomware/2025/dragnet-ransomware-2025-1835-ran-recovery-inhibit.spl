@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-1835 — Recovery Inhibition (sinobi)"
-| comment "Status: experimental | Level: high | ID: 4cd8bd5f-247c-5981-8bb0-c6c8f32f3da7"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1367 — Recovery Inhibition (mosesstaff)"
-| comment "Status: deprecated | Level: high | ID: 926c04fb-4e69-5745-88d9-04c4cb93c6ee"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-5238 — Recovery Inhibition (lockbit3)"
-| comment "Status: experimental | Level: high | ID: ec9e5dbf-fb51-5dd8-a01f-f31a9f812057"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

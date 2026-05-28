@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-1254 — Recovery Inhibition (shinyhunters)"
-| comment "Status: deprecated | Level: high | ID: 53fbebaa-066f-50f2-978c-fd7e7c3996e8"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

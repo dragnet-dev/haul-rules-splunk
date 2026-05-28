@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0587 — Recovery Inhibition (zeppelin)"
-| comment "Status: deprecated | Level: high | ID: fb47fbcc-c29e-51f4-8c56-e9a2fffa5b94"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0482 — Recovery Inhibition (m3rx)"
-| comment "Status: stable | Level: high | ID: 03a6a4da-4b05-5d3d-be5f-c3e67f9dd431"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

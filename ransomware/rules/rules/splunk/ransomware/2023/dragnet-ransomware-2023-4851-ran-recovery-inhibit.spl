@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-4851 — Recovery Inhibition (rhysida)"
-| comment "Status: experimental | Level: high | ID: c9fbfcd0-cb1c-5a32-b6b3-7ba6e814f0e1"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

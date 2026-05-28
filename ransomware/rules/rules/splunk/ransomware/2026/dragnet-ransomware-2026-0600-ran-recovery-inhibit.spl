@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-0600 — Recovery Inhibition (dragonforce)"
-| comment "Status: stable | Level: high | ID: 0eb4d5fc-bfb8-5be2-a2cb-4fd11784b9ae"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

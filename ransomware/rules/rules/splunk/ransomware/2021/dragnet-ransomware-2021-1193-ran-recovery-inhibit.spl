@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-1193 — Recovery Inhibition (pysa)"
-| comment "Status: deprecated | Level: high | ID: 1f2ec3ae-6c5b-5b2a-9e91-a25bc6bd8130"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

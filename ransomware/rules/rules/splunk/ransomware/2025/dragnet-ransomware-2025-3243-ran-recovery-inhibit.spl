@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-3243 — Recovery Inhibition (sarcoma)"
-| comment "Status: deprecated | Level: high | ID: a41bb445-7d58-5cb1-b1d5-6b0faa4d957c"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

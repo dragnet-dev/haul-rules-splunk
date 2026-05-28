@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-7463 — Recovery Inhibition (anubis)"
-| comment "Status: test | Level: high | ID: 171b57b4-3dd7-5b5b-a9e2-1ef3d2f3ca42"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-2080 — Recovery Inhibition (safepay)"
-| comment "Status: experimental | Level: high | ID: 8783a47d-e57d-5cc7-a5d4-3bfd4f37e3b7"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

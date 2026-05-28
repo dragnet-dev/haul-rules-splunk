@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2023-3685 — Recovery Inhibition (arvinclub)"
-| comment "Status: deprecated | Level: high | ID: 4e5fbdf8-6a68-5bd3-b401-c1173d216577"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

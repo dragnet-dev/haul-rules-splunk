@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2365 — Recovery Inhibition (thegentlemen)"
-| comment "Status: deprecated | Level: high | ID: c4a79b2b-f0e3-57cf-90d9-5503382f8c00"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

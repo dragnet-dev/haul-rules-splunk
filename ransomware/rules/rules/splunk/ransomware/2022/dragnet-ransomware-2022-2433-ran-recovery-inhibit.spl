@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-2433 — Recovery Inhibition (lockbit2)"
-| comment "Status: deprecated | Level: high | ID: 5ebeabb2-ddf9-5cf0-a7da-988c9baaeb74"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

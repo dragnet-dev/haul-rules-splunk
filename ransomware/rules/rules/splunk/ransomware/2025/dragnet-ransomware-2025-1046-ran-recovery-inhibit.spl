@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-1046 — Recovery Inhibition (anubis)"
-| comment "Status: experimental | Level: high | ID: 4851aaaa-9c8a-5be8-ae42-8ed2a9a4ee6b"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

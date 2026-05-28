@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-7831 — Recovery Inhibition (lynx)"
-| comment "Status: experimental | Level: high | ID: bc6e4fcb-e7d0-51bb-ab4e-3cfaed550ef8"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

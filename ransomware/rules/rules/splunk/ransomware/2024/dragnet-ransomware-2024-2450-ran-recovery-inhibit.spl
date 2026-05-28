@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-2450 — Recovery Inhibition (medusa)"
-| comment "Status: experimental | Level: high | ID: 704e10fa-5c1f-597c-8a9c-b4bb4eb4df54"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

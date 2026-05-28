@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-1681 — Recovery Inhibition (BrainCipher)"
-| comment "Status: experimental | Level: high | ID: b4a001b6-ebd8-595a-a838-9a4f9557bc34"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

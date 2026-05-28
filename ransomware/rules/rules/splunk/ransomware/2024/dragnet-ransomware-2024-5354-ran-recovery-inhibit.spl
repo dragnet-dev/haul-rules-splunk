@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2024-5354 — Recovery Inhibition (ElDorado)"
-| comment "Status: deprecated | Level: high | ID: ef6c7ab8-048c-5678-b5f9-2e1d3ff60c7c"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

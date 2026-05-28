@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0473 — Recovery Inhibition (suncrypt)"
-| comment "Status: deprecated | Level: high | ID: 7b78ece8-37da-5cf6-9ea9-e21a862ffd48"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

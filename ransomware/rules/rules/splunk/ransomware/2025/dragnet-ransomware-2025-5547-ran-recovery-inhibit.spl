@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-5547 — Recovery Inhibition (qilin)"
-| comment "Status: experimental | Level: high | ID: 1e3b7ea7-b9dc-5dae-9a3f-b389d69dc05e"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

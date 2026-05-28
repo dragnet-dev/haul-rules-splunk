@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-3165 — Recovery Inhibition (coinbasecartel)"
-| comment "Status: stable | Level: high | ID: 8a1387e6-03dd-5bdc-9cd9-e75dc27d20cc"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

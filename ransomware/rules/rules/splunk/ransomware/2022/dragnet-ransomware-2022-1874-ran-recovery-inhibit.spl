@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2022-1874 — Recovery Inhibition (avoslocker)"
-| comment "Status: deprecated | Level: high | ID: 55d3805b-5c5c-5b3a-b9fd-9d40c137675e"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

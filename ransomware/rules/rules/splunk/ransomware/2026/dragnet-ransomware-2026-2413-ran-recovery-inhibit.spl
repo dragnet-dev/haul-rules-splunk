@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2026-2413 — Recovery Inhibition (nightspire)"
-| comment "Status: deprecated | Level: high | ID: 7d8dd410-a12a-59c7-8cf9-1f00bdf7d302"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

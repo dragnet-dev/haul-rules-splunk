@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2025-0956 — Recovery Inhibition (worldleaks)"
-| comment "Status: experimental | Level: high | ID: 7a2d11b6-c53b-5e5d-bcfd-7b832878ea6b"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000

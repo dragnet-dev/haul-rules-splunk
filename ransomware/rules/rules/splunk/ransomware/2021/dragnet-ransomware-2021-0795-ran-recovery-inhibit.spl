@@ -1,6 +1,0 @@
-| comment "Dragnet [Ransomware]: dragnet-ransomware-2021-0795 — Recovery Inhibition (darkleakmarket)"
-| comment "Status: deprecated | Level: high | ID: 94ba9f82-c707-5748-b674-5fdd2baa9141"
-index=* sourcetype=endpoint*
-| where (CommandLine="*recoveryenabled no*" OR CommandLine="*bootstatuspolicy ignoreallfailures*") AND (process="*\bcdedit.exe")
-| table _time, host, process, parent_process, CommandLine
-| head 1000
